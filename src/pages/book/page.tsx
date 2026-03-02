@@ -27,6 +27,12 @@ import {
   Heart,
   CalendarDays,
   Users,
+  Clock,
+  GraduationCap,
+  Music,
+  Gem,
+  Globe,
+  MapPinPlus,
 } from "lucide-react";
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
@@ -34,70 +40,82 @@ import { cn } from "@/lib/utils.ts";
 import { ConvexError } from "convex/values";
 import { usePageMeta } from "@/hooks/use-page-meta.ts";
 
-const SERVICE_OPTIONS = [
-  { value: "limo-service", label: "Limousine Service", icon: Car },
-  { value: "party-bus", label: "Party Bus Rental", icon: PartyPopper },
-  { value: "corporate", label: "Corporate Transportation", icon: Briefcase },
-  { value: "airport-transfers", label: "Airport Transfer", icon: Plane },
-  { value: "wedding", label: "Wedding Transportation", icon: Heart },
+const EVENT_TYPES = [
+  { value: "wedding", label: "Wedding", icon: Heart },
+  { value: "prom", label: "Prom / Homecoming", icon: GraduationCap },
+  { value: "birthday", label: "Birthday Party", icon: PartyPopper },
+  { value: "bachelor-bachelorette", label: "Bachelor / Bachelorette", icon: Music },
+  { value: "corporate", label: "Corporate Event", icon: Briefcase },
+  { value: "airport-transfer", label: "Airport Transfer", icon: Plane },
+  { value: "concert-sporting", label: "Concert / Sporting Event", icon: Gem },
+  { value: "night-out", label: "Night Out", icon: Globe },
+  { value: "other", label: "Other", icon: Car },
 ] as const;
 
 const VEHICLE_OPTIONS = [
-  { value: "executive-sedan", label: "Executive Sedan (up to 3)" },
-  { value: "luxury-suv", label: "Luxury SUV (up to 6)" },
-  { value: "stretch-limo", label: "Stretch Limousine (up to 10)" },
-  { value: "white-stretch", label: "White Stretch Limo (up to 12)" },
-  { value: "executive-van", label: "Executive Sprinter Van (up to 14)" },
-  { value: "party-bus", label: "Party Bus (20-40)" },
-  { value: "no-preference", label: "No Preference - Recommend for Me" },
+  { value: "stretch-limo", label: "Stretch Limousine" },
+  { value: "party-bus", label: "Party Bus" },
+  { value: "executive-sedan", label: "Executive Sedan" },
+  { value: "luxury-suv", label: "Luxury SUV" },
+  { value: "white-stretch", label: "White Stretch Limo" },
+  { value: "executive-van", label: "Executive Sprinter Van" },
+  { value: "hummer-limo", label: "Hummer Limousine" },
+  { value: "charter-bus", label: "Charter / Mini Bus" },
+  { value: "not-sure", label: "Not Sure - Recommend for Me" },
 ] as const;
 
 const TIME_SLOTS = [
-  "6:00 AM", "6:30 AM", "7:00 AM", "7:30 AM",
-  "8:00 AM", "8:30 AM", "9:00 AM", "9:30 AM",
-  "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM",
-  "12:00 PM", "12:30 PM", "1:00 PM", "1:30 PM",
-  "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM",
-  "4:00 PM", "4:30 PM", "5:00 PM", "5:30 PM",
-  "6:00 PM", "6:30 PM", "7:00 PM", "7:30 PM",
-  "8:00 PM", "8:30 PM", "9:00 PM", "9:30 PM",
-  "10:00 PM", "10:30 PM", "11:00 PM", "11:30 PM",
+  "12:00 AM", "12:30 AM",
+  "1:00 AM", "1:30 AM", "2:00 AM", "2:30 AM",
+  "3:00 AM", "3:30 AM", "4:00 AM", "4:30 AM",
+  "5:00 AM", "5:30 AM", "6:00 AM", "6:30 AM",
+  "7:00 AM", "7:30 AM", "8:00 AM", "8:30 AM",
+  "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM",
+  "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM",
+  "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM",
+  "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM",
+  "5:00 PM", "5:30 PM", "6:00 PM", "6:30 PM",
+  "7:00 PM", "7:30 PM", "8:00 PM", "8:30 PM",
+  "9:00 PM", "9:30 PM", "10:00 PM", "10:30 PM",
+  "11:00 PM", "11:30 PM",
 ] as const;
 
 const STEPS = [
-  { id: 1, label: "Service", icon: Car },
-  { id: 2, label: "Details", icon: MapPin },
+  { id: 1, label: "Event", icon: CalendarDays },
+  { id: 2, label: "Trip", icon: MapPin },
   { id: 3, label: "Your Info", icon: User },
   { id: 4, label: "Confirm", icon: CheckCircle },
 ] as const;
 
 type BookingFormData = {
-  serviceType: string;
-  vehiclePreference: string;
-  pickupDate: string;
-  pickupTime: string;
-  pickupLocation: string;
-  dropoffLocation: string;
-  passengers: number;
-  firstName: string;
-  lastName: string;
+  fullName: string;
   email: string;
   phone: string;
+  eventDate: string;
+  eventType: string;
+  pickupTime: string;
+  pickupAddress: string;
+  stopsAddress: string;
+  destinationAddress: string;
+  dropoffTime: string;
+  passengers: number;
+  vehicleNeeded: string;
   specialRequests: string;
 };
 
 const INITIAL_FORM: BookingFormData = {
-  serviceType: "",
-  vehiclePreference: "",
-  pickupDate: "",
-  pickupTime: "",
-  pickupLocation: "",
-  dropoffLocation: "",
-  passengers: 1,
-  firstName: "",
-  lastName: "",
+  fullName: "",
   email: "",
   phone: "",
+  eventDate: "",
+  eventType: "",
+  pickupTime: "",
+  pickupAddress: "",
+  stopsAddress: "",
+  destinationAddress: "",
+  dropoffTime: "",
+  passengers: 1,
+  vehicleNeeded: "",
   specialRequests: "",
 };
 
@@ -135,7 +153,9 @@ function StepIndicator({ currentStep }: { currentStep: number }) {
   );
 }
 
-function Step1ServiceSelect({
+/* ────────────────────── Step 1: Event & Vehicle ────────────────────── */
+
+function Step1EventVehicle({
   form,
   onChange,
 }: {
@@ -145,48 +165,74 @@ function Step1ServiceSelect({
   return (
     <div>
       <h2 className="font-serif text-2xl font-bold text-foreground mb-2">
-        Select Your Service
+        Event &amp; Vehicle
       </h2>
       <p className="text-muted-foreground text-sm mb-8">
-        Choose the type of service you need. We{"'"}ll match you with the
-        perfect vehicle.
+        Tell us about your event and which vehicle you{"'"}d like.
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-        {SERVICE_OPTIONS.map((service) => (
+
+      {/* Event type grid */}
+      <Label className="mb-3 block">
+        Event Type <span className="text-destructive">*</span>
+      </Label>
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+        {EVENT_TYPES.map((evt) => (
           <button
-            key={service.value}
+            key={evt.value}
             type="button"
-            onClick={() => onChange({ serviceType: service.value })}
+            onClick={() => onChange({ eventType: evt.value })}
             className={cn(
-              "flex items-center gap-4 p-5 border text-left transition-all duration-300",
-              form.serviceType === service.value
+              "flex items-center gap-3 p-4 border text-left transition-all duration-300",
+              form.eventType === evt.value
                 ? "bg-primary/10 border-primary text-foreground"
                 : "bg-card border-border text-muted-foreground hover:border-primary/40",
             )}
           >
             <div
               className={cn(
-                "w-11 h-11 flex items-center justify-center shrink-0 transition-colors",
-                form.serviceType === service.value
+                "w-9 h-9 flex items-center justify-center shrink-0 transition-colors",
+                form.eventType === evt.value
                   ? "bg-primary text-primary-foreground"
                   : "bg-secondary text-muted-foreground",
               )}
             >
-              <service.icon className="size-5" />
+              <evt.icon className="size-4" />
             </div>
-            <span className="font-medium text-sm">{service.label}</span>
+            <span className="font-medium text-xs sm:text-sm leading-tight">
+              {evt.label}
+            </span>
           </button>
         ))}
       </div>
 
-      <div className="space-y-2">
-        <Label>Vehicle Preference</Label>
+      {/* Event date */}
+      <div className="space-y-2 mb-6">
+        <Label htmlFor="event-date">
+          <CalendarDays className="size-4 inline mr-1.5 text-primary" />
+          Event Date <span className="text-destructive">*</span>
+        </Label>
+        <Input
+          id="event-date"
+          type="date"
+          min={new Date().toISOString().split("T")[0]}
+          value={form.eventDate}
+          onChange={(e) => onChange({ eventDate: e.target.value })}
+          required
+          className="rounded-none bg-background"
+        />
+      </div>
+
+      {/* Vehicle needed */}
+      <div className="space-y-2 mb-6">
+        <Label>
+          Vehicle Needed <span className="text-destructive">*</span>
+        </Label>
         <Select
-          value={form.vehiclePreference}
-          onValueChange={(v) => onChange({ vehiclePreference: v })}
+          value={form.vehicleNeeded}
+          onValueChange={(v) => onChange({ vehicleNeeded: v })}
         >
           <SelectTrigger className="rounded-none bg-background">
-            <SelectValue placeholder="Select a vehicle (optional)" />
+            <SelectValue placeholder="Select a vehicle" />
           </SelectTrigger>
           <SelectContent>
             {VEHICLE_OPTIONS.map((v) => (
@@ -197,9 +243,31 @@ function Step1ServiceSelect({
           </SelectContent>
         </Select>
       </div>
+
+      {/* Passengers */}
+      <div className="space-y-2">
+        <Label htmlFor="passengers">
+          <Users className="size-4 inline mr-1.5 text-primary" />
+          Number of Passengers <span className="text-destructive">*</span>
+        </Label>
+        <Input
+          id="passengers"
+          type="number"
+          min={1}
+          max={60}
+          value={form.passengers}
+          onChange={(e) =>
+            onChange({ passengers: parseInt(e.target.value) || 1 })
+          }
+          required
+          className="rounded-none bg-background"
+        />
+      </div>
     </div>
   );
 }
+
+/* ────────────────────── Step 2: Trip Details ────────────────────── */
 
 function Step2TripDetails({
   form,
@@ -208,36 +276,20 @@ function Step2TripDetails({
   form: BookingFormData;
   onChange: (updates: Partial<BookingFormData>) => void;
 }) {
-  // Minimum date is today
-  const today = new Date().toISOString().split("T")[0];
-
   return (
     <div>
       <h2 className="font-serif text-2xl font-bold text-foreground mb-2">
         Trip Details
       </h2>
       <p className="text-muted-foreground text-sm mb-8">
-        Tell us when and where you need to go.
+        Provide your pickup, stops, destination, and schedule.
       </p>
       <div className="space-y-5">
+        {/* Pickup time & Dropoff time */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div className="space-y-2">
-            <Label htmlFor="pickup-date">
-              <CalendarDays className="size-4 inline mr-1.5 text-primary" />
-              Pickup Date <span className="text-destructive">*</span>
-            </Label>
-            <Input
-              id="pickup-date"
-              type="date"
-              min={today}
-              value={form.pickupDate}
-              onChange={(e) => onChange({ pickupDate: e.target.value })}
-              required
-              className="rounded-none bg-background"
-            />
-          </div>
-          <div className="space-y-2">
             <Label>
+              <Clock className="size-4 inline mr-1.5 text-primary" />
               Pickup Time <span className="text-destructive">*</span>
             </Label>
             <Select
@@ -245,11 +297,32 @@ function Step2TripDetails({
               onValueChange={(v) => onChange({ pickupTime: v })}
             >
               <SelectTrigger className="rounded-none bg-background">
-                <SelectValue placeholder="Select time" />
+                <SelectValue placeholder="Select pickup time" />
               </SelectTrigger>
               <SelectContent>
                 {TIME_SLOTS.map((t) => (
-                  <SelectItem key={t} value={t}>
+                  <SelectItem key={`pickup-${t}`} value={t}>
+                    {t}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="space-y-2">
+            <Label>
+              <Clock className="size-4 inline mr-1.5 text-primary" />
+              Drop-off Time <span className="text-destructive">*</span>
+            </Label>
+            <Select
+              value={form.dropoffTime}
+              onValueChange={(v) => onChange({ dropoffTime: v })}
+            >
+              <SelectTrigger className="rounded-none bg-background">
+                <SelectValue placeholder="Select drop-off time" />
+              </SelectTrigger>
+              <SelectContent>
+                {TIME_SLOTS.map((t) => (
+                  <SelectItem key={`dropoff-${t}`} value={t}>
                     {t}
                   </SelectItem>
                 ))}
@@ -258,50 +331,52 @@ function Step2TripDetails({
           </div>
         </div>
 
+        {/* Pickup address */}
         <div className="space-y-2">
-          <Label htmlFor="pickup-loc">
+          <Label htmlFor="pickup-addr">
             <MapPin className="size-4 inline mr-1.5 text-primary" />
-            Pickup Location <span className="text-destructive">*</span>
+            Pickup Address <span className="text-destructive">*</span>
           </Label>
           <Input
-            id="pickup-loc"
-            placeholder="123 Main St, New York, NY or JFK Airport Terminal 4"
-            value={form.pickupLocation}
-            onChange={(e) => onChange({ pickupLocation: e.target.value })}
+            id="pickup-addr"
+            placeholder="123 Main St, New York, NY 10001"
+            value={form.pickupAddress}
+            onChange={(e) => onChange({ pickupAddress: e.target.value })}
             required
             className="rounded-none bg-background"
           />
         </div>
 
+        {/* Stops address */}
         <div className="space-y-2">
-          <Label htmlFor="dropoff-loc">
-            <MapPin className="size-4 inline mr-1.5 text-primary" />
-            Drop-off Location <span className="text-destructive">*</span>
+          <Label htmlFor="stops-addr">
+            <MapPinPlus className="size-4 inline mr-1.5 text-primary" />
+            Stops Address{" "}
+            <span className="text-muted-foreground font-normal text-xs">
+              (optional — separate multiple stops with commas)
+            </span>
           </Label>
-          <Input
-            id="dropoff-loc"
-            placeholder="456 Park Ave, New York, NY or The Plaza Hotel"
-            value={form.dropoffLocation}
-            onChange={(e) => onChange({ dropoffLocation: e.target.value })}
-            required
-            className="rounded-none bg-background"
+          <Textarea
+            id="stops-addr"
+            placeholder="456 Oak Ave, Brooklyn, NY 11201, 789 Elm St, Manhattan, NY 10019"
+            rows={2}
+            value={form.stopsAddress}
+            onChange={(e) => onChange({ stopsAddress: e.target.value })}
+            className="rounded-none bg-background resize-none"
           />
         </div>
 
+        {/* Destination address */}
         <div className="space-y-2">
-          <Label htmlFor="passengers">
-            <Users className="size-4 inline mr-1.5 text-primary" />
-            Number of Passengers <span className="text-destructive">*</span>
+          <Label htmlFor="dest-addr">
+            <MapPin className="size-4 inline mr-1.5 text-primary" />
+            Destination Address <span className="text-destructive">*</span>
           </Label>
           <Input
-            id="passengers"
-            type="number"
-            min={1}
-            max={40}
-            value={form.passengers}
-            onChange={(e) =>
-              onChange({ passengers: parseInt(e.target.value) || 1 })
-            }
+            id="dest-addr"
+            placeholder="The Plaza Hotel, 768 5th Ave, New York, NY 10019"
+            value={form.destinationAddress}
+            onChange={(e) => onChange({ destinationAddress: e.target.value })}
             required
             className="rounded-none bg-background"
           />
@@ -311,7 +386,9 @@ function Step2TripDetails({
   );
 }
 
-function Step3ContactInfo({
+/* ────────────────────── Step 3: Personal Info ────────────────────── */
+
+function Step3PersonalInfo({
   form,
   onChange,
 }: {
@@ -327,33 +404,19 @@ function Step3ContactInfo({
         How can we reach you to confirm your reservation?
       </p>
       <div className="space-y-5">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          <div className="space-y-2">
-            <Label htmlFor="first-name">
-              First Name <span className="text-destructive">*</span>
-            </Label>
-            <Input
-              id="first-name"
-              placeholder="John"
-              value={form.firstName}
-              onChange={(e) => onChange({ firstName: e.target.value })}
-              required
-              className="rounded-none bg-background"
-            />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="last-name">
-              Last Name <span className="text-destructive">*</span>
-            </Label>
-            <Input
-              id="last-name"
-              placeholder="Smith"
-              value={form.lastName}
-              onChange={(e) => onChange({ lastName: e.target.value })}
-              required
-              className="rounded-none bg-background"
-            />
-          </div>
+        {/* Full name */}
+        <div className="space-y-2">
+          <Label htmlFor="full-name">
+            Full Name <span className="text-destructive">*</span>
+          </Label>
+          <Input
+            id="full-name"
+            placeholder="John Smith"
+            value={form.fullName}
+            onChange={(e) => onChange({ fullName: e.target.value })}
+            required
+            className="rounded-none bg-background"
+          />
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -373,7 +436,7 @@ function Step3ContactInfo({
           </div>
           <div className="space-y-2">
             <Label htmlFor="booking-phone">
-              Phone <span className="text-destructive">*</span>
+              Phone Number <span className="text-destructive">*</span>
             </Label>
             <Input
               id="booking-phone"
@@ -391,7 +454,7 @@ function Step3ContactInfo({
           <Label htmlFor="special-req">Special Requests</Label>
           <Textarea
             id="special-req"
-            placeholder="Child car seat needed, specific music, decorations, champagne preference..."
+            placeholder="Child car seat, specific music, decorations, champagne, accessibility needs..."
             rows={4}
             value={form.specialRequests}
             onChange={(e) => onChange({ specialRequests: e.target.value })}
@@ -403,25 +466,27 @@ function Step3ContactInfo({
   );
 }
 
+/* ────────────────────── Step 4: Confirmation ────────────────────── */
+
 function Step4Confirmation({ form }: { form: BookingFormData }) {
-  const serviceLabel =
-    SERVICE_OPTIONS.find((s) => s.value === form.serviceType)?.label ??
-    form.serviceType;
+  const eventLabel =
+    EVENT_TYPES.find((e) => e.value === form.eventType)?.label ?? form.eventType;
   const vehicleLabel =
-    VEHICLE_OPTIONS.find((v) => v.value === form.vehiclePreference)?.label ??
-    "No preference";
+    VEHICLE_OPTIONS.find((v) => v.value === form.vehicleNeeded)?.label ??
+    form.vehicleNeeded;
 
   const rows = [
-    { label: "Service", value: serviceLabel },
-    { label: "Vehicle", value: vehicleLabel },
-    { label: "Date", value: form.pickupDate },
-    { label: "Time", value: form.pickupTime },
-    { label: "Pickup", value: form.pickupLocation },
-    { label: "Drop-off", value: form.dropoffLocation },
-    { label: "Passengers", value: String(form.passengers) },
-    { label: "Name", value: `${form.firstName} ${form.lastName}` },
+    { label: "Full Name", value: form.fullName },
     { label: "Email", value: form.email },
     { label: "Phone", value: form.phone },
+    { label: "Event Type", value: eventLabel },
+    { label: "Event Date", value: form.eventDate },
+    { label: "Vehicle", value: vehicleLabel },
+    { label: "Passengers", value: String(form.passengers) },
+    { label: "Pickup Time", value: form.pickupTime },
+    { label: "Pickup Address", value: form.pickupAddress },
+    { label: "Drop-off Time", value: form.dropoffTime },
+    { label: "Destination", value: form.destinationAddress },
   ];
 
   return (
@@ -446,7 +511,15 @@ function Step4Confirmation({ form }: { form: BookingFormData }) {
             </span>
           </div>
         ))}
-        {form.specialRequests && (
+        {form.stopsAddress.trim() && (
+          <div className="py-3 px-5">
+            <span className="text-xs uppercase tracking-wider text-muted-foreground">
+              Stops
+            </span>
+            <p className="text-sm text-foreground mt-1">{form.stopsAddress}</p>
+          </div>
+        )}
+        {form.specialRequests.trim() && (
           <div className="py-3 px-5">
             <span className="text-xs uppercase tracking-wider text-muted-foreground">
               Special Requests
@@ -460,6 +533,8 @@ function Step4Confirmation({ form }: { form: BookingFormData }) {
     </div>
   );
 }
+
+/* ────────────────────── Success ────────────────────── */
 
 function BookingSuccess() {
   return (
@@ -496,6 +571,8 @@ function BookingSuccess() {
   );
 }
 
+/* ────────────────────── Main Page ────────────────────── */
+
 export default function BookingPage() {
   usePageMeta({
     title: "Book Your Luxury Ride | Free Quote | Vortex Lmntirx",
@@ -518,30 +595,52 @@ export default function BookingPage() {
   const validateStep = (s: number): boolean => {
     switch (s) {
       case 1:
-        if (!form.serviceType) {
-          toast.error("Please select a service type.");
+        if (!form.eventType) {
+          toast.error("Please select an event type.");
+          return false;
+        }
+        if (!form.eventDate) {
+          toast.error("Please select an event date.");
+          return false;
+        }
+        if (!form.vehicleNeeded) {
+          toast.error("Please select a vehicle.");
+          return false;
+        }
+        if (form.passengers < 1) {
+          toast.error("At least 1 passenger is required.");
           return false;
         }
         return true;
       case 2:
-        if (
-          !form.pickupDate ||
-          !form.pickupTime ||
-          !form.pickupLocation.trim() ||
-          !form.dropoffLocation.trim()
-        ) {
-          toast.error("Please fill in all trip details.");
+        if (!form.pickupTime) {
+          toast.error("Please select a pickup time.");
+          return false;
+        }
+        if (!form.pickupAddress.trim()) {
+          toast.error("Please enter a pickup address.");
+          return false;
+        }
+        if (!form.destinationAddress.trim()) {
+          toast.error("Please enter a destination address.");
+          return false;
+        }
+        if (!form.dropoffTime) {
+          toast.error("Please select a drop-off time.");
           return false;
         }
         return true;
       case 3:
-        if (
-          !form.firstName.trim() ||
-          !form.lastName.trim() ||
-          !form.email.trim() ||
-          !form.phone.trim()
-        ) {
-          toast.error("Please fill in all contact information.");
+        if (!form.fullName.trim()) {
+          toast.error("Please enter your full name.");
+          return false;
+        }
+        if (!form.email.trim()) {
+          toast.error("Please enter your email.");
+          return false;
+        }
+        if (!form.phone.trim()) {
+          toast.error("Please enter your phone number.");
           return false;
         }
         return true;
@@ -566,18 +665,18 @@ export default function BookingPage() {
     setIsSubmitting(true);
     try {
       await createBooking({
-        serviceType: form.serviceType,
-        vehiclePreference:
-          form.vehiclePreference || undefined,
-        pickupDate: form.pickupDate,
-        pickupTime: form.pickupTime,
-        pickupLocation: form.pickupLocation.trim(),
-        dropoffLocation: form.dropoffLocation.trim(),
-        passengers: form.passengers,
-        firstName: form.firstName.trim(),
-        lastName: form.lastName.trim(),
+        fullName: form.fullName.trim(),
         email: form.email.trim(),
         phone: form.phone.trim(),
+        eventDate: form.eventDate,
+        eventType: form.eventType,
+        pickupTime: form.pickupTime,
+        pickupAddress: form.pickupAddress.trim(),
+        stopsAddress: form.stopsAddress.trim() || undefined,
+        destinationAddress: form.destinationAddress.trim(),
+        dropoffTime: form.dropoffTime,
+        passengers: form.passengers,
+        vehicleNeeded: form.vehicleNeeded,
         specialRequests: form.specialRequests.trim() || undefined,
       });
       setIsSubmitted(true);
@@ -646,13 +745,13 @@ export default function BookingPage() {
                 transition={{ duration: 0.3 }}
               >
                 {step === 1 && (
-                  <Step1ServiceSelect form={form} onChange={updateForm} />
+                  <Step1EventVehicle form={form} onChange={updateForm} />
                 )}
                 {step === 2 && (
                   <Step2TripDetails form={form} onChange={updateForm} />
                 )}
                 {step === 3 && (
-                  <Step3ContactInfo form={form} onChange={updateForm} />
+                  <Step3PersonalInfo form={form} onChange={updateForm} />
                 )}
                 {step === 4 && <Step4Confirmation form={form} />}
               </motion.div>

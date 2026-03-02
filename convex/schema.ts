@@ -18,22 +18,22 @@ export default defineSchema({
   }),
 
   bookingRequests: defineTable({
-    // Service & vehicle
-    serviceType: v.string(),
-    vehiclePreference: v.optional(v.string()),
-    // Schedule
-    pickupDate: v.string(),
-    pickupTime: v.string(),
-    // Locations
-    pickupLocation: v.string(),
-    dropoffLocation: v.string(),
-    // Group
-    passengers: v.number(),
-    // Contact info
-    firstName: v.string(),
-    lastName: v.string(),
+    // Client info
+    fullName: v.string(),
     email: v.string(),
     phone: v.string(),
+    // Event
+    eventDate: v.string(),
+    eventType: v.string(),
+    // Trip
+    pickupTime: v.string(),
+    pickupAddress: v.string(),
+    stopsAddress: v.optional(v.string()),
+    destinationAddress: v.string(),
+    dropoffTime: v.string(),
+    // Group & vehicle
+    passengers: v.number(),
+    vehicleNeeded: v.string(),
     // Extra
     specialRequests: v.optional(v.string()),
     // Status
