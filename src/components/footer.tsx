@@ -3,12 +3,12 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { toast } from "sonner";
 
 const SERVICE_LINKS = [
-  "Limo Service",
-  "Party Bus Rentals",
-  "Corporate Transportation",
-  "Airport Transfers",
-  "Wedding Transportation",
-  "Event & Group Transportation",
+  { label: "Limo Service", href: "/services/limo-service" },
+  { label: "Party Bus Rentals", href: "/services/party-bus" },
+  { label: "Corporate Transportation", href: "/services/corporate" },
+  { label: "Airport Transfers", href: "/services/airport-transfers" },
+  { label: "Wedding Transportation", href: "/services/wedding" },
+  { label: "All Services", href: "/services" },
 ] as const;
 
 const QUICK_LINKS = [
@@ -85,14 +85,13 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               {SERVICE_LINKS.map((service) => (
-                <li key={service}>
-                  <a
-                    href="#"
-                    onClick={handleComingSoon}
+                <li key={service.href}>
+                  <Link
+                    to={service.href}
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
-                    {service}
-                  </a>
+                    {service.label}
+                  </Link>
                 </li>
               ))}
             </ul>

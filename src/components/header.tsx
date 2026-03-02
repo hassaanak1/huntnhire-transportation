@@ -19,13 +19,23 @@ const NAV_LINKS = [
   { label: "Contact", href: "/contact" },
 ] as const;
 
-// Pages that exist in this milestone
-const ACTIVE_ROUTES = new Set(["/"]);
+// Pages that are live and navigable
+const ACTIVE_ROUTES = new Set([
+  "/",
+  "/services",
+  "/services/limo-service",
+  "/services/party-bus",
+  "/services/corporate",
+  "/services/airport-transfers",
+  "/services/wedding",
+]);
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const location = useLocation();
+
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -43,13 +53,18 @@ export default function Header() {
     }
   };
 
+  // Show solid header on non-homepage routes or when scrolled
+  const showSolid = scrolled || !isHomePage;
+
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         scrolled
           ? "bg-background/95 backdrop-blur-md border-b border-border shadow-lg"
-          : "bg-transparent",
+          : showSolid
+            ? "bg-background border-b border-border"
+            : "bg-transparent",
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -80,7 +95,9 @@ export default function Header() {
                 onClick={(e) => handleNavClick(e, link.href)}
                 className={cn(
                   "text-sm uppercase tracking-[0.15em] font-medium transition-colors hover:text-primary",
-                  location.pathname === link.href
+                  location.pathname === link.href ||
+                    (link.href === "/services" &&
+                      location.pathname.startsWith("/services"))
                     ? "text-primary"
                     : "text-muted-foreground",
                 )}
@@ -160,7 +177,9 @@ export default function Header() {
                       }}
                       className={cn(
                         "text-base uppercase tracking-[0.15em] font-medium py-3 px-4 rounded transition-colors",
-                        location.pathname === link.href
+                        location.pathname === link.href ||
+                          (link.href === "/services" &&
+                            location.pathname.startsWith("/services"))
                           ? "text-primary bg-primary/10"
                           : "text-muted-foreground hover:text-foreground hover:bg-accent",
                       )}

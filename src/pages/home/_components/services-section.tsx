@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button.tsx";
 import {
   Car,
@@ -9,12 +10,12 @@ import {
   Users,
   ArrowRight,
 } from "lucide-react";
-import { toast } from "sonner";
 
 const SERVICES = [
   {
     icon: Car,
     title: "Limo Service",
+    href: "/services/limo-service",
     description:
       "Experience the pinnacle of luxury with our premium stretch limousine service. Perfect for special occasions, date nights, and VIP events.",
     image:
@@ -23,6 +24,7 @@ const SERVICES = [
   {
     icon: PartyPopper,
     title: "Party Bus Rentals",
+    href: "/services/party-bus",
     description:
       "Turn any celebration into an unforgettable experience. Our party buses feature state-of-the-art sound systems, LED lighting, and full bar setups.",
     image:
@@ -31,6 +33,7 @@ const SERVICES = [
   {
     icon: Briefcase,
     title: "Corporate Transportation",
+    href: "/services/corporate",
     description:
       "Elevate your business image with our executive transportation. Reliable, punctual, and impeccably professional service for all corporate needs.",
     image:
@@ -39,6 +42,7 @@ const SERVICES = [
   {
     icon: Plane,
     title: "Airport Transfers",
+    href: "/services/airport-transfers",
     description:
       "Start and end every journey in comfort. We monitor your flight status for seamless pickups and drop-offs at every major airport.",
     image:
@@ -47,6 +51,7 @@ const SERVICES = [
   {
     icon: Heart,
     title: "Wedding Transportation",
+    href: "/services/wedding",
     description:
       "Make your special day truly extraordinary. From bridal party arrivals to grand getaway exits, we handle every detail with care.",
     image:
@@ -55,6 +60,7 @@ const SERVICES = [
   {
     icon: Users,
     title: "Event & Group Transportation",
+    href: "/services",
     description:
       "Coordinated luxury transportation for groups of any size. Concerts, galas, sporting events, and more — arrive together in style.",
     image:
@@ -122,12 +128,12 @@ export default function ServicesSection() {
                 <Button
                   variant="link"
                   className="p-0 h-auto text-primary text-sm uppercase tracking-wider font-medium"
-                  onClick={() =>
-                    toast.info("Coming soon in a future milestone!")
-                  }
+                  asChild
                 >
-                  Learn More
-                  <ArrowRight className="size-4" />
+                  <Link to={service.href}>
+                    Learn More
+                    <ArrowRight className="size-4" />
+                  </Link>
                 </Button>
               </div>
             </motion.div>
