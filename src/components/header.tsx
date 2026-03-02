@@ -28,6 +28,8 @@ const ACTIVE_ROUTES = new Set([
   "/services/corporate",
   "/services/airport-transfers",
   "/services/wedding",
+  "/fleet",
+  "/about",
 ]);
 
 export default function Header() {
@@ -97,7 +99,11 @@ export default function Header() {
                   "text-sm uppercase tracking-[0.15em] font-medium transition-colors hover:text-primary",
                   location.pathname === link.href ||
                     (link.href === "/services" &&
-                      location.pathname.startsWith("/services"))
+                      location.pathname.startsWith("/services")) ||
+                    (link.href === "/fleet" &&
+                      location.pathname.startsWith("/fleet")) ||
+                    (link.href === "/about" &&
+                      location.pathname.startsWith("/about"))
                     ? "text-primary"
                     : "text-muted-foreground",
                 )}
@@ -179,7 +185,11 @@ export default function Header() {
                         "text-base uppercase tracking-[0.15em] font-medium py-3 px-4 rounded transition-colors",
                         location.pathname === link.href ||
                           (link.href === "/services" &&
-                            location.pathname.startsWith("/services"))
+                            location.pathname.startsWith("/services")) ||
+                          (link.href === "/fleet" &&
+                            location.pathname.startsWith("/fleet")) ||
+                          (link.href === "/about" &&
+                            location.pathname.startsWith("/about"))
                           ? "text-primary bg-primary/10"
                           : "text-muted-foreground hover:text-foreground hover:bg-accent",
                       )}

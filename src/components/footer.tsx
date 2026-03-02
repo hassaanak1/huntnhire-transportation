@@ -18,6 +18,8 @@ const QUICK_LINKS = [
   { label: "Contact", href: "/contact" },
 ] as const;
 
+const ACTIVE_QUICK_LINKS = new Set(["/about", "/fleet", "/services"]);
+
 function handleComingSoon(e: React.MouseEvent<HTMLAnchorElement>) {
   e.preventDefault();
   toast.info("Coming soon in a future milestone!");
@@ -107,7 +109,11 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     to={link.href}
-                    onClick={handleComingSoon}
+                    onClick={
+                      ACTIVE_QUICK_LINKS.has(link.href)
+                        ? undefined
+                        : handleComingSoon
+                    }
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.label}
