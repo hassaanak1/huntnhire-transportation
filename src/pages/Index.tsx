@@ -4,11 +4,24 @@ import FleetSection from "./home/_components/fleet-section.tsx";
 import WhyChooseUs from "./home/_components/why-choose-us.tsx";
 import TestimonialsSection from "./home/_components/testimonials-section.tsx";
 import CtaSection from "./home/_components/cta-section.tsx";
+import TrustBar from "@/components/trust-bar.tsx";
+import { LocalBusinessSchema } from "@/components/seo/structured-data.tsx";
+import { usePageMeta } from "@/hooks/use-page-meta.ts";
 
 export default function Index() {
+  usePageMeta({
+    title: "Vortex Lmntirx | Premium Luxury Transportation Services",
+    description:
+      "Vortex Lmntirx offers premium limousine rentals, party bus services, corporate transportation, airport transfers, and wedding limo service across the United States. Book your luxury ride today.",
+    keywords:
+      "limo service near me, party bus rental, luxury transportation services, corporate limo service, airport limo service, wedding limo rental, limousine rental, party bus near me, executive car service",
+  });
+
   return (
     <>
+      <LocalBusinessSchema />
       <HeroSection />
+      <TrustBar />
       <ServicesSection />
       <FleetSection />
       <WhyChooseUs />

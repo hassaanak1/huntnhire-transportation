@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import { toast } from "sonner";
 
 const SERVICE_LINKS = [
   { label: "Limo Service", href: "/services/limo-service" },
@@ -16,14 +15,8 @@ const QUICK_LINKS = [
   { label: "Our Fleet", href: "/fleet" },
   { label: "Services", href: "/services" },
   { label: "Contact", href: "/contact" },
+  { label: "Book a Ride", href: "/book" },
 ] as const;
-
-const ACTIVE_QUICK_LINKS = new Set(["/about", "/fleet", "/services", "/contact"]);
-
-function handleComingSoon(e: React.MouseEvent<HTMLAnchorElement>) {
-  e.preventDefault();
-  toast.info("Coming soon in a future milestone!");
-}
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -109,35 +102,12 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     to={link.href}
-                    onClick={
-                      ACTIVE_QUICK_LINKS.has(link.href)
-                        ? undefined
-                        : handleComingSoon
-                    }
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.label}
                   </Link>
                 </li>
               ))}
-              <li>
-                <a
-                  href="#"
-                  onClick={handleComingSoon}
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  onClick={handleComingSoon}
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Terms of Service
-                </a>
-              </li>
             </ul>
           </div>
 

@@ -32,6 +32,7 @@ import { toast } from "sonner";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils.ts";
 import { ConvexError } from "convex/values";
+import { usePageMeta } from "@/hooks/use-page-meta.ts";
 
 const SERVICE_OPTIONS = [
   { value: "limo-service", label: "Limousine Service", icon: Car },
@@ -496,6 +497,14 @@ function BookingSuccess() {
 }
 
 export default function BookingPage() {
+  usePageMeta({
+    title: "Book Your Luxury Ride | Free Quote | Vortex Lmntirx",
+    description:
+      "Reserve your luxury limousine, party bus, or executive vehicle in minutes. No payment required upfront. Our team confirms availability within the hour. Serving 50+ US cities.",
+    keywords:
+      "book limo, reserve party bus, luxury transportation booking, limo quote, Vortex Lmntirx reservation",
+  });
+
   const createBooking = useMutation(api.bookings.createBookingRequest);
   const [step, setStep] = useState(1);
   const [form, setForm] = useState<BookingFormData>(INITIAL_FORM);

@@ -3,8 +3,17 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button.tsx";
 import { ArrowRight, ChevronRight, Phone } from "lucide-react";
 import { SERVICES, SERVICE_SLUGS } from "./_lib/service-data.ts";
+import { usePageMeta } from "@/hooks/use-page-meta.ts";
 
 export default function ServicesPage() {
+  usePageMeta({
+    title: "Luxury Transportation Services | Limo, Party Bus, Corporate & Wedding | Vortex Lmntirx",
+    description:
+      "Explore our premium transportation services: limousine rentals, party bus services, corporate executive transport, airport transfers, and elegant wedding transportation. Serving 50+ US cities.",
+    keywords:
+      "luxury transportation services, limo service, party bus rental, corporate transportation, airport transfer service, wedding limo, Vortex Lmntirx",
+  });
+
   return (
     <div>
       {/* Hero */}

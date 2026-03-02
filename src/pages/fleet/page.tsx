@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils.ts";
 import { FLEET_VEHICLES, FLEET_CATEGORIES } from "./_lib/fleet-data.ts";
+import { usePageMeta } from "@/hooks/use-page-meta.ts";
 
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1764605206511-7cb61cd4b916?auto=format&fit=crop&w=1920&q=80";
@@ -254,6 +255,14 @@ function FleetTrust() {
 }
 
 export default function FleetPage() {
+  usePageMeta({
+    title: "Our Premium Fleet | Executive Sedans, Limos & Party Buses | Vortex Lmntirx",
+    description:
+      "Browse the Vortex Lmntirx luxury fleet: executive sedans, stretch limousines, SUVs, Sprinter vans, and party buses. 200+ vehicles, all current model year, fully insured.",
+    keywords:
+      "luxury fleet, limousine fleet, party bus fleet, executive sedan rental, stretch limo rental, Vortex Lmntirx vehicles",
+  });
+
   const [activeFilter, setActiveFilter] = useState("All");
 
   return (

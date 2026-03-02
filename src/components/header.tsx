@@ -8,7 +8,6 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet.tsx";
 import { Menu, Phone, X } from "lucide-react";
-import { toast } from "sonner";
 import { cn } from "@/lib/utils.ts";
 
 const NAV_LINKS = [
@@ -18,21 +17,6 @@ const NAV_LINKS = [
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const;
-
-// Pages that are live and navigable
-const ACTIVE_ROUTES = new Set([
-  "/",
-  "/services",
-  "/services/limo-service",
-  "/services/party-bus",
-  "/services/corporate",
-  "/services/airport-transfers",
-  "/services/wedding",
-  "/fleet",
-  "/about",
-  "/contact",
-  "/book",
-]);
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -47,16 +31,6 @@ export default function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  const handleNavClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    href: string,
-  ) => {
-    if (!ACTIVE_ROUTES.has(href)) {
-      e.preventDefault();
-      toast.info("Coming soon in a future milestone!");
-    }
-  };
 
   // Show solid header on non-homepage routes or when scrolled
   const showSolid = scrolled || !isHomePage;
@@ -97,7 +71,6 @@ export default function Header() {
               <Link
                 key={link.href}
                 to={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
                 className={cn(
                   "text-sm uppercase tracking-[0.15em] font-medium transition-colors hover:text-primary",
                   location.pathname === link.href ||
@@ -106,7 +79,9 @@ export default function Header() {
                     (link.href === "/fleet" &&
                       location.pathname.startsWith("/fleet")) ||
                     (link.href === "/about" &&
-                      location.pathname.startsWith("/about"))
+                      location.pathname.startsWith("/about")) ||
+                    (link.href === "/contact" &&
+                      location.pathname.startsWith("/contact"))
                     ? "text-primary"
                     : "text-muted-foreground",
                 )}
@@ -178,10 +153,7 @@ export default function Header() {
                     <Link
                       key={link.href}
                       to={link.href}
-                      onClick={(e) => {
-                        handleNavClick(e, link.href);
-                        setOpen(false);
-                      }}
+                      onClick={() => setOpen(false)}
                       className={cn(
                         "text-base uppercase tracking-[0.15em] font-medium py-3 px-4 rounded transition-colors",
                         location.pathname === link.href ||
@@ -190,7 +162,9 @@ export default function Header() {
                           (link.href === "/fleet" &&
                             location.pathname.startsWith("/fleet")) ||
                           (link.href === "/about" &&
-                            location.pathname.startsWith("/about"))
+                            location.pathname.startsWith("/about")) ||
+                          (link.href === "/contact" &&
+                            location.pathname.startsWith("/contact"))
                           ? "text-primary bg-primary/10"
                           : "text-muted-foreground hover:text-foreground hover:bg-accent",
                       )}

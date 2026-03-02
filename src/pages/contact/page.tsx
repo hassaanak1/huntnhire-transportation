@@ -25,6 +25,7 @@ import {
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
 import { ConvexError } from "convex/values";
+import { usePageMeta } from "@/hooks/use-page-meta.ts";
 
 const CONTACT_INFO = [
   {
@@ -337,6 +338,14 @@ function ContactInfo() {
 }
 
 export default function ContactPage() {
+  usePageMeta({
+    title: "Contact Vortex Lmntirx | 24/7 Luxury Transportation Support",
+    description:
+      "Get in touch with Vortex Lmntirx for quotes, corporate accounts, wedding transportation, or general inquiries. Call (888) 777-8989 or send a message. We respond within the hour.",
+    keywords:
+      "contact Vortex Lmntirx, limo service phone number, luxury transportation quote, corporate limo inquiry",
+  });
+
   return (
     <main>
       <ContactHero />

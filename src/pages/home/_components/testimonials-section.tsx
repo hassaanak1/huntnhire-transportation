@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Star, Quote } from "lucide-react";
+import { StructuredData } from "@/components/seo/structured-data.tsx";
 
 const TESTIMONIALS = [
   {
@@ -22,9 +23,38 @@ const TESTIMONIALS = [
   },
 ] as const;
 
+function ReviewSchema() {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Vortex Lmntirx",
+    review: TESTIMONIALS.map((t) => ({
+      "@type": "Review",
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: t.rating,
+        bestRating: 5,
+      },
+      author: {
+        "@type": "Person",
+        name: t.name,
+      },
+      reviewBody: t.text,
+    })),
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "2847",
+      bestRating: "5",
+    },
+  };
+  return <StructuredData data={data} />;
+}
+
 export default function TestimonialsSection() {
   return (
     <section className="py-24 sm:py-32 bg-card">
+      <ReviewSchema />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div

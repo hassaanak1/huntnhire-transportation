@@ -16,6 +16,12 @@ import {
 } from "lucide-react";
 import type { ServiceData } from "../_lib/service-data.ts";
 import { SERVICES } from "../_lib/service-data.ts";
+import { usePageMeta } from "@/hooks/use-page-meta.ts";
+import {
+  FaqSchema,
+  BreadcrumbSchema,
+  ServiceSchema,
+} from "@/components/seo/structured-data.tsx";
 
 type ServicePageTemplateProps = {
   data: ServiceData;
@@ -24,12 +30,34 @@ type ServicePageTemplateProps = {
 export default function ServicePageTemplate({
   data,
 }: ServicePageTemplateProps) {
+  usePageMeta({
+    title: `${data.title} | Vortex Lmntirx`,
+    description: data.overview[0].slice(0, 160),
+    keywords: `${data.tagline}, ${data.shortTitle}, luxury transportation, Vortex Lmntirx`,
+  });
+
   const relatedServices = data.relatedSlugs
     .map((slug) => SERVICES[slug])
     .filter(Boolean);
 
+  const BASE_URL = "https://vortexlmntirx.com";
+
   return (
     <div>
+      <FaqSchema faqs={data.faqs} />
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", url: BASE_URL },
+          { name: "Services", url: `${BASE_URL}/services` },
+          { name: data.shortTitle, url: `${BASE_URL}/services/${data.slug}` },
+        ]}
+      />
+      <ServiceSchema
+        name={data.title}
+        description={data.overview[0]}
+        url={`${BASE_URL}/services/${data.slug}`}
+      />
+
       {/* Hero Banner */}
       <section className="relative pt-20">
         <div className="relative h-[40vh] sm:h-[50vh] overflow-hidden">

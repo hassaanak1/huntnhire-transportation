@@ -15,6 +15,8 @@ import {
   Eye,
   Gem,
 } from "lucide-react";
+import { usePageMeta } from "@/hooks/use-page-meta.ts";
+import { OrganizationSchema } from "@/components/seo/structured-data.tsx";
 
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1630705318048-184e6193d4ae?auto=format&fit=crop&w=1920&q=80";
@@ -539,8 +541,17 @@ function AboutCta() {
 }
 
 export default function AboutPage() {
+  usePageMeta({
+    title: "About Vortex Lmntirx | 15+ Years of Premium Luxury Transportation",
+    description:
+      "Learn about Vortex Lmntirx — founded in 2009, serving 50+ US cities with 200+ luxury vehicles. Meet our leadership team and discover our commitment to excellence.",
+    keywords:
+      "about Vortex Lmntirx, luxury transportation company, limousine company, corporate transportation provider",
+  });
+
   return (
     <main>
+      <OrganizationSchema />
       <AboutHero />
       <StatsBar />
       <OurStory />
