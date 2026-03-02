@@ -1,14 +1,19 @@
+import HeroSection from "./home/_components/hero-section.tsx";
+import ServicesSection from "./home/_components/services-section.tsx";
+import FleetSection from "./home/_components/fleet-section.tsx";
+import WhyChooseUs from "./home/_components/why-choose-us.tsx";
+import TestimonialsSection from "./home/_components/testimonials-section.tsx";
+import CtaSection from "./home/_components/cta-section.tsx";
+
 export default function Index() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center space-y-6">
-        <h1 className="text-4xl text-balance font-bold tracking-tight">
-          Welcome to Your Blank App
-        </h1>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Start chatting to build your app
-        </p>
-      </div>
-    </div>
+    <>
+      <HeroSection />
+      <ServicesSection />
+      <FleetSection />
+      <WhyChooseUs />
+      <TestimonialsSection />
+      <CtaSection />
+    </>
   );
 }
