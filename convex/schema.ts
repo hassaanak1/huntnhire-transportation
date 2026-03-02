@@ -33,6 +33,7 @@ export default defineSchema({
     dropoffTime: v.string(),
     // Group & vehicle
     passengers: v.number(),
+    hoursNeeded: v.number(),
     vehicleNeeded: v.string(),
     // Extra
     specialRequests: v.optional(v.string()),

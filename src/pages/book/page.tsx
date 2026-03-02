@@ -99,6 +99,7 @@ type BookingFormData = {
   destinationAddress: string;
   dropoffTime: string;
   passengers: number;
+  hoursNeeded: number;
   vehicleNeeded: string;
   specialRequests: string;
 };
@@ -115,6 +116,7 @@ const INITIAL_FORM: BookingFormData = {
   destinationAddress: "",
   dropoffTime: "",
   passengers: 1,
+  hoursNeeded: 1,
   vehicleNeeded: "",
   specialRequests: "",
 };
@@ -244,24 +246,44 @@ function Step1EventVehicle({
         </Select>
       </div>
 
-      {/* Passengers */}
-      <div className="space-y-2">
-        <Label htmlFor="passengers">
-          <Users className="size-4 inline mr-1.5 text-primary" />
-          Number of Passengers <span className="text-destructive">*</span>
-        </Label>
-        <Input
-          id="passengers"
-          type="number"
-          min={1}
-          max={60}
-          value={form.passengers}
-          onChange={(e) =>
-            onChange({ passengers: parseInt(e.target.value) || 1 })
-          }
-          required
-          className="rounded-none bg-background"
-        />
+      {/* Passengers & Hours */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="space-y-2">
+          <Label htmlFor="passengers">
+            <Users className="size-4 inline mr-1.5 text-primary" />
+            Number of Passengers <span className="text-destructive">*</span>
+          </Label>
+          <Input
+            id="passengers"
+            type="number"
+            min={1}
+            max={60}
+            value={form.passengers}
+            onChange={(e) =>
+              onChange({ passengers: parseInt(e.target.value) || 1 })
+            }
+            required
+            className="rounded-none bg-background"
+          />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="hours-needed">
+            <Clock className="size-4 inline mr-1.5 text-primary" />
+            Number of Hours <span className="text-destructive">*</span>
+          </Label>
+          <Input
+            id="hours-needed"
+            type="number"
+            min={1}
+            max={24}
+            value={form.hoursNeeded}
+            onChange={(e) =>
+              onChange({ hoursNeeded: parseInt(e.target.value) || 1 })
+            }
+            required
+            className="rounded-none bg-background"
+          />
+        </div>
       </div>
     </div>
   );
@@ -483,6 +505,7 @@ function Step4Confirmation({ form }: { form: BookingFormData }) {
     { label: "Event Date", value: form.eventDate },
     { label: "Vehicle", value: vehicleLabel },
     { label: "Passengers", value: String(form.passengers) },
+    { label: "Hours Needed", value: `${form.hoursNeeded} hour${form.hoursNeeded !== 1 ? "s" : ""}` },
     { label: "Pickup Time", value: form.pickupTime },
     { label: "Pickup Address", value: form.pickupAddress },
     { label: "Drop-off Time", value: form.dropoffTime },
@@ -676,6 +699,7 @@ export default function BookingPage() {
         destinationAddress: form.destinationAddress.trim(),
         dropoffTime: form.dropoffTime,
         passengers: form.passengers,
+        hoursNeeded: form.hoursNeeded,
         vehicleNeeded: form.vehicleNeeded,
         specialRequests: form.specialRequests.trim() || undefined,
       });
