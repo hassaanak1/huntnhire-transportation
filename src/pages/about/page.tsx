@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button.tsx";
 import {
   Shield,
@@ -14,7 +15,6 @@ import {
   Eye,
   Gem,
 } from "lucide-react";
-import { toast } from "sonner";
 
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1630705318048-184e6193d4ae?auto=format&fit=crop&w=1920&q=80";
@@ -516,16 +516,15 @@ function AboutCta() {
           same thing: an experience that exceeds your expectations.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button
-            size="lg"
-            className="rounded-none uppercase tracking-wider text-sm font-semibold px-10"
-            onClick={() =>
-              toast.info("Coming soon in a future milestone!")
-            }
-          >
-            Book Your Ride
-            <ChevronRight className="size-4 ml-1" />
-          </Button>
+          <Link to="/book">
+            <Button
+              size="lg"
+              className="rounded-none uppercase tracking-wider text-sm font-semibold px-10"
+            >
+              Book Your Ride
+              <ChevronRight className="size-4 ml-1" />
+            </Button>
+          </Link>
           <a
             href="tel:+18887778989"
             className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"

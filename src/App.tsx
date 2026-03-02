@@ -12,6 +12,8 @@ import AirportTransfersPage from "./pages/services/airport-transfers/page.tsx";
 import WeddingPage from "./pages/services/wedding/page.tsx";
 import FleetPage from "./pages/fleet/page.tsx";
 import AboutPage from "./pages/about/page.tsx";
+import ContactPage from "./pages/contact/page.tsx";
+import BookingPage from "./pages/book/page.tsx";
 
 export default function App() {
   return (
@@ -29,6 +31,8 @@ export default function App() {
             <Route path="/services/wedding" element={<WeddingPage />} />
             <Route path="/fleet" element={<FleetPage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/book" element={<BookingPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           </Route>
           <Route path="*" element={<NotFound />} />

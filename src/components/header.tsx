@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button.tsx";
 import {
   Sheet,
@@ -30,12 +30,15 @@ const ACTIVE_ROUTES = new Set([
   "/services/wedding",
   "/fleet",
   "/about",
+  "/contact",
+  "/book",
 ]);
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const isHomePage = location.pathname === "/";
 
@@ -125,9 +128,7 @@ export default function Header() {
             <Button
               size="sm"
               className="rounded-none uppercase tracking-wider text-xs font-semibold px-6"
-              onClick={() =>
-                toast.info("Coming soon in a future milestone!")
-              }
+              onClick={() => navigate("/book")}
             >
               Book Now
             </Button>
@@ -203,7 +204,7 @@ export default function Header() {
                   <Button
                     className="w-full rounded-none uppercase tracking-wider text-xs font-semibold"
                     onClick={() => {
-                      toast.info("Coming soon in a future milestone!");
+                      navigate("/book");
                       setOpen(false);
                     }}
                   >

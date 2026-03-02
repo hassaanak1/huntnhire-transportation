@@ -2,7 +2,6 @@ import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button.tsx";
 import { ArrowRight, ChevronRight, Phone } from "lucide-react";
-import { toast } from "sonner";
 import { SERVICES, SERVICE_SLUGS } from "./_lib/service-data.ts";
 
 export default function ServicesPage() {
@@ -113,15 +112,14 @@ export default function ServicesPage() {
               vehicle and service for your occasion, group size, and budget.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button
-                className="rounded-none uppercase tracking-wider text-xs font-semibold px-8 py-5"
-                onClick={() =>
-                  toast.info("Coming soon in a future milestone!")
-                }
-              >
-                Get a Free Quote
-                <ChevronRight className="size-4" />
-              </Button>
+              <Link to="/book">
+                <Button
+                  className="rounded-none uppercase tracking-wider text-xs font-semibold px-8 py-5"
+                >
+                  Get a Free Quote
+                  <ChevronRight className="size-4" />
+                </Button>
+              </Link>
               <a href="tel:+18887778989">
                 <Button
                   variant="ghost"

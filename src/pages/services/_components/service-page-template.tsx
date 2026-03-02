@@ -14,7 +14,6 @@ import {
   ArrowRight,
   ChevronRightIcon,
 } from "lucide-react";
-import { toast } from "sonner";
 import type { ServiceData } from "../_lib/service-data.ts";
 import { SERVICES } from "../_lib/service-data.ts";
 
@@ -111,15 +110,14 @@ export default function ServicePageTemplate({
                 ))}
               </div>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <Button
-                  className="rounded-none uppercase tracking-wider text-xs font-semibold px-8"
-                  onClick={() =>
-                    toast.info("Coming soon in a future milestone!")
-                  }
-                >
-                  Get a Free Quote
-                  <ChevronRight className="size-4" />
-                </Button>
+                <Link to="/book">
+                  <Button
+                    className="rounded-none uppercase tracking-wider text-xs font-semibold px-8"
+                  >
+                    Get a Free Quote
+                    <ChevronRight className="size-4" />
+                  </Button>
+                </Link>
                 <a href="tel:+18887778989">
                   <Button
                     variant="ghost"
@@ -242,15 +240,14 @@ export default function ServicePageTemplate({
                 needs. Our team responds within minutes.
               </p>
               <div className="space-y-3">
-                <Button
-                  className="w-full rounded-none uppercase tracking-wider text-xs font-semibold py-5"
-                  onClick={() =>
-                    toast.info("Coming soon in a future milestone!")
-                  }
-                >
-                  Get an Instant Quote
-                  <ChevronRight className="size-4" />
-                </Button>
+                <Link to="/book">
+                  <Button
+                    className="w-full rounded-none uppercase tracking-wider text-xs font-semibold py-5"
+                  >
+                    Get an Instant Quote
+                    <ChevronRight className="size-4" />
+                  </Button>
+                </Link>
                 <a href="tel:+18887778989" className="block">
                   <Button
                     variant="ghost"

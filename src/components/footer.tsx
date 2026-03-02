@@ -18,7 +18,7 @@ const QUICK_LINKS = [
   { label: "Contact", href: "/contact" },
 ] as const;
 
-const ACTIVE_QUICK_LINKS = new Set(["/about", "/fleet", "/services"]);
+const ACTIVE_QUICK_LINKS = new Set(["/about", "/fleet", "/services", "/contact"]);
 
 function handleComingSoon(e: React.MouseEvent<HTMLAnchorElement>) {
   e.preventDefault();

@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button.tsx";
 import { Phone, ChevronRight } from "lucide-react";
-import { toast } from "sonner";
 
 const HERO_IMAGE =
   "https://images.unsplash.com/photo-1607332623489-e8ddd788072d?auto=format&fit=crop&w=1920&q=80";
@@ -63,16 +63,15 @@ export default function HeroSection() {
             transition={{ delay: 0.55, duration: 0.6, ease: "easeOut" }}
             className="mt-10 flex flex-col sm:flex-row gap-4"
           >
-            <Button
-              size="lg"
-              className="rounded-none text-sm sm:text-base px-8 py-6 font-semibold uppercase tracking-wider"
-              onClick={() =>
-                toast.info("Coming soon in a future milestone!")
-              }
-            >
-              Book Your Ride
-              <ChevronRight className="size-5" />
-            </Button>
+            <Link to="/book">
+              <Button
+                size="lg"
+                className="rounded-none text-sm sm:text-base px-8 py-6 font-semibold uppercase tracking-wider"
+              >
+                Book Your Ride
+                <ChevronRight className="size-5" />
+              </Button>
+            </Link>
             <a href="tel:+18887778989">
               <Button
                 size="lg"

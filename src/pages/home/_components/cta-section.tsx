@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button.tsx";
 import { Phone, ChevronRight } from "lucide-react";
-import { toast } from "sonner";
 
 const INTERIOR_IMAGE =
   "https://images.unsplash.com/photo-1753183514606-3aa17d649872?auto=format&fit=crop&w=1920&q=80";
@@ -45,16 +45,15 @@ export default function CtaSection() {
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button
-              size="lg"
-              className="rounded-none text-sm sm:text-base px-10 py-6 font-semibold uppercase tracking-wider"
-              onClick={() =>
-                toast.info("Coming soon in a future milestone!")
-              }
-            >
-              Get an Instant Quote
-              <ChevronRight className="size-5" />
-            </Button>
+            <Link to="/book">
+              <Button
+                size="lg"
+                className="rounded-none text-sm sm:text-base px-10 py-6 font-semibold uppercase tracking-wider"
+              >
+                Get an Instant Quote
+                <ChevronRight className="size-5" />
+              </Button>
+            </Link>
             <a href="tel:+18887778989">
               <Button
                 size="lg"

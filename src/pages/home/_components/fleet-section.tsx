@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button.tsx";
 import { Users, Wifi, Wine, Music, Star, ArrowRight } from "lucide-react";
-import { toast } from "sonner";
 
 const FLEET = [
   {
@@ -115,15 +115,14 @@ export default function FleetSection() {
                   ))}
                 </div>
 
-                <Button
-                  className="w-fit rounded-none uppercase tracking-wider text-xs font-semibold px-8"
-                  onClick={() =>
-                    toast.info("Coming soon in a future milestone!")
-                  }
-                >
-                  Reserve Now
-                  <ArrowRight className="size-4" />
-                </Button>
+                <Link to="/book">
+                  <Button
+                    className="w-fit rounded-none uppercase tracking-wider text-xs font-semibold px-8"
+                  >
+                    Reserve Now
+                    <ArrowRight className="size-4" />
+                  </Button>
+                </Link>
               </div>
             </motion.div>
           ))}
@@ -137,16 +136,15 @@ export default function FleetSection() {
           transition={{ duration: 0.5 }}
           className="text-center mt-12"
         >
-          <Button
-            variant="ghost"
-            className="rounded-none border border-primary/30 text-primary hover:bg-primary/10 uppercase tracking-wider text-xs font-semibold px-8 py-5"
-            onClick={() =>
-              toast.info("Coming soon in a future milestone!")
-            }
-          >
-            View Complete Fleet
-            <ArrowRight className="size-4" />
-          </Button>
+          <Link to="/fleet">
+            <Button
+              variant="ghost"
+              className="rounded-none border border-primary/30 text-primary hover:bg-primary/10 uppercase tracking-wider text-xs font-semibold px-8 py-5"
+            >
+              View Complete Fleet
+              <ArrowRight className="size-4" />
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </section>

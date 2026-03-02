@@ -10,7 +10,6 @@ import {
   Phone,
   SlidersHorizontal,
 } from "lucide-react";
-import { toast } from "sonner";
 import { cn } from "@/lib/utils.ts";
 import { FLEET_VEHICLES, FLEET_CATEGORIES } from "./_lib/fleet-data.ts";
 
@@ -171,15 +170,14 @@ function FleetGrid({ filter }: { filter: string }) {
             </div>
 
             {/* CTA */}
-            <Button
-              className="w-full rounded-none uppercase tracking-wider text-xs font-semibold"
-              onClick={() =>
-                toast.info("Coming soon in a future milestone!")
-              }
-            >
-              Reserve This Vehicle
-              <ChevronRight className="size-4 ml-1" />
-            </Button>
+            <Link to="/book">
+              <Button
+                className="w-full rounded-none uppercase tracking-wider text-xs font-semibold"
+              >
+                Reserve This Vehicle
+                <ChevronRight className="size-4 ml-1" />
+              </Button>
+            </Link>
           </div>
         </motion.div>
       ))}
@@ -200,15 +198,14 @@ function FleetCta() {
           always complimentary.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button
-            size="lg"
-            className="rounded-none uppercase tracking-wider text-sm font-semibold px-10"
-            onClick={() =>
-              toast.info("Coming soon in a future milestone!")
-            }
-          >
-            Get a Free Quote
-          </Button>
+          <Link to="/book">
+            <Button
+              size="lg"
+              className="rounded-none uppercase tracking-wider text-sm font-semibold px-10"
+            >
+              Get a Free Quote
+            </Button>
+          </Link>
           <a
             href="tel:+18887778989"
             className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
