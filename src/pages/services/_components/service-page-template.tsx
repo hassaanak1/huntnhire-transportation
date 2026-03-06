@@ -146,13 +146,13 @@ export default function ServicePageTemplate({
                     <ChevronRight className="size-4" />
                   </Button>
                 </Link>
-                <a href="tel:+18887778989">
+                <a href="tel:+12108019909">
                   <Button
                     variant="ghost"
                     className="w-full sm:w-auto rounded-none border border-primary/30 text-primary hover:bg-primary/10 uppercase tracking-wider text-xs font-semibold px-8"
                   >
                     <Phone className="size-4" />
-                    (888) 777-8989
+                    (210) 801-9909
                   </Button>
                 </a>
               </div>
@@ -276,13 +276,13 @@ export default function ServicePageTemplate({
                     <ChevronRight className="size-4" />
                   </Button>
                 </Link>
-                <a href="tel:+18887778989" className="block">
+                <a href="tel:+12108019909" className="block">
                   <Button
                     variant="ghost"
                     className="w-full rounded-none border border-primary/30 text-primary hover:bg-primary/10 uppercase tracking-wider text-xs font-semibold py-5"
                   >
                     <Phone className="size-4" />
-                    Call (888) 777-8989
+                    Call (210) 801-9909
                   </Button>
                 </a>
               </div>

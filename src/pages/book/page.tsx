@@ -583,11 +583,11 @@ function BookingSuccess() {
           </Button>
         </Link>
         <a
-          href="tel:+18887778989"
+          href="tel:+12108019909"
           className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
         >
           <Phone className="size-4" />
-          (888) 777-8989
+          (210) 801-9909
         </a>
       </div>
     </motion.div>

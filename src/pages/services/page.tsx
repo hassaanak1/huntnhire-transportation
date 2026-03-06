@@ -129,13 +129,13 @@ export default function ServicesPage() {
                   <ChevronRight className="size-4" />
                 </Button>
               </Link>
-              <a href="tel:+18887778989">
+              <a href="tel:+12108019909">
                 <Button
                   variant="ghost"
                   className="rounded-none border border-primary/30 text-primary hover:bg-primary/10 uppercase tracking-wider text-xs font-semibold px-8 py-5"
                 >
                   <Phone className="size-4" />
-                  (888) 777-8989
+                  (210) 801-9909
                 </Button>
               </a>
             </div>

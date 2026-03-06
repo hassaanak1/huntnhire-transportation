@@ -54,14 +54,14 @@ export default function CtaSection() {
                 <ChevronRight className="size-5" />
               </Button>
             </Link>
-            <a href="tel:+18887778989">
+            <a href="tel:+12108019909">
               <Button
                 size="lg"
                 variant="ghost"
                 className="rounded-none text-sm sm:text-base px-10 py-6 border border-primary/30 text-primary hover:bg-primary/10 font-semibold uppercase tracking-wider"
               >
                 <Phone className="size-5" />
-                Call (888) 777-8989
+                Call (210) 801-9909
               </Button>
             </a>
           </div>

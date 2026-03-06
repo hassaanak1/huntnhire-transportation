@@ -72,14 +72,14 @@ export default function HeroSection() {
                 <ChevronRight className="size-5" />
               </Button>
             </Link>
-            <a href="tel:+18887778989">
+            <a href="tel:+12108019909">
               <Button
                 size="lg"
                 variant="ghost"
                 className="w-full sm:w-auto rounded-none text-sm sm:text-base px-8 py-6 border border-primary/30 text-primary hover:bg-primary/10 font-semibold uppercase tracking-wider"
               >
                 <Phone className="size-5" />
-                (888) 777-8989
+                (210) 801-9909
               </Button>
             </a>
           </motion.div>

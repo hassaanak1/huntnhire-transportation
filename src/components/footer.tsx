@@ -49,18 +49,18 @@ export default function Footer() {
             </p>
             <div className="space-y-3">
               <a
-                href="tel:+18887778989"
+                href="tel:+12108019909"
                 className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Phone className="size-4 text-primary shrink-0" />
-                (888) 777-8989
+                (210) 801-9909
               </a>
               <a
-                href="mailto:info@vortexlmntirx.com"
+                href="mailto:limntrixinc@gmail.com"
                 className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail className="size-4 text-primary shrink-0" />
-                info@vortexlmntirx.com
+                limntrixinc@gmail.com
               </a>
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <MapPin className="size-4 text-primary shrink-0" />

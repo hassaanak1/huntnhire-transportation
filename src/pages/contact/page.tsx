@@ -31,15 +31,15 @@ const CONTACT_INFO = [
   {
     icon: Phone,
     label: "Phone",
-    value: "(888) 777-8989",
-    href: "tel:+18887778989",
+    value: "(210) 801-9909",
+    href: "tel:+12108019909",
     sublabel: "Available 24/7",
   },
   {
     icon: Mail,
     label: "Email",
-    value: "info@vortexlmntirx.com",
-    href: "mailto:info@vortexlmntirx.com",
+    value: "limntrixinc@gmail.com",
+    href: "mailto:limntrixinc@gmail.com",
     sublabel: "Response within 1 hour",
   },
   {
@@ -341,7 +341,7 @@ export default function ContactPage() {
   usePageMeta({
     title: "Contact Vortex Lmntirx | 24/7 Luxury Transportation Support",
     description:
-      "Get in touch with Vortex Lmntirx for quotes, corporate accounts, wedding transportation, or general inquiries. Call (888) 777-8989 or send a message. We respond within the hour.",
+      "Get in touch with Vortex Lmntirx for quotes, corporate accounts, wedding transportation, or general inquiries. Call (210) 801-9909 or send a message. We respond within the hour.",
     keywords:
       "contact Vortex Lmntirx, limo service phone number, luxury transportation quote, corporate limo inquiry",
   });

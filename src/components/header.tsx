@@ -94,11 +94,11 @@ export default function Header() {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="tel:+18887778989"
+              href="tel:+12108019909"
               className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
             >
               <Phone className="size-4" />
-              <span className="font-medium">(888) 777-8989</span>
+              <span className="font-medium">(210) 801-9909</span>
             </a>
             <Button
               size="sm"
@@ -112,7 +112,7 @@ export default function Header() {
           {/* Mobile Menu */}
           <div className="lg:hidden flex items-center gap-3">
             <a
-              href="tel:+18887778989"
+              href="tel:+12108019909"
               className="text-primary"
             >
               <Phone className="size-5" />
@@ -185,11 +185,11 @@ export default function Header() {
                     Book Your Ride
                   </Button>
                   <a
-                    href="tel:+18887778989"
+                    href="tel:+12108019909"
                     className="flex items-center justify-center gap-2 mt-4 text-sm text-primary"
                   >
                     <Phone className="size-4" />
-                    (888) 777-8989
+                    (210) 801-9909
                   </a>
                 </div>
               </SheetContent>
