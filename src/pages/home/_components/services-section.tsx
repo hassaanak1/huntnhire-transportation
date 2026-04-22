@@ -19,7 +19,7 @@ const SERVICES = [
     description:
       "Experience the pinnacle of luxury with our premium stretch limousine service. Perfect for special occasions, date nights, and VIP events.",
     image:
-      "https://images.unsplash.com/photo-1771775751121-3091d79073d4?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1605329674253-c7680c5e44cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     icon: PartyPopper,
@@ -27,8 +27,7 @@ const SERVICES = [
     href: "/services/party-bus",
     description:
       "Turn any celebration into an unforgettable experience. Our party buses feature state-of-the-art sound systems, LED lighting, and full bar setups.",
-    image:
-      "https://images.unsplash.com/photo-1631222193608-b887bb1f3c23?auto=format&fit=crop&w=800&q=80",
+    image: "https://jaclimo.com/wp-content/uploads/2024/12/Party-Bus.jpg",
   },
   {
     icon: Briefcase,
@@ -37,7 +36,7 @@ const SERVICES = [
     description:
       "Elevate your business image with our executive transportation. Reliable, punctual, and impeccably professional service for all corporate needs.",
     image:
-      "https://images.unsplash.com/photo-1765292784374-e061c5b3d111?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1632656269435-77b10f3fcbc6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     icon: Plane,
@@ -46,7 +45,7 @@ const SERVICES = [
     description:
       "Start and end every journey in comfort. We monitor your flight status for seamless pickups and drop-offs at every major airport.",
     image:
-      "https://images.unsplash.com/photo-1679587833052-8f1ac182d85c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1684426133903-620526a5cd21?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     icon: Heart,
@@ -55,7 +54,7 @@ const SERVICES = [
     description:
       "Make your special day truly extraordinary. From bridal party arrivals to grand getaway exits, we handle every detail with care.",
     image:
-      "https://images.unsplash.com/photo-1639497366184-abc2260cca65?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1729022508881-866e115a51d8?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     icon: Users,
@@ -64,7 +63,7 @@ const SERVICES = [
     description:
       "Coordinated luxury transportation for groups of any size. Concerts, galas, sporting events, and more — arrive together in style.",
     image:
-      "https://images.unsplash.com/photo-1687634365981-f6c4e3bba317?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1637950634698-2e27e3d6f3db?q=80&w=786&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ] as const;
 
