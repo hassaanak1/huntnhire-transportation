@@ -2,16 +2,21 @@ import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button.tsx";
 import { Users, Wifi, Wine, Music, Star, ArrowRight } from "lucide-react";
+import rollsRoyce from "@/assets/fleet/vintage-rolls-royce.jpg";
 
 const FLEET = [
   {
-    name: "Executive Sedans",
+    name: "Vintage Cars",
     description:
       "Sleek, sophisticated sedans perfect for executive travel, airport transfers, and intimate occasions. Experience first-class comfort in every ride.",
-    image:
-      "https://images.unsplash.com/photo-1604442132605-c36c123d2ba9?auto=format&fit=crop&w=900&q=80",
+    image: rollsRoyce,
     capacity: "Up to 3 passengers",
-    amenities: ["Premium Leather", "WiFi", "Privacy Partition", "Climate Control"],
+    amenities: [
+      "Premium Leather",
+      "WiFi",
+      "Privacy Partition",
+      "Climate Control",
+    ],
     icons: [Star, Wifi],
   },
   {
@@ -19,9 +24,14 @@ const FLEET = [
     description:
       "Our signature stretch limousines define luxury. With a full bar, ambient lighting, and an entertainment system, every journey becomes a celebration.",
     image:
-      "https://images.unsplash.com/photo-1771775751121-3091d79073d4?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1639497366184-abc2260cca65?q=80&w=992&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     capacity: "Up to 10 passengers",
-    amenities: ["Full Bar", "Ambient Lighting", "Entertainment System", "Champagne"],
+    amenities: [
+      "Full Bar",
+      "Ambient Lighting",
+      "Entertainment System",
+      "Champagne",
+    ],
     icons: [Wine, Music],
   },
   {
@@ -29,7 +39,7 @@ const FLEET = [
     description:
       "The ultimate mobile celebration. Our party buses feature dance floors, LED lighting, surround sound, and everything needed for an unforgettable experience.",
     image:
-      "https://images.unsplash.com/photo-1631222193608-b887bb1f3c23?auto=format&fit=crop&w=900&q=80",
+      "https://scottsdalepartybuses.com/wp-content/uploads/2025/04/white-party-bus-2.jpg",
     capacity: "Up to 40 passengers",
     amenities: ["Dance Floor", "LED Lights", "Surround Sound", "Full Bar"],
     icons: [Music, Users],
@@ -55,8 +65,8 @@ export default function FleetSection() {
             Our Distinguished Fleet
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg">
-            Every vehicle in our fleet is meticulously maintained and detailed to
-            ensure the highest standard of luxury and comfort.
+            Every vehicle in our fleet is meticulously maintained and detailed
+            to ensure the highest standard of luxury and comfort.
           </p>
         </motion.div>
 
@@ -82,7 +92,7 @@ export default function FleetSection() {
                 <img
                   src={vehicle.image}
                   alt={vehicle.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover object-bottom group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
               </div>
@@ -116,9 +126,7 @@ export default function FleetSection() {
                 </div>
 
                 <Link to="/book">
-                  <Button
-                    className="w-fit rounded-none uppercase tracking-wider text-xs font-semibold px-8"
-                  >
+                  <Button className="w-fit rounded-none uppercase tracking-wider text-xs font-semibold px-8">
                     Reserve Now
                     <ArrowRight className="size-4" />
                   </Button>

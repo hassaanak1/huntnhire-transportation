@@ -44,7 +44,11 @@ const EVENT_TYPES = [
   { value: "wedding", label: "Wedding", icon: Heart },
   { value: "prom", label: "Prom / Homecoming", icon: GraduationCap },
   { value: "birthday", label: "Birthday Party", icon: PartyPopper },
-  { value: "bachelor-bachelorette", label: "Bachelor / Bachelorette", icon: Music },
+  {
+    value: "bachelor-bachelorette",
+    label: "Bachelor / Bachelorette",
+    icon: Music,
+  },
   { value: "corporate", label: "Corporate Event", icon: Briefcase },
   { value: "airport-transfer", label: "Airport Transfer", icon: Plane },
   { value: "concert-sporting", label: "Concert / Sporting Event", icon: Gem },
@@ -53,31 +57,70 @@ const EVENT_TYPES = [
 ] as const;
 
 const VEHICLE_OPTIONS = [
-  { value: "stretch-limo", label: "Stretch Limousine" },
-  { value: "party-bus", label: "Party Bus" },
-  { value: "executive-sedan", label: "Executive Sedan" },
+  { value: "vintage-rolls-royce", label: "Vintage Rolls Royce" },
+  { value: "beuford-1920", label: "Beuford 1920" },
   { value: "luxury-suv", label: "Luxury SUV" },
+  { value: "stretch-limo", label: "Stretch Limousine" },
   { value: "white-stretch", label: "White Stretch Limo" },
+  { value: "escalado-limo", label: "Escalade Limo" },
+  { value: "chrysler-limo", label: "Chrysler Limo" },
+  { value: "hummer-limo", label: "Hummer Limo" },
+  { value: "jet-sprinter", label: "Jet Sprinter" },
   { value: "executive-van", label: "Executive Sprinter Van" },
-  { value: "hummer-limo", label: "Hummer Limousine" },
-  { value: "charter-bus", label: "Charter / Mini Bus" },
+  { value: "party-bus", label: "Party Bus" },
+  { value: "coach-bus", label: "Coach Bus" },
   { value: "not-sure", label: "Not Sure - Recommend for Me" },
 ] as const;
 
 const TIME_SLOTS = [
-  "12:00 AM", "12:30 AM",
-  "1:00 AM", "1:30 AM", "2:00 AM", "2:30 AM",
-  "3:00 AM", "3:30 AM", "4:00 AM", "4:30 AM",
-  "5:00 AM", "5:30 AM", "6:00 AM", "6:30 AM",
-  "7:00 AM", "7:30 AM", "8:00 AM", "8:30 AM",
-  "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM",
-  "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM",
-  "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM",
-  "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM",
-  "5:00 PM", "5:30 PM", "6:00 PM", "6:30 PM",
-  "7:00 PM", "7:30 PM", "8:00 PM", "8:30 PM",
-  "9:00 PM", "9:30 PM", "10:00 PM", "10:30 PM",
-  "11:00 PM", "11:30 PM",
+  "12:00 AM",
+  "12:30 AM",
+  "1:00 AM",
+  "1:30 AM",
+  "2:00 AM",
+  "2:30 AM",
+  "3:00 AM",
+  "3:30 AM",
+  "4:00 AM",
+  "4:30 AM",
+  "5:00 AM",
+  "5:30 AM",
+  "6:00 AM",
+  "6:30 AM",
+  "7:00 AM",
+  "7:30 AM",
+  "8:00 AM",
+  "8:30 AM",
+  "9:00 AM",
+  "9:30 AM",
+  "10:00 AM",
+  "10:30 AM",
+  "11:00 AM",
+  "11:30 AM",
+  "12:00 PM",
+  "12:30 PM",
+  "1:00 PM",
+  "1:30 PM",
+  "2:00 PM",
+  "2:30 PM",
+  "3:00 PM",
+  "3:30 PM",
+  "4:00 PM",
+  "4:30 PM",
+  "5:00 PM",
+  "5:30 PM",
+  "6:00 PM",
+  "6:30 PM",
+  "7:00 PM",
+  "7:30 PM",
+  "8:00 PM",
+  "8:30 PM",
+  "9:00 PM",
+  "9:30 PM",
+  "10:00 PM",
+  "10:30 PM",
+  "11:00 PM",
+  "11:30 PM",
 ] as const;
 
 const STEPS = [
@@ -492,7 +535,8 @@ function Step3PersonalInfo({
 
 function Step4Confirmation({ form }: { form: BookingFormData }) {
   const eventLabel =
-    EVENT_TYPES.find((e) => e.value === form.eventType)?.label ?? form.eventType;
+    EVENT_TYPES.find((e) => e.value === form.eventType)?.label ??
+    form.eventType;
   const vehicleLabel =
     VEHICLE_OPTIONS.find((v) => v.value === form.vehicleNeeded)?.label ??
     form.vehicleNeeded;
@@ -505,7 +549,10 @@ function Step4Confirmation({ form }: { form: BookingFormData }) {
     { label: "Event Date", value: form.eventDate },
     { label: "Vehicle", value: vehicleLabel },
     { label: "Passengers", value: String(form.passengers) },
-    { label: "Hours Needed", value: `${form.hoursNeeded} hour${form.hoursNeeded !== 1 ? "s" : ""}` },
+    {
+      label: "Hours Needed",
+      value: `${form.hoursNeeded} hour${form.hoursNeeded !== 1 ? "s" : ""}`,
+    },
     { label: "Pickup Time", value: form.pickupTime },
     { label: "Pickup Address", value: form.pickupAddress },
     { label: "Drop-off Time", value: form.dropoffTime },
