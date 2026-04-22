@@ -18,7 +18,7 @@ const FLEET = [
   {
     name: "Classic Collection",
     description:
-      "Step back in time with our majestic Vintage Rolls Royce and Beuford tourers. Perfect for weddings and grand entrances where timeless elegance is the only option.",
+      "Experience refined heritage travel with our Vintage Rolls Royce and Beauford tourers. Ideal for weddings and formal arrivals where sophistication and presence matter most.",
     image: rollsRoyce,
     capacity: "Up to 3 passengers",
     amenities: [
@@ -32,7 +32,7 @@ const FLEET = [
   {
     name: "Stretch Limousines",
     description:
-      "From sleek Chrysler 300s to bold Hummer H2s, our stretch fleet defines luxury. Featuring fiber-optic lighting and premium bars for the ultimate red-carpet experience.",
+      "A modern expression of luxury featuring Chrysler 300 and Hummer H2 stretch models. Designed for high-impact entrances with ambient lighting and premium onboard comfort.",
     image:
       "https://images.unsplash.com/photo-1676107773690-9d670f8b1afa?auto=format&fit=crop&w=800&q=80",
     capacity: "10 to 20 passengers",
@@ -47,7 +47,7 @@ const FLEET = [
   {
     name: "Executive Vans & Sprinters",
     description:
-      "The gold standard for corporate travel. Our Jet Sprinters offer a private jet experience on wheels, featuring reclining captain chairs and mobile office amenities.",
+      "A premium mobile workspace designed for productivity and comfort. The Jet Sprinter delivers a private, first-class travel environment for business professionals.",
     image: jetSprinter,
     capacity: "Up to 14 passengers",
     amenities: [
@@ -61,7 +61,7 @@ const FLEET = [
   {
     name: "Luxury Party Buses",
     description:
-      "A mobile nightclub experience. Equipped with LED dance floors, concert-quality sound systems, and massive capacity for your entire crew to celebrate in style.",
+      "A fully immersive entertainment experience on wheels. Designed for celebrations with dynamic lighting, powerful sound systems, and spacious group seating.",
     image:
       "https://scottsdalepartybuses.com/wp-content/uploads/2025/04/white-party-bus-2.jpg",
     capacity: "Up to 40 passengers",
@@ -94,8 +94,9 @@ export default function FleetSection() {
             Our Distinguished Fleet
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg">
-            Every vehicle in our fleet is meticulously maintained and detailed
-            to ensure the highest standard of luxury and comfort.
+            Each vehicle in our collection is carefully maintained and presented
+            to deliver exceptional comfort, reliability, and a first-class
+            travel experience.
           </p>
         </motion.div>
 

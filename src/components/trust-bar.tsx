@@ -3,9 +3,9 @@ import { Shield, Star, Clock, Award } from "lucide-react";
 
 const TRUST_ITEMS = [
   { icon: Star, label: "4.9★ Average Rating" },
-  { icon: Shield, label: "Fully Licensed & Insured" },
-  { icon: Clock, label: "24/7 Availability" },
-  { icon: Award, label: "15+ Years of Excellence" },
+  { icon: Shield, label: "Licensed, Bonded & Insured" },
+  { icon: Clock, label: "24h Service Coverage" },
+  { icon: Award, label: "15+ Years Experience" },
 ] as const;
 
 /**
@@ -29,7 +29,9 @@ export default function TrustBar() {
               className="flex items-center gap-2 text-xs sm:text-sm text-foreground/80"
             >
               <item.icon className="size-4 text-primary shrink-0" />
-              <span className="font-medium whitespace-nowrap">{item.label}</span>
+              <span className="font-medium whitespace-nowrap">
+                {item.label}
+              </span>
             </div>
           ))}
         </div>

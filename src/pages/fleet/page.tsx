@@ -26,22 +26,26 @@ function FleetHero() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
       </div>
-      <div className="relative z-10 max-w-4xl mx-auto px-4 text-center py-32">
+
+      <div className="relative z-10 max-w-5xl mx-auto px-4 text-center py-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <p className="text-primary uppercase tracking-[0.3em] text-sm font-medium mb-4">
-            Our Fleet
+            Premium Fleet
           </p>
+
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance">
-            A Vehicle for Every <span className="text-primary">Occasion</span>
+            Luxury Vehicles for Every{" "}
+            <span className="text-primary">Journey</span>
           </h1>
+
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            From executive sedans to party buses, every vehicle in our fleet is
-            meticulously maintained, fully insured, and equipped with premium
-            amenities.
+            From executive sedans to luxury party buses, every vehicle in our
+            fleet is meticulously maintained, professionally chauffeured, and
+            equipped with premium amenities for a first-class experience.
           </p>
         </motion.div>
       </div>
@@ -186,22 +190,25 @@ function FleetCta() {
     <section className="py-20 border-t border-border">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4">
-          Not Sure Which Vehicle <span className="text-primary">Fits?</span>
+          Not Sure Which Vehicle <span className="text-primary">You Need?</span>
         </h2>
+
         <p className="text-muted-foreground mb-8 max-w-xl mx-auto leading-relaxed">
-          Our transportation specialists will help you choose the perfect
-          vehicle for your event, group size, and budget. Consultations are
-          always complimentary.
+          Our transportation specialists are here to help you choose the perfect
+          vehicle based on your group size, event type, and travel requirements.
+          Every consultation is completely free.
         </p>
+
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link to="/book">
             <Button
               size="lg"
               className="rounded-none uppercase tracking-wider text-sm font-semibold px-10"
             >
-              Get a Free Quote
+              Request Quote
             </Button>
           </Link>
+
           <a
             href="tel:+12108019909"
             className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
@@ -269,11 +276,12 @@ export default function FleetPage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-6">
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Explore Our <span className="text-primary">Fleet</span>
+              Browse Our <span className="text-primary">Premium Fleet</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Every vehicle is current model year, meticulously detailed, and
-              equipped with premium amenities for your comfort and safety.
+              Explore our full range of premium vehicles — from executive
+              transport to high-capacity party buses — all maintained to the
+              highest standards of comfort, safety, and style.
             </p>
           </div>
           <FleetFilter active={activeFilter} onSelect={setActiveFilter} />

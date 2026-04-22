@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button.tsx";
 import { Phone, ChevronRight } from "lucide-react";
 
 const HERO_IMAGE =
-  // "https://images.unsplash.com/photo-1607332623489-e8ddd788072d?auto=format&fit=crop&w=1920&q=80";
   "https://images.unsplash.com/photo-1628832908835-814f799db7c5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
 export default function HeroSection() {
@@ -14,7 +13,7 @@ export default function HeroSection() {
       <div className="absolute inset-0">
         <img
           src={HERO_IMAGE}
-          alt="Premium luxury limousine service"
+          alt="Executive luxury limousine transportation"
           className="w-full h-full object-cover"
           loading="eager"
         />
@@ -24,25 +23,25 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-        <div className="max-w-3xl">
+        <div className="max-w-5xl">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="text-primary uppercase tracking-[0.35em] text-xs sm:text-sm font-medium mb-6"
           >
-            Premium Luxury Transportation
+            Executive Luxury Transport
           </motion.p>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.8, ease: "easeOut" }}
-            className="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-foreground leading-[1.05] text-balance"
+            className="font-serif text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold text-foreground leading-[1.05] text-balance"
           >
-            Arrive in <span className="text-primary italic">Luxury.</span>
+            Arrive with <span className="text-primary italic">Elegance.</span>
             <br />
-            Travel in <span className="text-primary italic">Style.</span>
+            Move with <span className="text-primary italic">Confidence.</span>
           </motion.h1>
 
           <motion.p
@@ -51,9 +50,9 @@ export default function HeroSection() {
             transition={{ delay: 0.35, duration: 0.6, ease: "easeOut" }}
             className="mt-8 text-base sm:text-lg lg:text-xl text-muted-foreground max-w-xl leading-relaxed"
           >
-            Experience unmatched elegance with our premium limousine and party
-            bus services. Professional chauffeurs, impeccable vehicles, and
-            service that exceeds every expectation.
+            Discover refined travel through our premium limousine and group
+            transport solutions. Skilled chauffeurs, pristine vehicles, and
+            service standards designed to surpass expectations.
           </motion.p>
 
           <motion.div
@@ -67,7 +66,7 @@ export default function HeroSection() {
                 size="lg"
                 className="rounded-none text-sm sm:text-base px-8 py-6 font-semibold uppercase tracking-wider"
               >
-                Book Your Ride
+                Reserve Your Ride
                 <ChevronRight className="size-5" />
               </Button>
             </Link>
@@ -91,10 +90,10 @@ export default function HeroSection() {
             className="mt-14 flex flex-wrap items-center gap-6 sm:gap-10"
           >
             {[
-              { value: "15+", label: "Years Experience" },
-              { value: "50K+", label: "Happy Clients" },
-              { value: "200+", label: "Premium Vehicles" },
-              { value: "24/7", label: "Availability" },
+              { value: "15+", label: "Years in Service" },
+              { value: "50K+", label: "Satisfied Clients" },
+              { value: "200+", label: "Luxury Fleet" },
+              { value: "24/7", label: "Service Access" },
             ].map((stat) => (
               <div key={stat.label} className="text-center sm:text-left">
                 <p className="text-2xl sm:text-3xl font-serif font-bold text-primary">

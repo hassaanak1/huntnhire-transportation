@@ -46,15 +46,21 @@ export const FLEET_VEHICLES: Vehicle[] = [
     passengers: "Up to 3",
     luggage: "2 bags",
     description:
-      "The epitome of timeless elegance. Our vintage Rolls Royce provides a majestic presence for your most special occasions, featuring classic wood trim and wool carpeting.",
+      "A rare expression of heritage luxury, this vintage Rolls Royce delivers an iconic arrival experience defined by craftsmanship, prestige, and timeless automotive design.",
     amenities: [
-      { icon: Crown, label: "Heritage Interior" },
-      { icon: Wine, label: "Champagne Service" },
-      { icon: Sparkles, label: "Classic Ornament" },
-      { icon: Shield, label: "Chauffeur Service" },
+      { icon: Crown, label: "Handcrafted Interior" },
+      { icon: Wine, label: "Premium Beverage Service" },
+      { icon: Sparkles, label: "Restored Classic Finish" },
+      { icon: Shield, label: "Professional Chauffeur" },
     ],
-    idealFor: ["Weddings", "Anniversaries", "Film Shoots", "VIP Appearances"],
+    idealFor: [
+      "Luxury Weddings",
+      "Anniversary Events",
+      "Film Productions",
+      "VIP Arrivals",
+    ],
   },
+
   {
     id: "beuford-1920",
     name: "Beuford 1920",
@@ -63,20 +69,21 @@ export const FLEET_VEHICLES: Vehicle[] = [
     passengers: "Up to 3",
     luggage: "1 bag",
     description:
-      "A stunning open-top vintage tourer that captures the romance of the 1920s. Perfect for making a grand entrance and creating unforgettable photographs.",
+      "An authentic open-top vintage touring car offering a nostalgic 1920s experience, ideal for scenic drives and unforgettable ceremonial entrances.",
     amenities: [
-      { icon: Sparkles, label: "Convertible Top" },
-      { icon: Crown, label: "Lace Details" },
+      { icon: Sparkles, label: "Open-Top Convertible" },
+      { icon: Crown, label: "Vintage Detailing" },
       { icon: Wine, label: "Chilled Refreshments" },
-      { icon: Music, label: "Period Style" },
+      { icon: Music, label: "Classic Era Styling" },
     ],
     idealFor: [
-      "Summer Weddings",
-      "Garden Parties",
-      "Photo Sessions",
-      "Parades",
+      "Outdoor Weddings",
+      "Editorial Shoots",
+      "Heritage Events",
+      "Luxury Parades",
     ],
   },
+
   {
     id: "escalado-limo",
     name: "Escalade Limo",
@@ -85,15 +92,21 @@ export const FLEET_VEHICLES: Vehicle[] = [
     passengers: "Up to 18",
     luggage: "4 bags",
     description:
-      "The modern standard of luxury transport. This stretched SUV combines the rugged power of an Escalade with an interior designed for high-end entertainment.",
+      "A bold luxury SUV limousine designed for group travel, combining spacious interiors with modern entertainment features and a commanding road presence.",
     amenities: [
-      { icon: Wifi, label: "Fiber Optic Lighting" },
-      { icon: Music, label: "Surround Sound" },
-      { icon: Wine, label: "Full Bar" },
-      { icon: Users, label: "Wraparound Seating" },
+      { icon: Wifi, label: "Ambient LED Lighting" },
+      { icon: Music, label: "Surround Entertainment System" },
+      { icon: Wine, label: "Integrated Bar Area" },
+      { icon: Users, label: "Luxury Lounge Seating" },
     ],
-    idealFor: ["Corporate Galas", "Bachelor Parties", "Concerts", "Red Carpet"],
+    idealFor: [
+      "Corporate Events",
+      "Group Celebrations",
+      "Concert Transfers",
+      "VIP Transport",
+    ],
   },
+
   {
     id: "chrysler-limo",
     name: "Chrysler Limo",
@@ -102,15 +115,21 @@ export const FLEET_VEHICLES: Vehicle[] = [
     passengers: "Up to 10",
     luggage: "2 bags",
     description:
-      "Sleek, sophisticated, and urban. The Chrysler 300 stretch offers a bold profile with a modern interior that feels like a private lounge on wheels.",
+      "A refined urban limousine offering a sleek exterior and a comfortable lounge-style interior designed for stylish city travel and formal occasions.",
     amenities: [
-      { icon: Sparkles, label: "LED Starlight Headliner" },
-      { icon: Music, label: "Bluetooth Audio" },
-      { icon: Wine, label: "Cocktail Station" },
-      { icon: Shield, label: "Privacy Glass" },
+      { icon: Sparkles, label: "Starlight Ceiling" },
+      { icon: Music, label: "Wireless Audio System" },
+      { icon: Wine, label: "Refreshment Bar" },
+      { icon: Shield, label: "Tinted Privacy Glass" },
     ],
-    idealFor: ["Proms", "Business Dinners", "City Tours", "Birthdays"],
+    idealFor: [
+      "Prom Nights",
+      "Business Travel",
+      "City Tours",
+      "Special Occasions",
+    ],
   },
+
   {
     id: "hummer-limo",
     name: "Hummer Limo",
@@ -119,20 +138,16 @@ export const FLEET_VEHICLES: Vehicle[] = [
     passengers: "Up to 20",
     luggage: "3 bags",
     description:
-      "Make a massive statement. Our Hummer H2 stretch is the ultimate party vehicle, featuring an expansive interior that can accommodate large groups with ease.",
+      "A high-impact luxury vehicle built for large groups, delivering a bold presence with expansive interior space and premium entertainment features.",
     amenities: [
-      { icon: Sparkles, label: "Neon Light Show" },
-      { icon: Music, label: "Subwoofer System" },
-      { icon: Wine, label: "Multiple Chillers" },
-      { icon: Users, label: "Massive Capacity" },
+      { icon: Sparkles, label: "Dynamic Interior Lighting" },
+      { icon: Music, label: "High-Power Audio System" },
+      { icon: Wine, label: "Multiple Beverage Stations" },
+      { icon: Users, label: "Extra-Large Capacity Cabin" },
     ],
-    idealFor: [
-      "Large Group Outings",
-      "Night Out",
-      "Festivals",
-      "Sporting Events",
-    ],
+    idealFor: ["Group Events", "Night Outs", "Festivals", "Sports Travel"],
   },
+
   {
     id: "jet-sprinter",
     name: "Jet Sprinter",
@@ -141,20 +156,21 @@ export const FLEET_VEHICLES: Vehicle[] = [
     passengers: "Up to 9",
     luggage: "10 bags",
     description:
-      "Designed for those who prefer a private jet experience on the ground. Custom-built with reclining captain chairs and high-end work amenities.",
+      "A premium executive van designed to replicate a private jet cabin experience, offering unmatched comfort for business and long-distance travel.",
     amenities: [
-      { icon: Briefcase, label: "Executive Workdesk" },
-      { icon: Wifi, label: "Dedicated Hotspot" },
-      { icon: Shield, label: "Smart TV System" },
-      { icon: Crown, label: "Reclining Seats" },
+      { icon: Briefcase, label: "Workstation Setup" },
+      { icon: Wifi, label: "Onboard Connectivity" },
+      { icon: Shield, label: "Entertainment Display System" },
+      { icon: Crown, label: "Reclining Executive Seating" },
     ],
     idealFor: [
       "Executive Travel",
-      "Mobile Meetings",
+      "Business Meetings",
       "Golf Trips",
-      "Family Roadtrips",
+      "Family Transfers",
     ],
   },
+
   {
     id: "coach-bus",
     name: "Coach Bus",
@@ -163,20 +179,21 @@ export const FLEET_VEHICLES: Vehicle[] = [
     passengers: "Up to 56",
     luggage: "50+ bags",
     description:
-      "Our high-capacity motor coach provides comfortable, efficient transportation for very large groups, featuring climate control and under-carriage storage.",
+      "A full-size motor coach designed for efficient large-group transportation with maximum comfort, storage capacity, and long-distance reliability.",
     amenities: [
-      { icon: Users, label: "Extra Legroom" },
-      { icon: Shield, label: "Climate Control" },
-      { icon: Car, label: "Ample Storage" },
-      { icon: Music, label: "PA System" },
+      { icon: Users, label: "Reclining Seats" },
+      { icon: Shield, label: "Climate Controlled Cabin" },
+      { icon: Car, label: "High-Capacity Storage Bays" },
+      { icon: Music, label: "Onboard PA System" },
     ],
     idealFor: [
-      "Conventions",
       "Tour Groups",
-      "Wedding Shuttles",
-      "Corporate Retreats",
+      "Corporate Shuttles",
+      "Wedding Transport",
+      "Large Events",
     ],
   },
+
   {
     id: "luxury-suv",
     name: "Luxury SUV",
@@ -186,20 +203,21 @@ export const FLEET_VEHICLES: Vehicle[] = [
     passengers: "Up to 6",
     luggage: "6 bags",
     description:
-      "Command the road in our premium luxury SUVs. Spacious interiors accommodate families, executive groups, and anyone who demands extra room without compromising on style.",
+      "A premium SUV offering elevated comfort, spacious seating, and refined styling for families and executive travelers who require versatility and luxury.",
     amenities: [
-      { icon: Users, label: "Spacious seating" },
-      { icon: Wifi, label: "Complimentary Wi-Fi" },
-      { icon: Shield, label: "Climate zones" },
-      { icon: Crown, label: "Premium sound" },
+      { icon: Users, label: "Spacious Interior Seating" },
+      { icon: Wifi, label: "Onboard Connectivity" },
+      { icon: Shield, label: "Dual-Zone Climate Control" },
+      { icon: Crown, label: "Premium Audio System" },
     ],
     idealFor: [
-      "Family travel",
-      "Group transfers",
-      "Corporate events",
-      "Airport runs with luggage",
+      "Family Travel",
+      "Airport Transfers",
+      "Corporate Use",
+      "Group Transport",
     ],
   },
+
   {
     id: "stretch-limo",
     name: "Stretch Limousine",
@@ -209,15 +227,16 @@ export const FLEET_VEHICLES: Vehicle[] = [
     passengers: "Up to 10",
     luggage: "2 bags",
     description:
-      "The ultimate symbol of luxury. Our stretch limousines transform every occasion into a red-carpet event with spacious interiors, mood lighting, and complimentary champagne service.",
+      "A classic luxury limousine designed for premium celebrations, offering elegant interiors, smooth rides, and a refined red-carpet experience.",
     amenities: [
-      { icon: Wine, label: "Champagne service" },
-      { icon: Sparkles, label: "Mood lighting" },
-      { icon: Music, label: "Premium audio" },
-      { icon: Crown, label: "Red carpet arrival" },
+      { icon: Wine, label: "Complimentary Bar Service" },
+      { icon: Sparkles, label: "Ambient Interior Lighting" },
+      { icon: Music, label: "Premium Sound System" },
+      { icon: Crown, label: "Red Carpet Experience" },
     ],
-    idealFor: ["Weddings", "Proms", "Anniversaries", "Birthday celebrations"],
+    idealFor: ["Weddings", "Proms", "Anniversaries", "Celebrations"],
   },
+
   {
     id: "white-stretch",
     name: "White Stretch Limousine",
@@ -227,15 +246,16 @@ export const FLEET_VEHICLES: Vehicle[] = [
     passengers: "Up to 12",
     luggage: "2 bags",
     description:
-      "Our pristine white stretch limousines are the top choice for weddings and formal events. Impeccably maintained with custom decoration options and bridal party amenities.",
+      "A luxury white stretch limousine tailored for formal occasions, offering elegant presentation, comfort, and customization options for special events.",
     amenities: [
-      { icon: Wine, label: "Bridal champagne" },
-      { icon: Sparkles, label: "Custom decorations" },
-      { icon: Music, label: "Bluetooth audio" },
-      { icon: Crown, label: "Photo-ready interior" },
+      { icon: Wine, label: "Celebration Service" },
+      { icon: Sparkles, label: "Custom Interior Styling" },
+      { icon: Music, label: "Bluetooth Audio System" },
+      { icon: Crown, label: "Premium Event Presentation" },
     ],
-    idealFor: ["Weddings", "Quinceañeras", "Galas", "VIP arrivals"],
+    idealFor: ["Weddings", "Formal Events", "Galas", "VIP Transport"],
   },
+
   {
     id: "party-bus",
     name: "Party Bus",
@@ -244,20 +264,16 @@ export const FLEET_VEHICLES: Vehicle[] = [
     passengers: "20 – 40",
     luggage: "Limited",
     description:
-      "A mobile nightclub on wheels. Our party buses feature concert-quality sound systems, LED dance floors, full bar setups, and enough space for your entire crew to celebrate.",
+      "A fully equipped entertainment vehicle designed for group celebrations, combining music, lighting, and space for a high-energy mobile party experience.",
     amenities: [
-      { icon: Music, label: "DJ sound system" },
-      { icon: Sparkles, label: "LED light show" },
-      { icon: Wine, label: "Full bar setup" },
-      { icon: Users, label: "Dance floor" },
+      { icon: Music, label: "Club-Grade Sound System" },
+      { icon: Sparkles, label: "LED Party Lighting" },
+      { icon: Wine, label: "Onboard Beverage Station" },
+      { icon: Users, label: "Open Dance Space" },
     ],
-    idealFor: [
-      "Bachelor/bachelorette parties",
-      "Club hopping",
-      "Concert shuttles",
-      "Birthday bashes",
-    ],
+    idealFor: ["Bachelor Parties", "Club Nights", "Concerts", "Birthdays"],
   },
+
   {
     id: "executive-van",
     name: "Executive Sprinter Van",
@@ -266,18 +282,18 @@ export const FLEET_VEHICLES: Vehicle[] = [
     passengers: "Up to 14",
     luggage: "14 bags",
     description:
-      "The perfect blend of capacity and luxury. Our executive Sprinter vans offer airline-style seating, conference capability, and generous luggage space for group travel.",
+      "A premium group transport solution offering executive seating, generous luggage capacity, and a comfortable environment for business or leisure travel.",
     amenities: [
-      { icon: Wifi, label: "High-speed Wi-Fi" },
-      { icon: Briefcase, label: "Conference seating" },
-      { icon: Car, label: "Luggage space" },
-      { icon: Shield, label: "USB charging" },
+      { icon: Wifi, label: "High-Speed Connectivity" },
+      { icon: Briefcase, label: "Conference Seating Layout" },
+      { icon: Car, label: "Expanded Cargo Space" },
+      { icon: Shield, label: "USB Charging Ports" },
     ],
     idealFor: [
-      "Corporate groups",
-      "Conference shuttles",
-      "Sports teams",
-      "Airport groups",
+      "Corporate Travel",
+      "Group Transfers",
+      "Sports Teams",
+      "Airport Runs",
     ],
   },
 ];

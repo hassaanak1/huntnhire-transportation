@@ -2,66 +2,67 @@ import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button.tsx";
 import {
-  Car,
-  PartyPopper,
-  Briefcase,
-  Plane,
-  Heart,
-  Users,
+  Crown,
+  Music,
+  Building2,
+  PlaneTakeoff,
+  Gem,
+  Users2,
   ArrowRight,
 } from "lucide-react";
 
 const SERVICES = [
   {
-    icon: Car,
-    title: "Limo Service",
-    href: "/services/limo-service",
-    description:
-      "Experience the pinnacle of luxury with our premium stretch limousine service. Perfect for special occasions, date nights, and VIP events.",
-    image:
-      "https://images.unsplash.com/photo-1605329674253-c7680c5e44cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    icon: PartyPopper,
+    icon: Music,
     title: "Party Bus Rentals",
     href: "/services/party-bus",
     description:
-      "Turn any celebration into an unforgettable experience. Our party buses feature state-of-the-art sound systems, LED lighting, and full bar setups.",
+      "Elevate your celebration with a dynamic onboard experience. Our party buses include premium audio, vibrant lighting, and fully equipped interiors.",
     image: "https://jaclimo.com/wp-content/uploads/2024/12/Party-Bus.jpg",
   },
+
   {
-    icon: Briefcase,
-    title: "Corporate Transportation",
-    href: "/services/corporate",
-    description:
-      "Elevate your business image with our executive transportation. Reliable, punctual, and impeccably professional service for all corporate needs.",
-    image:
-      "https://images.unsplash.com/photo-1632656269435-77b10f3fcbc6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    icon: Plane,
+    icon: PlaneTakeoff,
     title: "Airport Transfers",
     href: "/services/airport-transfers",
     description:
-      "Start and end every journey in comfort. We monitor your flight status for seamless pickups and drop-offs at every major airport.",
+      "Travel with ease from departure to arrival. We track flights in real time to ensure prompt pickups and smooth transfers every time.",
     image:
       "https://images.unsplash.com/photo-1684426133903-620526a5cd21?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    icon: Heart,
+    icon: Crown,
+    title: "Limo Service",
+    href: "/services/limo-service",
+    description:
+      "Indulge in refined comfort with our high-end stretch limousine service. Ideal for milestone events, evenings out, and exclusive VIP travel.",
+    image:
+      "https://images.unsplash.com/photo-1605329674253-c7680c5e44cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    icon: Gem,
     title: "Wedding Transportation",
     href: "/services/wedding",
     description:
-      "Make your special day truly extraordinary. From bridal party arrivals to grand getaway exits, we handle every detail with care.",
+      "Ensure your big day flows seamlessly with elegant transport. From ceremony arrivals to final departures, every moment is handled with precision.",
     image:
       "https://images.unsplash.com/photo-1729022508881-866e115a51d8?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    icon: Users,
+    icon: Building2,
+    title: "Corporate Transportation",
+    href: "/services/corporate",
+    description:
+      "Enhance your corporate presence with executive transport solutions. Dependable, timely, and professionally managed for all business engagements.",
+    image:
+      "https://images.unsplash.com/photo-1632656269435-77b10f3fcbc6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  },
+  {
+    icon: Users2,
     title: "Event & Group Transportation",
     href: "/services",
     description:
-      "Coordinated luxury transportation for groups of any size. Concerts, galas, sporting events, and more — arrive together in style.",
+      "Streamlined travel solutions for groups of all sizes. Whether concerts, conferences, or private events, we ensure coordinated and stylish arrivals.",
     image:
       "https://images.unsplash.com/photo-1637950634698-2e27e3d6f3db?q=80&w=786&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
@@ -80,14 +81,15 @@ export default function ServicesSection() {
           className="text-center mb-16"
         >
           <p className="text-primary uppercase tracking-[0.3em] text-xs font-medium mb-4">
-            What We Offer
+            Our Services
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
-            Our Premium Services
+            Premium Transportation
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg">
-            From intimate rides to grand celebrations, our comprehensive luxury
-            transportation services are tailored to exceed your expectations.
+            From private transfers to large-scale events, our luxury transport
+            services are designed to deliver comfort, reliability, and a
+            consistently elevated travel experience.
           </p>
         </motion.div>
 
