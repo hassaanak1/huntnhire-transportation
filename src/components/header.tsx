@@ -57,10 +57,10 @@ export default function Header() {
             </div>
             <div>
               <span className="font-serif text-xl font-bold tracking-wide text-foreground">
-                VORTEX
+                Hassaan
               </span>
               <span className="font-serif text-xl font-light tracking-widest text-primary ml-2">
-                LMNTIRX
+                Akbar
               </span>
             </div>
           </Link>
@@ -111,10 +111,7 @@ export default function Header() {
 
           {/* Mobile Menu */}
           <div className="lg:hidden flex items-center gap-3">
-            <a
-              href="tel:+12108019909"
-              className="text-primary"
-            >
+            <a href="tel:+12108019909" className="text-primary">
               <Phone className="size-5" />
             </a>
             <Sheet open={open} onOpenChange={setOpen}>
