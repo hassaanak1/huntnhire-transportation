@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button.tsx";
 import { Phone, ChevronRight } from "lucide-react";
 
-const INTERIOR_IMAGE =
-  "https://images.unsplash.com/photo-1753183514606-3aa17d649872?auto=format&fit=crop&w=1920&q=80";
+const INTERIOR_IMAGE = "https://i.ytimg.com/vi/B0WC3q4nmFw/maxresdefault.jpg";
 
 export default function CtaSection() {
   return (
@@ -36,8 +35,7 @@ export default function CtaSection() {
             Ready to Experience the Difference?
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-            Your Luxury Ride{" "}
-            <span className="text-primary italic">Awaits</span>
+            Your Luxury Ride <span className="text-primary italic">Awaits</span>
           </h2>
           <p className="mt-6 text-muted-foreground max-w-xl mx-auto text-base sm:text-lg">
             Whether it{"'"}s a corporate event, wedding, airport transfer, or a
