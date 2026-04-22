@@ -13,9 +13,7 @@ import {
 import { cn } from "@/lib/utils.ts";
 import { FLEET_VEHICLES, FLEET_CATEGORIES } from "./_lib/fleet-data.ts";
 import { usePageMeta } from "@/hooks/use-page-meta.ts";
-
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1764605206511-7cb61cd4b916?auto=format&fit=crop&w=1920&q=80";
+import HERO_IMAGE from "@/assets/fleet/hero.jpg";
 
 function FleetHero() {
   return (
@@ -38,8 +36,7 @@ function FleetHero() {
             Our Fleet
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance">
-            A Vehicle for Every{" "}
-            <span className="text-primary">Occasion</span>
+            A Vehicle for Every <span className="text-primary">Occasion</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             From executive sedans to party buses, every vehicle in our fleet is
@@ -172,9 +169,7 @@ function FleetGrid({ filter }: { filter: string }) {
 
             {/* CTA */}
             <Link to="/book">
-              <Button
-                className="w-full rounded-none uppercase tracking-wider text-xs font-semibold"
-              >
+              <Button className="w-full rounded-none uppercase tracking-wider text-xs font-semibold">
                 Reserve This Vehicle
                 <ChevronRight className="size-4 ml-1" />
               </Button>
@@ -256,7 +251,8 @@ function FleetTrust() {
 
 export default function FleetPage() {
   usePageMeta({
-    title: "Our Premium Fleet | Executive Sedans, Limos & Party Buses | Vortex Lmntirx",
+    title:
+      "Our Premium Fleet | Executive Sedans, Limos & Party Buses | Vortex Lmntirx",
     description:
       "Browse the Vortex Lmntirx luxury fleet: executive sedans, stretch limousines, SUVs, Sprinter vans, and party buses. 200+ vehicles, all current model year, fully insured.",
     keywords:

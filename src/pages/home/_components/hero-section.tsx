@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button.tsx";
 import { Phone, ChevronRight } from "lucide-react";
 
 const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1607332623489-e8ddd788072d?auto=format&fit=crop&w=1920&q=80";
+  // "https://images.unsplash.com/photo-1607332623489-e8ddd788072d?auto=format&fit=crop&w=1920&q=80";
+  "https://images.unsplash.com/photo-1628832908835-814f799db7c5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
 export default function HeroSection() {
   return (
@@ -39,11 +40,9 @@ export default function HeroSection() {
             transition={{ delay: 0.15, duration: 0.8, ease: "easeOut" }}
             className="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-foreground leading-[1.05] text-balance"
           >
-            Arrive in{" "}
-            <span className="text-primary italic">Luxury.</span>
+            Arrive in <span className="text-primary italic">Luxury.</span>
             <br />
-            Travel in{" "}
-            <span className="text-primary italic">Style.</span>
+            Travel in <span className="text-primary italic">Style.</span>
           </motion.h1>
 
           <motion.p
