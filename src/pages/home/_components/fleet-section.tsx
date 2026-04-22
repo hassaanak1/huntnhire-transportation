@@ -1,47 +1,76 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button.tsx";
-import { Users, Wifi, Wine, Music, Star, ArrowRight } from "lucide-react";
+import {
+  Users,
+  Wifi,
+  Wine,
+  Music,
+  ArrowRight,
+  Briefcase,
+  Sparkles,
+  Crown,
+} from "lucide-react";
 import rollsRoyce from "@/assets/fleet/vintage-rolls-royce.jpg";
+import jetSprinter from "@/assets/fleet/jet-sprinter.jpg";
 
 const FLEET = [
   {
-    name: "Vintage Cars",
+    name: "Classic Collection",
     description:
-      "Sleek, sophisticated sedans perfect for executive travel, airport transfers, and intimate occasions. Experience first-class comfort in every ride.",
+      "Step back in time with our majestic Vintage Rolls Royce and Beuford tourers. Perfect for weddings and grand entrances where timeless elegance is the only option.",
     image: rollsRoyce,
     capacity: "Up to 3 passengers",
     amenities: [
-      "Premium Leather",
-      "WiFi",
-      "Privacy Partition",
-      "Climate Control",
+      "Heritage Interiors",
+      "Period Styling",
+      "Champagne Service",
+      "Chauffeur Driven",
     ],
-    icons: [Star, Wifi],
+    icons: [Crown, Wine],
   },
   {
     name: "Stretch Limousines",
     description:
-      "Our signature stretch limousines define luxury. With a full bar, ambient lighting, and an entertainment system, every journey becomes a celebration.",
+      "From sleek Chrysler 300s to bold Hummer H2s, our stretch fleet defines luxury. Featuring fiber-optic lighting and premium bars for the ultimate red-carpet experience.",
     image:
-      "https://images.unsplash.com/photo-1639497366184-abc2260cca65?q=80&w=992&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    capacity: "Up to 10 passengers",
+      "https://images.unsplash.com/photo-1676107773690-9d670f8b1afa?auto=format&fit=crop&w=800&q=80",
+    capacity: "10 to 20 passengers",
     amenities: [
-      "Full Bar",
-      "Ambient Lighting",
-      "Entertainment System",
-      "Champagne",
+      "Starlight Headliner",
+      "Full Cocktail Bar",
+      "Bluetooth Audio",
+      "Privacy Partition",
     ],
-    icons: [Wine, Music],
+    icons: [Sparkles, Wine],
+  },
+  {
+    name: "Executive Vans & Sprinters",
+    description:
+      "The gold standard for corporate travel. Our Jet Sprinters offer a private jet experience on wheels, featuring reclining captain chairs and mobile office amenities.",
+    image: jetSprinter,
+    capacity: "Up to 14 passengers",
+    amenities: [
+      "High-Speed WiFi",
+      "Reclining Leather Seats",
+      "Conference Setup",
+      "USB Charging Ports",
+    ],
+    icons: [Briefcase, Wifi],
   },
   {
     name: "Luxury Party Buses",
     description:
-      "The ultimate mobile celebration. Our party buses feature dance floors, LED lighting, surround sound, and everything needed for an unforgettable experience.",
+      "A mobile nightclub experience. Equipped with LED dance floors, concert-quality sound systems, and massive capacity for your entire crew to celebrate in style.",
     image:
       "https://scottsdalepartybuses.com/wp-content/uploads/2025/04/white-party-bus-2.jpg",
     capacity: "Up to 40 passengers",
-    amenities: ["Dance Floor", "LED Lights", "Surround Sound", "Full Bar"],
+    amenities: [
+      "LED Dance Floor",
+      "Pro Sound System",
+      "Climate Control",
+      "Multi-Color Lighting",
+    ],
     icons: [Music, Users],
   },
 ] as const;
