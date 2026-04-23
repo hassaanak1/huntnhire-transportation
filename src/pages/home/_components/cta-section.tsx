@@ -32,14 +32,15 @@ export default function CtaSection() {
           transition={{ duration: 0.6 }}
         >
           <p className="text-primary uppercase tracking-[0.3em] text-xs font-medium mb-4">
-            Ready to Experience the Difference?
+            Reserve Your Experience Today
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-            Your Luxury Ride <span className="text-primary italic">Awaits</span>
+            Step Into <span className="text-primary italic">Luxury Travel</span>
           </h2>
           <p className="mt-6 text-muted-foreground max-w-xl mx-auto text-base sm:text-lg">
-            Whether it{"'"}s a corporate event, wedding, airport transfer, or a
-            night on the town — we{"'"}re here to make it extraordinary.
+            From business travel to special occasions, every journey is designed
+            to deliver comfort, style, and a premium experience from start to
+            finish.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -48,7 +49,7 @@ export default function CtaSection() {
                 size="lg"
                 className="rounded-none text-sm sm:text-base px-10 py-6 font-semibold uppercase tracking-wider"
               >
-                Get an Instant Quote
+                Reserve Your Ride
                 <ChevronRight className="size-5" />
               </Button>
             </Link>
@@ -59,7 +60,7 @@ export default function CtaSection() {
                 className="rounded-none text-sm sm:text-base px-10 py-6 border border-primary/30 text-primary hover:bg-primary/10 font-semibold uppercase tracking-wider"
               >
                 <Phone className="size-5" />
-                Call (210) 801-9909
+                Speak With Us Now
               </Button>
             </a>
           </div>

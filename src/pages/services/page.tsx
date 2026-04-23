@@ -8,11 +8,11 @@ import { usePageMeta } from "@/hooks/use-page-meta.ts";
 export default function ServicesPage() {
   usePageMeta({
     title:
-      "Luxury Transportation Services | Limo, Party Bus, Corporate & Wedding | Vortex Lmntirx",
+      "Luxury Transportation Services | Limo, Party Bus, Corporate & Wedding | HuntnHire",
     description:
       "Explore our premium transportation services: limousine rentals, party bus services, corporate executive transport, airport transfers, and elegant wedding transportation. Serving 50+ US cities.",
     keywords:
-      "luxury transportation services, limo service, party bus rental, corporate transportation, airport transfer service, wedding limo, Vortex Lmntirx",
+      "luxury transportation services, limo service, party bus rental, corporate transportation, airport transfer service, wedding limo, HuntnHire",
   });
 
   const HERO_IMAGE =

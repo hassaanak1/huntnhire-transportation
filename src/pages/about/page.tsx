@@ -35,76 +35,76 @@ const CORE_VALUES = [
     icon: Shield,
     title: "Safety First",
     description:
-      "Every vehicle undergoes rigorous inspections. Every chauffeur passes comprehensive background checks. Every ride is fully insured. Your safety is non-negotiable.",
+      "Every journey begins with safety. Our vehicles are routinely inspected, and our chauffeurs are carefully vetted to ensure every ride is secure, reliable, and worry-free.",
   },
   {
     icon: Award,
-    title: "Uncompromising Quality",
+    title: "Exceptional Standards",
     description:
-      "From the polish on our vehicles to the press of our chauffeurs' suits — we obsess over every detail so you experience nothing but excellence.",
+      "We hold ourselves to uncompromising standards in every detail — from vehicle presentation to chauffeur professionalism — ensuring a consistently refined experience.",
   },
   {
     icon: Heart,
-    title: "Genuine Hospitality",
+    title: "Thoughtful Service",
     description:
-      "Luxury isn't just about the vehicle. It's about how we make you feel. We train our team to anticipate needs and exceed expectations at every turn.",
+      "We believe true luxury lies in care. Our team focuses on anticipating needs and delivering a service experience that feels personal, warm, and effortless.",
   },
   {
     icon: Clock,
-    title: "Punctual Precision",
+    title: "Always On Time",
     description:
-      "Our 99.5% on-time rate speaks volumes. GPS-tracked vehicles, proactive route optimization, and dedicated dispatch ensure you're never left waiting.",
+      "Punctuality is at the core of our operations. With advanced routing and real-time coordination, we make sure every pickup and drop-off happens exactly when expected.",
   },
   {
     icon: Star,
-    title: "Client-Centric",
+    title: "Experience Focused",
     description:
-      "Your preferences, your schedule, your vision. We build every experience around you — from first call to final destination.",
+      "Every ride is designed around you. From preferences to scheduling, we tailor each detail to deliver a seamless and enjoyable journey.",
   },
   {
     icon: Gem,
-    title: "Integrity Always",
+    title: "Trust & Transparency",
     description:
-      "Transparent pricing, honest communication, and confidentiality you can trust. We earn your loyalty through every interaction.",
+      "We operate with honesty and clarity at every step — fair pricing, open communication, and complete respect for your privacy.",
   },
 ] as const;
 
 const MILESTONES = [
   {
     year: "2009",
-    title: "Founded in New York",
+    title: "Company Established in New York",
     description:
-      "Vortex Lmntirx launches with a fleet of 5 executive sedans and a vision to redefine luxury transportation in the tri-state area.",
+      "HuntnHire began with a small fleet of executive sedans, built on a vision to elevate the standard of luxury ground transportation.",
   },
   {
     year: "2012",
-    title: "Expanded to 10 Cities",
+    title: "Regional Expansion Begins",
     description:
-      "Rapid growth driven by word-of-mouth referrals takes us to Los Angeles, Chicago, Miami, Dallas, and beyond.",
+      "Growing demand and client trust helped us expand into major U.S. cities including Los Angeles, Chicago, Miami, and Dallas.",
   },
   {
     year: "2015",
-    title: "Corporate Division Launched",
+    title: "Corporate Services Introduced",
     description:
-      "Dedicated corporate accounts program introduced with streamlined billing, dedicated account managers, and Fortune 500 partnerships.",
+      "We launched dedicated corporate travel solutions with streamlined billing, account management, and enterprise-level partnerships.",
   },
   {
     year: "2018",
-    title: "200-Vehicle Milestone",
+    title: "Fleet Growth Milestone",
     description:
-      "Fleet reaches 200 vehicles across sedans, SUVs, limousines, party buses, and executive vans — all current model year.",
+      "Our fleet expanded to over 200 luxury vehicles, covering sedans, SUVs, limousines, and executive transport options nationwide.",
   },
   {
     year: "2021",
-    title: "Technology Overhaul",
+    title: "Technology Enhancement",
     description:
-      "Launch of real-time GPS tracking, flight monitoring integration, and our proprietary dispatch system for seamless operations.",
+      "We introduced real-time tracking, smarter dispatch systems, and flight-aware scheduling to improve coordination and reliability.",
   },
   {
     year: "2024",
-    title: "50+ Cities Nationwide",
+    title: "Nationwide Presence Achieved",
     description:
-      "Service now available in over 50 major metropolitan areas coast to coast, making Vortex Lmntirx a true national brand.",
+      "HuntnHire now operates in more than 50 cities across the United States, serving clients coast to coast with consistent excellence.",
   },
 ] as const;
 
@@ -114,21 +114,21 @@ const LEADERSHIP = [
     role: "Founder & CEO",
     image:
       "https://images.unsplash.com/photo-1630705337159-7b95f34a9db5?auto=format&fit=crop&w=400&q=80",
-    bio: "15+ years in luxury hospitality. Former concierge at The Ritz-Carlton before founding Vortex Lmntirx with a vision of redefining ground transportation.",
+    bio: "A hospitality professional with over 15 years of experience, Alexander founded HuntnHire with a mission to redefine premium ground transportation through consistency and care.",
   },
   {
     name: "Victoria Chen",
     role: "VP of Operations",
     image:
       "https://images.unsplash.com/photo-1672909547926-cb81922f86bb?auto=format&fit=crop&w=400&q=80",
-    bio: "Former logistics director at a Fortune 100 company. Oversees fleet operations, dispatch, and our industry-leading 99.5% on-time rate.",
+    bio: "Victoria brings extensive logistics expertise from leading global firms, overseeing operations to ensure precision, efficiency, and dependable service delivery.",
   },
   {
     name: "Marcus Cole",
     role: "Director of Client Relations",
     image:
       "https://images.unsplash.com/photo-1630215195671-fcc845a7511b?auto=format&fit=crop&w=400&q=80",
-    bio: "Hospitality veteran with a passion for client experience. Leads our corporate accounts team and wedding coordination division.",
+    bio: "With a strong background in luxury hospitality, Marcus leads client experience initiatives, ensuring every interaction reflects care and attention to detail.",
   },
 ] as const;
 
@@ -150,15 +150,15 @@ function AboutHero() {
           transition={{ duration: 0.8 }}
         >
           <p className="text-primary uppercase tracking-[0.3em] text-sm font-medium mb-4">
-            About Vortex Lmntirx
+            About HuntnHire
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance">
-            Where Luxury Meets{" "}
-            <span className="text-primary">Precision</span>
+            Redefining Luxury <span className="text-primary">Travel</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            For over 15 years, we have set the standard for premium ground
-            transportation — one impeccable ride at a time.
+            For more than 15 years, we’ve been committed to delivering smooth,
+            reliable, and refined transportation experiences across the United
+            States.
           </p>
         </motion.div>
       </div>
@@ -198,7 +198,6 @@ function OurStory() {
     <section className="py-20">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -209,11 +208,10 @@ function OurStory() {
             <div className="relative overflow-hidden">
               <img
                 src={STORY_IMAGE}
-                alt="Vortex Lmntirx chauffeur"
+                alt="HuntnHire chauffeur"
                 className="w-full h-[500px] object-cover"
               />
             </div>
-            {/* Floating accent */}
             <div className="absolute -bottom-6 -right-6 bg-primary p-6 hidden lg:block">
               <p className="text-primary-foreground font-serif text-3xl font-bold">
                 15+
@@ -224,7 +222,6 @@ function OurStory() {
             </div>
           </motion.div>
 
-          {/* Text */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -235,32 +232,29 @@ function OurStory() {
               Our Story
             </p>
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-6">
-              Built on a Promise of{" "}
-              <span className="text-primary">Excellence</span>
+              Built on a Foundation of{" "}
+              <span className="text-primary">Trust</span>
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Vortex Lmntirx was founded in 2009 with a simple belief: luxury
-                transportation should be flawless, reliable, and accessible to
-                everyone who demands the best. What started as a fleet of five
-                executive sedans in New York has grown into a nationwide
-                operation spanning 50+ cities with over 200 premium vehicles.
+                HuntnHire started with a simple goal — to make luxury
+                transportation more dependable and accessible. From a small
+                beginning in New York, we’ve grown into a nationwide service
+                trusted across major cities.
               </p>
               <p>
-                Our founder, Alexander Voss, spent years in the luxury
-                hospitality industry and noticed a glaring gap — ground
-                transportation hadn't kept pace with the standards of five-star
-                hotels and first-class air travel. He set out to change that.
+                Our founder recognized early on that clients deserved more than
+                just transportation — they deserved consistency,
+                professionalism, and peace of mind with every ride.
               </p>
               <p>
-                Today, Vortex Lmntirx is trusted by Fortune 500 executives,
-                wedding planners, event coordinators, and discerning individuals
-                who refuse to settle. We've completed over 500,000 rides with a
-                99.5% on-time rate and a 4.9-star average rating.
+                Today, we proudly serve individuals, businesses, and event
+                clients across the country, delivering hundreds of thousands of
+                rides with a strong reputation for reliability and service
+                quality.
               </p>
             </div>
 
-            {/* Mission & Vision */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
               <div className="flex gap-3">
                 <div className="shrink-0 mt-1">
@@ -271,8 +265,8 @@ function OurStory() {
                     Our Mission
                   </h4>
                   <p className="text-sm text-muted-foreground">
-                    To deliver luxury transportation that is as reliable as it
-                    is extraordinary — every ride, every time.
+                    To deliver dependable luxury transportation with a focus on
+                    comfort, safety, and consistency.
                   </p>
                 </div>
               </div>
@@ -285,8 +279,8 @@ function OurStory() {
                     Our Vision
                   </h4>
                   <p className="text-sm text-muted-foreground">
-                    To be America's most trusted and admired luxury ground
-                    transportation company.
+                    To be the most trusted name in premium ground transportation
+                    across the United States.
                   </p>
                 </div>
               </div>
@@ -310,8 +304,8 @@ function CoreValues() {
             Our Core <span className="text-primary">Values</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            These principles guide every decision we make, every driver we hire,
-            and every experience we deliver.
+            These principles shape how we operate, how we serve, and how we
+            continuously improve.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -353,8 +347,8 @@ function Leadership() {
             Our <span className="text-primary">Leadership</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A team of industry veterans united by a shared obsession with
-            exceptional service.
+            A dedicated team focused on delivering consistent excellence in
+            every aspect of our service.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -407,7 +401,6 @@ function Timeline() {
         </div>
 
         <div className="relative">
-          {/* Center line */}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
 
           <div className="space-y-12">
@@ -422,10 +415,8 @@ function Timeline() {
                   i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
               >
-                {/* Dot */}
                 <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-primary rounded-full -translate-x-1.5 md:-translate-x-1.5 mt-1.5 z-10" />
 
-                {/* Content */}
                 <div
                   className={`ml-10 md:ml-0 md:w-[calc(50%-2rem)] ${
                     i % 2 === 0 ? "md:text-right md:pr-8" : "md:pl-8"
@@ -442,7 +433,6 @@ function Timeline() {
                   </p>
                 </div>
 
-                {/* Spacer for alternation */}
                 <div className="hidden md:block md:w-[calc(50%-2rem)]" />
               </motion.div>
             ))}
@@ -480,8 +470,8 @@ function ServiceAreas() {
             We Go Where <span className="text-primary">You Go</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Premium transportation available in all major metropolitan areas
-            across the United States — with more cities added every quarter.
+            Premium transportation available across major U.S. cities, ensuring
+            reliable service wherever your journey takes you.
           </p>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
@@ -514,8 +504,8 @@ function AboutCta() {
           <span className="text-primary">Difference?</span>
         </h2>
         <p className="text-muted-foreground mb-8 max-w-xl mx-auto leading-relaxed">
-          Whether it's your first ride or your five hundredth, we promise the
-          same thing: an experience that exceeds your expectations.
+          Every ride is an opportunity to deliver something better — a smooth,
+          comfortable, and dependable experience from start to finish.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link to="/book">
@@ -542,11 +532,11 @@ function AboutCta() {
 
 export default function AboutPage() {
   usePageMeta({
-    title: "About Vortex Lmntirx | 15+ Years of Premium Luxury Transportation",
+    title: "About HuntnHire | 15+ Years of Premium Luxury Transportation",
     description:
-      "Learn about Vortex Lmntirx — founded in 2009, serving 50+ US cities with 200+ luxury vehicles. Meet our leadership team and discover our commitment to excellence.",
+      "Learn about HuntnHire — founded in 2009, serving 50+ US cities with 200+ luxury vehicles. Meet our leadership team and discover our commitment to excellence.",
     keywords:
-      "about Vortex Lmntirx, luxury transportation company, limousine company, corporate transportation provider",
+      "about HuntnHire, luxury transportation company, limousine company, corporate transportation provider",
   });
 
   return (

@@ -4,22 +4,22 @@ import { StructuredData } from "@/components/seo/structured-data.tsx";
 
 const TESTIMONIALS = [
   {
-    name: "Sarah Mitchell",
-    role: "Wedding Client",
+    name: "Emily Carter",
+    role: "Bride",
     rating: 5,
-    text: "Vortex Lmntirx made our wedding day absolutely magical. The white stretch limo was immaculate, and our chauffeur was incredibly professional and attentive. Every detail was perfect.",
+    text: "Our wedding transportation experience was flawless from start to finish. The vehicle arrived spotless, and the chauffeur delivered exceptional service with great attention to timing and detail.",
   },
   {
-    name: "Michael Reynolds",
-    role: "Corporate Account Manager",
+    name: "Daniel Brooks",
+    role: "Operations Director",
     rating: 5,
-    text: "We use Vortex for all our corporate events and executive travel. Their reliability and professionalism are unmatched. Our executives always arrive in style and on time.",
+    text: "We rely on HuntnHire for executive and corporate travel. Their consistency, professionalism, and punctual service make them a dependable partner for our business needs.",
   },
   {
-    name: "Jessica Lee",
-    role: "Birthday Celebration",
+    name: "Alyssa Morgan",
+    role: "Event Organizer",
     rating: 5,
-    text: "The party bus was absolutely incredible! Our group of 25 had the time of our lives. The LED lighting, the sound system, the space — everything was beyond perfect.",
+    text: "The party bus experience exceeded expectations. Everything from lighting to sound and space was well managed, creating a smooth and enjoyable group celebration.",
   },
 ] as const;
 
@@ -27,7 +27,7 @@ function ReviewSchema() {
   const data = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "Vortex Lmntirx",
+    name: "HuntnHire",
     review: TESTIMONIALS.map((t) => ({
       "@type": "Review",
       reviewRating: {
@@ -65,14 +65,14 @@ export default function TestimonialsSection() {
           className="text-center mb-16"
         >
           <p className="text-primary uppercase tracking-[0.3em] text-xs font-medium mb-4">
-            Testimonials
+            Client Feedback
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
-            What Our Clients Say
+            Experiences That Speak for Themselves
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg">
-            Don{"'"}t just take our word for it. Here{"'"}s what our valued
-            clients have to say about their Vortex Lmntirx experience.
+            Real feedback from clients who trust our service for their most
+            important journeys and special occasions.
           </p>
         </motion.div>
 
@@ -93,10 +93,7 @@ export default function TestimonialsSection() {
               {/* Stars */}
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <Star
-                    key={i}
-                    className="size-4 fill-primary text-primary"
-                  />
+                  <Star key={i} className="size-4 fill-primary text-primary" />
                 ))}
               </div>
 

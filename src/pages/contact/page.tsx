@@ -125,7 +125,10 @@ function ContactForm() {
       toast.success("Message sent successfully!");
     } catch (error) {
       if (error instanceof ConvexError) {
-        const { message: msg } = error.data as { code: string; message: string };
+        const { message: msg } = error.data as {
+          code: string;
+          message: string;
+        };
         toast.error(msg);
       } else {
         toast.error("Something went wrong. Please try again.");
@@ -179,7 +182,10 @@ function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-card border border-border p-8 sm:p-10">
+    <form
+      onSubmit={handleSubmit}
+      className="bg-card border border-border p-8 sm:p-10"
+    >
       <h2 className="font-serif text-2xl font-bold text-foreground mb-6">
         Send Us a Message
       </h2>
@@ -231,7 +237,10 @@ function ContactForm() {
               Subject <span className="text-destructive">*</span>
             </Label>
             <Select value={subject} onValueChange={setSubject} required>
-              <SelectTrigger id="contact-subject" className="rounded-none bg-background">
+              <SelectTrigger
+                id="contact-subject"
+                className="rounded-none bg-background"
+              >
                 <SelectValue placeholder="Select a subject" />
               </SelectTrigger>
               <SelectContent>
@@ -339,11 +348,11 @@ function ContactInfo() {
 
 export default function ContactPage() {
   usePageMeta({
-    title: "Contact Vortex Lmntirx | 24/7 Luxury Transportation Support",
+    title: "Contact HuntnHire | 24/7 Luxury Transportation Support",
     description:
-      "Get in touch with Vortex Lmntirx for quotes, corporate accounts, wedding transportation, or general inquiries. Call (210) 801-9909 or send a message. We respond within the hour.",
+      "Get in touch with HuntnHire for quotes, corporate accounts, wedding transportation, or general inquiries. Call (210) 801-9909 or send a message. We respond within the hour.",
     keywords:
-      "contact Vortex Lmntirx, limo service phone number, luxury transportation quote, corporate limo inquiry",
+      "contact HuntnHire, limo service phone number, luxury transportation quote, corporate limo inquiry",
   });
 
   return (

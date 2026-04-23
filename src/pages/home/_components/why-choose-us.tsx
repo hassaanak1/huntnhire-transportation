@@ -1,30 +1,30 @@
 import { motion } from "motion/react";
-import { Shield, Clock, Award, DollarSign } from "lucide-react";
+import { ShieldCheck, Timer, BadgeCheck, BadgeDollarSign } from "lucide-react";
 
 const REASONS = [
   {
-    icon: Award,
-    title: "Professional Chauffeurs",
+    icon: BadgeCheck,
+    title: "Experienced & Verified Drivers",
     description:
-      "Every driver is background-checked, professionally trained, and dressed impeccably. They know every route and always arrive early.",
+      "Our chauffeurs are carefully vetted, professionally trained, and committed to delivering a smooth, respectful, and reliable travel experience on every ride.",
   },
   {
-    icon: Clock,
-    title: "24/7 Availability",
+    icon: Timer,
+    title: "Always On Schedule",
     description:
-      "Whether it's a 3 AM airport pickup or a midnight event, our team is available around the clock, 365 days a year.",
+      "We operate 24/7 with a strong focus on punctuality. Whether it’s early morning or late night, your ride arrives exactly when you need it.",
   },
   {
-    icon: Shield,
-    title: "Fully Licensed & Insured",
+    icon: ShieldCheck,
+    title: "Trusted & Fully Protected Service",
     description:
-      "Complete peace of mind with full DOT compliance, comprehensive insurance, and an impeccable safety record spanning 15+ years.",
+      "Enjoy complete peace of mind with fully insured vehicles, regulatory compliance, and a long-standing commitment to passenger safety.",
   },
   {
-    icon: DollarSign,
-    title: "Transparent Pricing",
+    icon: BadgeDollarSign,
+    title: "Fair & Clear Pricing",
     description:
-      "No hidden fees, no surge pricing. Get a clear, competitive quote upfront. Premium luxury doesn't have to break the bank.",
+      "We keep pricing straightforward and honest with no hidden costs. You get premium service with clear rates you can trust from the start.",
   },
 ] as const;
 
@@ -45,14 +45,15 @@ export default function WhyChooseUs() {
           className="text-center mb-16"
         >
           <p className="text-primary uppercase tracking-[0.3em] text-xs font-medium mb-4">
-            The Vortex Difference
+            Why Ride With Us
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
-            Why Choose Vortex Lmntirx
+            A Better Standard of Travel
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg">
-            We don{"'"}t just provide transportation — we deliver an experience.
-            Here{"'"}s what sets us apart from the rest.
+            We focus on more than just transportation. Every detail is designed
+            to ensure comfort, reliability, and a consistently premium
+            experience.
           </p>
         </motion.div>
 
