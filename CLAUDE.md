@@ -1,4 +1,4 @@
-# HuntnHire — Project Context for Claude AI
+# HuntnHire — Project Context for Claude
 
 ## What this project is
 
