@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { useMutation } from "convex/react";
-import { api } from "@/convex/_generated/api.js";
 import { Button } from "@/components/ui/button.tsx";
 import { Input } from "@/components/ui/input.tsx";
 import { Textarea } from "@/components/ui/textarea.tsx";
@@ -37,7 +35,6 @@ import {
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils.ts";
-import { ConvexError } from "convex/values";
 import { usePageMeta } from "@/hooks/use-page-meta.ts";
 
 const EVENT_TYPES = [
@@ -652,7 +649,6 @@ export default function BookingPage() {
       "book limo, reserve party bus, luxury transportation booking, limo quote, HuntnHire reservation",
   });
 
-  const createBooking = useMutation(api.bookings.createBookingRequest);
   const [step, setStep] = useState(1);
   const [form, setForm] = useState<BookingFormData>(INITIAL_FORM);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -734,31 +730,40 @@ export default function BookingPage() {
   const handleSubmit = async () => {
     setIsSubmitting(true);
     try {
-      await createBooking({
-        fullName: form.fullName.trim(),
-        email: form.email.trim(),
-        phone: form.phone.trim(),
-        eventDate: form.eventDate,
-        eventType: form.eventType,
-        pickupTime: form.pickupTime,
-        pickupAddress: form.pickupAddress.trim(),
-        stopsAddress: form.stopsAddress.trim() || undefined,
-        destinationAddress: form.destinationAddress.trim(),
-        dropoffTime: form.dropoffTime,
-        passengers: form.passengers,
-        hoursNeeded: form.hoursNeeded,
-        vehicleNeeded: form.vehicleNeeded,
-        specialRequests: form.specialRequests.trim() || undefined,
+      const res = await fetch("/api/booking", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: form.fullName.trim(),
+          email: form.email.trim(),
+          phone: form.phone.trim(),
+          eventDate: form.eventDate,
+          eventType: form.eventType,
+          pickupTime: form.pickupTime,
+          pickupAddress: form.pickupAddress.trim(),
+          stopsAddress: form.stopsAddress.trim() || undefined,
+          destinationAddress: form.destinationAddress.trim(),
+          dropoffTime: form.dropoffTime,
+          passengers: form.passengers,
+          hoursNeeded: form.hoursNeeded,
+          vehicleNeeded: form.vehicleNeeded,
+          specialRequests: form.specialRequests.trim() || undefined,
+        }),
       });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error((data as { error?: string }).error ?? "Failed to submit");
+      }
+
       setIsSubmitted(true);
       toast.success("Booking request submitted!");
     } catch (error) {
-      if (error instanceof ConvexError) {
-        const { message } = error.data as { code: string; message: string };
-        toast.error(message);
-      } else {
-        toast.error("Something went wrong. Please try again.");
-      }
+      toast.error(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again.",
+      );
     } finally {
       setIsSubmitting(false);
     }

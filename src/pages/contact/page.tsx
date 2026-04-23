@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { motion } from "motion/react";
-import { useMutation } from "convex/react";
-import { api } from "@/convex/_generated/api.js";
 import { Button } from "@/components/ui/button.tsx";
 import { Input } from "@/components/ui/input.tsx";
 import { Textarea } from "@/components/ui/textarea.tsx";
@@ -24,7 +22,6 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import { Link } from "react-router-dom";
-import { ConvexError } from "convex/values";
 import { usePageMeta } from "@/hooks/use-page-meta.ts";
 
 const CONTACT_INFO = [
@@ -94,7 +91,6 @@ function ContactHero() {
 }
 
 function ContactForm() {
-  const submitContact = useMutation(api.contact.submitContactForm);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -114,25 +110,31 @@ function ContactForm() {
 
     setIsSubmitting(true);
     try {
-      await submitContact({
-        name: name.trim(),
-        email: email.trim(),
-        phone: phone.trim() || undefined,
-        subject,
-        message: message.trim(),
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim(),
+          phone: phone.trim() || undefined,
+          subject,
+          message: message.trim(),
+        }),
       });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error((data as { error?: string }).error ?? "Failed to send");
+      }
+
       setIsSubmitted(true);
       toast.success("Message sent successfully!");
     } catch (error) {
-      if (error instanceof ConvexError) {
-        const { message: msg } = error.data as {
-          code: string;
-          message: string;
-        };
-        toast.error(msg);
-      } else {
-        toast.error("Something went wrong. Please try again.");
-      }
+      toast.error(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again.",
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -327,7 +329,6 @@ function ContactInfo() {
         })}
       </div>
 
-      {/* Quick booking CTA */}
       <div className="bg-card border border-border p-6 mt-8">
         <h3 className="font-serif text-lg font-bold text-foreground mb-2">
           Need a Ride?
