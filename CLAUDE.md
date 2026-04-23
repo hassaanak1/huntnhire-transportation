@@ -1,4 +1,4 @@
-# HuntnHire — Project Context for Claude
+# HuntnHire — Project Context for Claude AI
 
 ## What this project is
 
@@ -6,16 +6,16 @@ A luxury limousine / transportation booking website for **HuntnHire**, built wit
 
 ## Tech stack
 
-| Layer | Choice |
-|---|---|
-| Frontend | React 19, TypeScript, Vite 7 |
-| Styling | Tailwind CSS v4, shadcn/ui components |
-| Routing | React Router DOM v7 |
-| Animations | Motion (motion/react) |
-| Forms | Controlled React state (no form library) |
-| Email | Mailtrap Sending API |
-| API routes | Vercel serverless functions (`api/`) |
-| Deployment | Vercel |
+| Layer      | Choice                                   |
+| ---------- | ---------------------------------------- |
+| Frontend   | React 19, TypeScript, Vite 7             |
+| Styling    | Tailwind CSS v4, shadcn/ui components    |
+| Routing    | React Router DOM v7                      |
+| Animations | Motion (motion/react)                    |
+| Forms      | Controlled React state (no form library) |
+| Email      | Mailtrap Sending API                     |
+| API routes | Vercel serverless functions (`api/`)     |
+| Deployment | Vercel                                   |
 
 ## What was removed (Hercules + Convex cleanup)
 
@@ -46,11 +46,13 @@ All of these have been removed. The following files were simplified or deleted:
 Both forms submit via `fetch` to Vercel serverless functions. There is no database — submissions are sent directly as emails via the Mailtrap Sending API.
 
 ### Contact form (`/contact`)
+
 - Frontend: `src/pages/contact/page.tsx`
 - API route: `api/contact.ts`
 - Posts `{ name, email, phone?, subject, message }`
 
 ### Booking form (`/book`)
+
 - Frontend: `src/pages/book/page.tsx`
 - API route: `api/booking.ts`
 - 4-step multi-page form (Event → Trip → Personal Info → Review)
@@ -87,6 +89,7 @@ npm run build   # tsc -b && vite build → outputs dist/
 ```
 
 `vercel.json` is configured with:
+
 - `buildCommand`: `npm run build`
 - `outputDirectory`: `dist`
 - Rewrite `/((?!api/).*) → /index.html` — serves the SPA for all non-API routes (React Router handles client-side navigation)
