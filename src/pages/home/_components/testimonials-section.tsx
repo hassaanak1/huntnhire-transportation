@@ -13,7 +13,7 @@ const TESTIMONIALS = [
     name: "Daniel Brooks",
     role: "Operations Director",
     rating: 5,
-    text: "We rely on Vortex Lmntirx for executive and corporate travel. Their consistency, professionalism, and punctual service make them a dependable partner for our business needs.",
+    text: "We rely on HuntnHire for executive and corporate travel. Their consistency, professionalism, and punctual service make them a dependable partner for our business needs.",
   },
   {
     name: "Alyssa Morgan",
@@ -27,7 +27,7 @@ function ReviewSchema() {
   const data = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "Vortex Lmntirx",
+    name: "HuntnHire",
     review: TESTIMONIALS.map((t) => ({
       "@type": "Review",
       reviewRating: {

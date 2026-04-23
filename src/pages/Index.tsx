@@ -10,9 +10,9 @@ import { usePageMeta } from "@/hooks/use-page-meta.ts";
 
 export default function Index() {
   usePageMeta({
-    title: "Vortex Lmntirx | Premium Luxury Transportation Services",
+    title: "HuntnHire | Premium Luxury Transportation Services",
     description:
-      "Vortex Lmntirx offers premium limousine rentals, party bus services, corporate transportation, airport transfers, and wedding limo service across the United States. Book your luxury ride today.",
+      "HuntnHire offers premium limousine rentals, party bus services, corporate transportation, airport transfers, and wedding limo service across the United States. Book your luxury ride today.",
     keywords:
       "limo service near me, party bus rental, luxury transportation services, corporate limo service, airport limo service, wedding limo rental, limousine rental, party bus near me, executive car service",
   });

@@ -259,11 +259,11 @@ function FleetTrust() {
 export default function FleetPage() {
   usePageMeta({
     title:
-      "Our Premium Fleet | Executive Sedans, Limos & Party Buses | Vortex Lmntirx",
+      "Our Premium Fleet | Executive Sedans, Limos & Party Buses | HuntnHire",
     description:
-      "Browse the Vortex Lmntirx luxury fleet: executive sedans, stretch limousines, SUVs, Sprinter vans, and party buses. 200+ vehicles, all current model year, fully insured.",
+      "Browse the HuntnHire luxury fleet: executive sedans, stretch limousines, SUVs, Sprinter vans, and party buses. 200+ vehicles, all current model year, fully insured.",
     keywords:
-      "luxury fleet, limousine fleet, party bus fleet, executive sedan rental, stretch limo rental, Vortex Lmntirx vehicles",
+      "luxury fleet, limousine fleet, party bus fleet, executive sedan rental, stretch limo rental, HuntnHire vehicles",
   });
 
   const [activeFilter, setActiveFilter] = useState("All");

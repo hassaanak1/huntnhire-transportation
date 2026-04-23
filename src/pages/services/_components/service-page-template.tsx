@@ -31,16 +31,16 @@ export default function ServicePageTemplate({
   data,
 }: ServicePageTemplateProps) {
   usePageMeta({
-    title: `${data.title} | Vortex Lmntirx`,
+    title: `${data.title} | HuntnHire`,
     description: data.overview[0].slice(0, 160),
-    keywords: `${data.tagline}, ${data.shortTitle}, luxury transportation, Vortex Lmntirx`,
+    keywords: `${data.tagline}, ${data.shortTitle}, luxury transportation, HuntnHire`,
   });
 
   const relatedServices = data.relatedSlugs
     .map((slug) => SERVICES[slug])
     .filter(Boolean);
 
-  const BASE_URL = "https://vortexlmntirx.com";
+  const BASE_URL = "https://huntnhire.co";
 
   return (
     <div>
@@ -79,10 +79,7 @@ export default function ServicePageTemplate({
               >
                 {/* Breadcrumb */}
                 <nav className="flex items-center gap-2 text-xs text-muted-foreground mb-4">
-                  <Link
-                    to="/"
-                    className="hover:text-primary transition-colors"
-                  >
+                  <Link to="/" className="hover:text-primary transition-colors">
                     Home
                   </Link>
                   <ChevronRightIcon className="size-3" />
@@ -139,9 +136,7 @@ export default function ServicePageTemplate({
               </div>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <Link to="/book">
-                  <Button
-                    className="rounded-none uppercase tracking-wider text-xs font-semibold px-8"
-                  >
+                  <Button className="rounded-none uppercase tracking-wider text-xs font-semibold px-8">
                     Get a Free Quote
                     <ChevronRight className="size-4" />
                   </Button>
@@ -235,7 +230,7 @@ export default function ServicePageTemplate({
               transition={{ duration: 0.6 }}
             >
               <p className="text-primary uppercase tracking-[0.3em] text-xs font-medium mb-4">
-                Why Vortex Lmntirx
+                Why HuntnHire
               </p>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-8">
                 Everything You Need, Nothing You Don{"'"}t
@@ -264,14 +259,13 @@ export default function ServicePageTemplate({
                 Ready to Book?
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                Get a free, no-obligation quote for your {data.shortTitle.toLowerCase()}{" "}
-                needs. Our team responds within minutes.
+                Get a free, no-obligation quote for your{" "}
+                {data.shortTitle.toLowerCase()} needs. Our team responds within
+                minutes.
               </p>
               <div className="space-y-3">
                 <Link to="/book">
-                  <Button
-                    className="w-full rounded-none uppercase tracking-wider text-xs font-semibold py-5"
-                  >
+                  <Button className="w-full rounded-none uppercase tracking-wider text-xs font-semibold py-5">
                     Get an Instant Quote
                     <ChevronRight className="size-4" />
                   </Button>

@@ -30,15 +30,15 @@ export default function Footer() {
             <Link to="/" className="flex items-center gap-2 mb-6">
               <div className="w-7 h-7 bg-primary rotate-45 flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-[10px] -rotate-45">
-                  V
+                  HnH
                 </span>
               </div>
               <div>
                 <span className="font-serif text-lg font-bold tracking-wide text-foreground">
-                  VORTEX
+                  Huntn
                 </span>
-                <span className="font-serif text-lg font-light tracking-widest text-primary ml-1">
-                  LMNTIRX
+                <span className="font-serif text-lg font-light tracking-widest text-primary">
+                  Hire
                 </span>
               </div>
             </Link>
@@ -136,7 +136,7 @@ export default function Footer() {
       <div className="border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground text-center sm:text-left">
-            &copy; {year} Vortex Lmntirx. All rights reserved. Premium Luxury
+            &copy; {year} HuntnHire. All rights reserved. Premium Luxury
             Transportation Services.
           </p>
           <p className="text-xs text-muted-foreground">

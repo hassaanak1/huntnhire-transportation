@@ -16,10 +16,10 @@ export function LocalBusinessSchema() {
   const data = {
     "@context": "https://schema.org",
     "@type": "LimousineBus",
-    name: "Vortex Lmntirx",
+    name: "HuntnHire",
     description:
       "Premium luxury transportation services including limousine rentals, party bus services, corporate transportation, airport transfers, and wedding limo service across the United States.",
-    url: "https://vortexlmntirx.com",
+    url: "https://huntnhire.co",
     telephone: "+1-210-801-9909",
     email: "limntrixinc@gmail.com",
     areaServed: {
@@ -57,10 +57,10 @@ export function OrganizationSchema() {
   const data = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Vortex Lmntirx",
+    name: "HuntnHire",
     description:
       "Premium luxury transportation company operating in 50+ cities across the United States since 2009.",
-    url: "https://vortexlmntirx.com",
+    url: "https://huntnhire.co",
     telephone: "+1-210-801-9909",
     email: "limntrixinc@gmail.com",
     foundingDate: "2009",
@@ -135,7 +135,7 @@ export function ServiceSchema({
     url,
     provider: {
       "@type": "Organization",
-      name: "Vortex Lmntirx",
+      name: "HuntnHire",
       telephone: "+1-210-801-9909",
     },
     areaServed: {
