@@ -129,9 +129,17 @@ Vercel auto-detects files in `api/` as Node.js serverless functions. The `api/ts
 └── CLAUDE.md               # This file
 ```
 
+## Lockfile and package manager
+
+The project uses **npm**. A `package-lock.json` is committed to the repo. There is no `pnpm-lock.yaml` — it was deleted because Vercel was picking it up (leftover from the original Hercules template), seeing it was out of sync with `package.json` after the dependency cleanup, and failing with `ERR_PNPM_OUTDATED_LOCKFILE`.
+
+- Always use `npm install` locally, not pnpm or yarn.
+- If a `pnpm-lock.yaml` ever reappears, delete it — it will break Vercel CI.
+
 ## Key decisions and constraints
 
 - **No auth**: Authentication was part of the Hercules template but is unused in this project. The stub files (`use-auth.ts`, `signin.tsx`, `auth/Callback.tsx`) are left in place to avoid breaking anything but do nothing.
 - **No database**: Convex was the original data store. It has been removed entirely. Form submissions go straight to email — nothing is persisted.
 - **API token security**: The Mailtrap token must never have a `VITE_` prefix — that would expose it in the client bundle. All email logic lives exclusively in `api/` (production) and the Vite server-side plugin (development).
 - **Do not add `vercel dev` back as the dev command** — it requires Vercel account linking and provides no benefit over the current Vite middleware approach.
+- **Do not commit `pnpm-lock.yaml`** — Vercel detects it before `package-lock.json` and will try to use pnpm, breaking the build.
