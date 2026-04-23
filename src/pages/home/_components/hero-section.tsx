@@ -48,7 +48,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35, duration: 0.6, ease: "easeOut" }}
-            className="mt-8 text-base sm:text-lg lg:text-xl text-muted-foreground max-w-xl leading-relaxed"
+            className="mt-8 text-base sm:text-lg lg:text-xl text-muted-foreground max-w-4xl leading-relaxed"
           >
             Discover refined travel through our premium limousine and group
             transport solutions. Skilled chauffeurs, pristine vehicles, and
@@ -87,7 +87,8 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.85, duration: 0.8 }}
-            className="mt-14 flex flex-wrap items-center gap-6 sm:gap-10"
+            // className="mt-14 flex flex-wrap items-center gap-6 sm:gap-10"
+            className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6"
           >
             {[
               { value: "15+", label: "Years in Service" },
