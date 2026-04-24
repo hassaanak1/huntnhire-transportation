@@ -96,13 +96,16 @@ npm run build   # tsc -b && vite build → outputs dist/
 
 Vercel auto-detects files in `api/` as Node.js serverless functions. The `api/tsconfig.json` configures TypeScript for CommonJS output compatible with Vercel's Node.js runtime. Types come from `@vercel/node` (devDependency).
 
+**ESM/CJS module conflict**: The root `package.json` has `"type": "module"` (required by Vite), which tells Node.js to load all compiled `.js` files as ES modules. The API functions compile to CommonJS (per `api/tsconfig.json`). Without a local override, Node.js tries to load the CJS bundle as ESM and crashes — `FUNCTION_INVOCATION_FAILED` — before any handler code runs. The `api/package.json` with `"type": "commonjs"` overrides the root setting for that directory only, so the CJS bundle loads correctly. **Do not delete `api/package.json`.**
+
 ## Project structure
 
 ```
 ├── api/
 │   ├── contact.ts          # Vercel function — contact form email
 │   ├── booking.ts          # Vercel function — booking request email
-│   └── tsconfig.json       # Separate TS config for API (CommonJS, Node types)
+│   ├── tsconfig.json       # Separate TS config for API (CommonJS, Node types)
+│   └── package.json        # "type": "commonjs" — overrides root ESM for Vercel CJS functions
 ├── src/
 │   ├── components/
 │   │   ├── providers/      # Theme, QueryClient, Tooltip wrappers
@@ -123,6 +126,7 @@ Vercel auto-detects files in `api/` as Node.js serverless functions. The `api/ts
 │   │   ├── use-page-meta.ts
 │   │   └── use-mobile.ts
 │   └── lib/utils.ts
+├── src/components/scroll-to-top.tsx  # Scrolls window to top on every route change
 ├── vite.config.ts          # Includes apiDevPlugin for local API handling
 ├── vercel.json             # SPA rewrite + build config
 ├── .env                    # Gitignored — local secrets
@@ -143,3 +147,5 @@ The project uses **npm**. A `package-lock.json` is committed to the repo. There 
 - **API token security**: The Mailtrap token must never have a `VITE_` prefix — that would expose it in the client bundle. All email logic lives exclusively in `api/` (production) and the Vite server-side plugin (development).
 - **Do not add `vercel dev` back as the dev command** — it requires Vercel account linking and provides no benefit over the current Vite middleware approach.
 - **Do not commit `pnpm-lock.yaml`** — Vercel detects it before `package-lock.json` and will try to use pnpm, breaking the build.
+- **Do not delete `api/package.json`** — it fixes the `FUNCTION_INVOCATION_FAILED` crash caused by the ESM/CJS module conflict between the root `"type": "module"` and the CommonJS API bundles. See the Production deployment section for full explanation.
+- **Navigation scroll-to-top**: `ScrollToTop` (`src/components/scroll-to-top.tsx`) is mounted inside `<BrowserRouter>` in `App.tsx`. It calls `window.scrollTo(0, 0)` on every `pathname` change. `SiteLayout` wraps `<Outlet>` in a `motion.div` keyed by pathname for a 180ms fade-in on each page transition. Do not remove the `key={pathname}` — without it, Motion won't re-trigger the animation on navigation.

@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { DefaultProviders } from "./components/providers/default.tsx";
+import ScrollToTop from "./components/scroll-to-top.tsx";
 import AuthCallback from "./pages/auth/Callback.tsx";
 import SiteLayout from "./components/site-layout.tsx";
 import Index from "./pages/Index.tsx";
@@ -19,6 +20,7 @@ export default function App() {
   return (
     <DefaultProviders>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/auth/callback" element={<AuthCallback />} />
           <Route element={<SiteLayout />}>
