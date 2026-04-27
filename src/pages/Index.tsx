@@ -10,9 +10,9 @@ import { usePageMeta } from "@/hooks/use-page-meta.ts";
 
 export default function Index() {
   usePageMeta({
-    title: "HuntnHire | Premium Luxury Transportation Services",
+    title: "Hunt&Hire | Premium Luxury Transportation Services",
     description:
-      "HuntnHire offers premium limousine rentals, party bus services, corporate transportation, airport transfers, and wedding limo service across the United States. Book your luxury ride today.",
+      "Hunt&Hire offers premium limousine rentals, party bus services, corporate transportation, airport transfers, and wedding limo service across the United States. Book your luxury ride today.",
     keywords:
       "limo service near me, party bus rental, luxury transportation services, corporate limo service, airport limo service, wedding limo rental, limousine rental, party bus near me, executive car service",
   });

@@ -25,11 +25,11 @@ function Section({
 
 export default function PrivacyPolicyPage() {
   usePageMeta({
-    title: "Privacy Policy | HuntnHire Luxury Transportation",
+    title: "Privacy Policy | Hunt&Hire Luxury Transportation",
     description:
-      "Read the HuntnHire Privacy Policy to understand how we collect, use, and protect your personal information when you use our luxury transportation services.",
+      "Read the Hunt&Hire Privacy Policy to understand how we collect, use, and protect your personal information when you use our luxury transportation services.",
     keywords:
-      "HuntnHire privacy policy, data protection, personal information, luxury limo service privacy",
+      "Hunt&Hire privacy policy, data protection, personal information, luxury limo service privacy",
   });
 
   return (
@@ -65,7 +65,7 @@ export default function PrivacyPolicyPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p className="text-sm text-muted-foreground leading-relaxed mb-10 p-6 bg-card border border-border">
-              HuntnHire ("we," "our," or "us") is committed to protecting your
+              Hunt&Hire ("we," "our," or "us") is committed to protecting your
               privacy. This Privacy Policy explains how we collect, use,
               disclose, and safeguard your information when you visit our
               website at{" "}
@@ -350,7 +350,7 @@ export default function PrivacyPolicyPage() {
               </p>
               <div className="mt-4 p-5 bg-card border border-border space-y-2">
                 <p className="text-foreground font-semibold font-serif text-base">
-                  HuntnHire
+                  Hunt&Hire
                 </p>
                 <p>2019 Allen St, Dallas, TX 75204, United States</p>
                 <p>

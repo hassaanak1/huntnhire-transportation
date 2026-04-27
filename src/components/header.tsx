@@ -52,12 +52,12 @@ export default function Header() {
           <Link to="/" className="flex items-center gap-3">
             <div className="w-8 h-8 bg-primary rotate-45 flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-xs -rotate-45">
-                HnH
+                H&H
               </span>
             </div>
             <div>
               <span className="font-serif text-xl font-bold tracking-wide text-foreground">
-                Huntn
+                Hunt&
               </span>
               <span className="font-serif text-xl font-light tracking-widest text-primary">
                 Hire
@@ -129,11 +129,11 @@ export default function Header() {
                   <div className="flex items-center gap-2">
                     <div className="w-6 h-6 bg-primary rotate-45 flex items-center justify-center">
                       <span className="text-primary-foreground font-bold text-[10px] -rotate-45">
-                        HnH
+                        H&H
                       </span>
                     </div>
                     <span className="font-serif text-lg font-bold tracking-wide text-foreground">
-                      HuntnHire
+                      Hunt&Hire
                     </span>
                   </div>
                   <Button

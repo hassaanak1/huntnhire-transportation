@@ -1,8 +1,8 @@
-# HuntnHire — Project Context for Claude
+# Hunt&Hire — Project Context for Claude
 
 ## What this project is
 
-A luxury limousine / transportation booking website for **HuntnHire**, built with React + Vite + TypeScript. It was originally scaffolded from a Hercules.app template. All Hercules-specific code, authentication, and the Convex backend have been stripped out and replaced with a clean, self-contained setup.
+A luxury limousine / transportation booking website for **Hunt&Hire**, built with React + Vite + TypeScript. It was originally scaffolded from a Hercules.app template. All Hercules-specific code, authentication, and the Convex backend have been stripped out and replaced with a clean, self-contained setup.
 
 ## Tech stack
 
@@ -40,6 +40,10 @@ All of these have been removed. The following files were simplified or deleted:
 - `index.html` → removed Hercules og:image meta tags
 - `eslint.config.mjs` → removed Hercules and Convex ESLint plugins
 - `vite.config.ts` → removed `hercules()` plugin
+
+## Brand name
+
+The brand name is **Hunt&Hire** (with an ampersand). In HTML attribute values use `Hunt&amp;Hire`; in JSX text and JS strings use `Hunt&Hire`. Never write "HuntnHire". Do not change email addresses — they use lowercase `huntnhire` and are correct as-is.
 
 ## Forms and email
 
@@ -109,42 +113,84 @@ Vercel auto-detects files in `api/` as Node.js serverless functions. The `api/ts
 
 These appear throughout the app (header, footer, contact page, hero, service pages, book page, about page, floating CTA, structured data). When updating contact details, search for the old value across all `src/` files — do not update just one location.
 
+## Routes
+
+| Path                          | Component                                              |
+| ----------------------------- | ------------------------------------------------------ |
+| `/`                           | `src/pages/Index.tsx`                                  |
+| `/services`                   | `src/pages/services/page.tsx`                          |
+| `/services/limo-service`      | `src/pages/services/limo-service/page.tsx`             |
+| `/services/party-bus`         | `src/pages/services/party-bus/page.tsx`                |
+| `/services/corporate`         | `src/pages/services/corporate/page.tsx`                |
+| `/services/airport-transfers` | `src/pages/services/airport-transfers/page.tsx`        |
+| `/services/wedding`           | `src/pages/services/wedding/page.tsx`                  |
+| `/fleet`                      | `src/pages/fleet/page.tsx`                             |
+| `/about`                      | `src/pages/about/page.tsx`                             |
+| `/contact`                    | `src/pages/contact/page.tsx`                           |
+| `/book`                       | `src/pages/book/page.tsx`                              |
+| `/privacy-policy`             | `src/pages/privacy/page.tsx`                           |
+| `/auth/callback`              | `src/pages/auth/Callback.tsx` (redirects to `/`)       |
+| `*`                           | `src/pages/NotFound.tsx`                               |
+
 ## Project structure
 
 ```
 ├── api/
-│   ├── contact.ts          # Vercel function — contact form email
-│   ├── booking.ts          # Vercel function — booking request email
-│   ├── tsconfig.json       # Separate TS config for API (CommonJS, Node types)
-│   └── package.json        # "type": "commonjs" — overrides root ESM for Vercel CJS functions
+│   ├── contact.ts              # Vercel function — contact form email
+│   ├── booking.ts              # Vercel function — booking request email
+│   ├── tsconfig.json           # Separate TS config for API (CommonJS, Node types)
+│   └── package.json            # "type": "commonjs" — overrides root ESM for Vercel CJS functions
 ├── src/
+│   ├── assets/
+│   │   └── fleet/              # Fleet vehicle images (jpg/webp)
 │   ├── components/
-│   │   ├── providers/      # Theme, QueryClient, Tooltip wrappers
-│   │   ├── ui/             # shadcn/ui components
+│   │   ├── providers/          # Theme, QueryClient, Tooltip wrappers
+│   │   ├── ui/                 # shadcn/ui components
 │   │   ├── header.tsx
 │   │   ├── footer.tsx
 │   │   ├── floating-cta.tsx
-│   │   └── site-layout.tsx
-│   ├── pages/
-│   │   ├── home/           # Landing page sections
-│   │   ├── contact/        # Contact form page
-│   │   ├── book/           # Multi-step booking form
-│   │   ├── fleet/          # Vehicle fleet page
-│   │   ├── about/
-│   │   ├── services/       # Services + individual service pages
-│   │   ├── privacy/        # Privacy policy page (/privacy-policy)
-│   │   └── auth/Callback.tsx  # Redirects to / (auth removed, kept for safety)
+│   │   ├── trust-bar.tsx
+│   │   ├── scroll-to-top.tsx   # Scrolls to top on every route change
+│   │   ├── site-layout.tsx
+│   │   └── seo/
+│   │       └── structured-data.tsx  # JSON-LD schema (LocalBusiness, Organization, Service, etc.)
 │   ├── hooks/
-│   │   ├── use-auth.ts     # Stub (auth unused)
-│   │   ├── use-page-meta.ts
-│   │   └── use-mobile.ts
-│   └── lib/utils.ts
-├── src/components/scroll-to-top.tsx  # Scrolls window to top on every route change
-├── src/components/seo/structured-data.tsx  # JSON-LD schema components (LocalBusiness, Organization, Service, etc.)
-├── vite.config.ts          # Includes apiDevPlugin for local API handling
-├── vercel.json             # SPA rewrite + build config
-├── .env                    # Gitignored — local secrets
-└── CLAUDE.md               # This file
+│   │   ├── use-auth.ts         # Stub (auth unused)
+│   │   ├── use-debounce.ts
+│   │   ├── use-mobile.ts
+│   │   └── use-page-meta.ts
+│   ├── pages/
+│   │   ├── home/
+│   │   │   └── _components/    # hero-section, services-section, fleet-section,
+│   │   │                       # testimonials-section, why-choose-us, cta-section
+│   │   ├── contact/page.tsx
+│   │   ├── book/page.tsx
+│   │   ├── fleet/
+│   │   │   ├── _lib/fleet-data.ts   # Vehicle data array
+│   │   │   └── page.tsx
+│   │   ├── about/page.tsx
+│   │   ├── services/
+│   │   │   ├── _components/service-page-template.tsx
+│   │   │   ├── _lib/service-data.ts
+│   │   │   ├── page.tsx
+│   │   │   ├── limo-service/page.tsx
+│   │   │   ├── party-bus/page.tsx
+│   │   │   ├── corporate/page.tsx
+│   │   │   ├── airport-transfers/page.tsx
+│   │   │   └── wedding/page.tsx
+│   │   ├── privacy/page.tsx
+│   │   ├── auth/Callback.tsx   # Redirects to / immediately
+│   │   ├── Index.tsx           # Home page
+│   │   └── NotFound.tsx
+│   ├── lib/utils.ts
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+├── vite.config.ts              # Includes apiDevPlugin for local API handling
+├── vercel.json                 # SPA rewrite + build config
+├── index.html
+├── .env                        # Gitignored — local secrets
+└── CLAUDE.md                   # This file
 ```
 
 ## Lockfile and package manager

@@ -638,11 +638,11 @@ function BookingSuccess() {
 
 export default function BookingPage() {
   usePageMeta({
-    title: "Book Your Luxury Ride | Free Quote | HuntnHire",
+    title: "Book Your Luxury Ride | Free Quote | Hunt&Hire",
     description:
       "Reserve your luxury limousine, party bus, or executive vehicle in minutes. No payment required upfront. Our team confirms availability within the hour. Serving 50+ US cities.",
     keywords:
-      "book limo, reserve party bus, luxury transportation booking, limo quote, HuntnHire reservation",
+      "book limo, reserve party bus, luxury transportation booking, limo quote, Hunt&Hire reservation",
   });
 
   const [step, setStep] = useState(1);
