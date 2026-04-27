@@ -76,6 +76,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         reply_to: { email, name },
         subject: `Contact: ${subject} — ${name}`,
         html,
+        headers: {
+          "X-Priority": "1",
+          "X-MSMail-Priority": "High",
+          "Importance": "high",
+        },
       }),
     });
 
