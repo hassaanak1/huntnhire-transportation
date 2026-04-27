@@ -128,6 +128,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         reply_to: { email, name: fullName },
         subject: `Booking: ${eventType} on ${eventDate} — ${fullName}`,
         html,
+        headers: {
+          "X-Priority": "1",
+          "X-MSMail-Priority": "High",
+          "Importance": "high",
+        },
       }),
     });
 
