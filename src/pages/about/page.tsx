@@ -74,7 +74,7 @@ const MILESTONES = [
     year: "2009",
     title: "Company Established in New York",
     description:
-      "HuntnHire began with a small fleet of executive sedans, built on a vision to elevate the standard of luxury ground transportation.",
+      "Hunt&Hire began with a small fleet of executive sedans, built on a vision to elevate the standard of luxury ground transportation.",
   },
   {
     year: "2012",
@@ -104,7 +104,7 @@ const MILESTONES = [
     year: "2024",
     title: "Nationwide Presence Achieved",
     description:
-      "HuntnHire now operates in more than 50 cities across the United States, serving clients coast to coast with consistent excellence.",
+      "Hunt&Hire now operates in more than 50 cities across the United States, serving clients coast to coast with consistent excellence.",
   },
 ] as const;
 
@@ -114,7 +114,7 @@ const LEADERSHIP = [
     role: "Founder & CEO",
     image:
       "https://images.unsplash.com/photo-1630705337159-7b95f34a9db5?auto=format&fit=crop&w=400&q=80",
-    bio: "A hospitality professional with over 15 years of experience, Alexander founded HuntnHire with a mission to redefine premium ground transportation through consistency and care.",
+    bio: "A hospitality professional with over 15 years of experience, Alexander founded Hunt&Hire with a mission to redefine premium ground transportation through consistency and care.",
   },
   {
     name: "Victoria Chen",
@@ -150,7 +150,7 @@ function AboutHero() {
           transition={{ duration: 0.8 }}
         >
           <p className="text-primary uppercase tracking-[0.3em] text-sm font-medium mb-4">
-            About HuntnHire
+            About Hunt&Hire
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance">
             Redefining Luxury <span className="text-primary">Travel</span>
@@ -208,7 +208,7 @@ function OurStory() {
             <div className="relative overflow-hidden">
               <img
                 src={STORY_IMAGE}
-                alt="HuntnHire chauffeur"
+                alt="Hunt&Hire chauffeur"
                 className="w-full h-[500px] object-cover"
               />
             </div>
@@ -237,7 +237,7 @@ function OurStory() {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                HuntnHire started with a simple goal — to make luxury
+                Hunt&Hire started with a simple goal — to make luxury
                 transportation more dependable and accessible. From a small
                 beginning in New York, we’ve grown into a nationwide service
                 trusted across major cities.
@@ -532,11 +532,11 @@ function AboutCta() {
 
 export default function AboutPage() {
   usePageMeta({
-    title: "About HuntnHire | 15+ Years of Premium Luxury Transportation",
+    title: "About Hunt&Hire | 15+ Years of Premium Luxury Transportation",
     description:
-      "Learn about HuntnHire — founded in 2009, serving 50+ US cities with 200+ luxury vehicles. Meet our leadership team and discover our commitment to excellence.",
+      "Learn about Hunt&Hire — founded in 2009, serving 50+ US cities with 200+ luxury vehicles. Meet our leadership team and discover our commitment to excellence.",
     keywords:
-      "about HuntnHire, luxury transportation company, limousine company, corporate transportation provider",
+      "about Hunt&Hire, luxury transportation company, limousine company, corporate transportation provider",
   });
 
   return (

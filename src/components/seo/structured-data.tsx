@@ -16,7 +16,7 @@ export function LocalBusinessSchema() {
   const data = {
     "@context": "https://schema.org",
     "@type": "LimousineBus",
-    name: "HuntnHire",
+    name: "Hunt&Hire",
     description:
       "Premium luxury transportation services including limousine rentals, party bus services, corporate transportation, airport transfers, and wedding limo service across the United States.",
     url: "https://huntnhire.co",
@@ -65,7 +65,7 @@ export function OrganizationSchema() {
   const data = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "HuntnHire",
+    name: "Hunt&Hire",
     description:
       "Premium luxury transportation company operating in 50+ cities across the United States since 2009.",
     url: "https://huntnhire.co",
@@ -143,7 +143,7 @@ export function ServiceSchema({
     url,
     provider: {
       "@type": "Organization",
-      name: "HuntnHire",
+      name: "Hunt&Hire",
       telephone: "+1-978-396-4667",
     },
     areaServed: {

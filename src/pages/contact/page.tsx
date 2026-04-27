@@ -349,11 +349,11 @@ function ContactInfo() {
 
 export default function ContactPage() {
   usePageMeta({
-    title: "Contact HuntnHire | 24/7 Luxury Transportation Support",
+    title: "Contact Hunt&Hire | 24/7 Luxury Transportation Support",
     description:
-      "Get in touch with HuntnHire for quotes, corporate accounts, wedding transportation, or general inquiries. Call (978) 396-4667 or send a message. We respond within the hour.",
+      "Get in touch with Hunt&Hire for quotes, corporate accounts, wedding transportation, or general inquiries. Call (978) 396-4667 or send a message. We respond within the hour.",
     keywords:
-      "contact HuntnHire, limo service phone number, luxury transportation quote, corporate limo inquiry",
+      "contact Hunt&Hire, limo service phone number, luxury transportation quote, corporate limo inquiry",
   });
 
   return (

@@ -259,11 +259,11 @@ function FleetTrust() {
 export default function FleetPage() {
   usePageMeta({
     title:
-      "Our Premium Fleet | Executive Sedans, Limos & Party Buses | HuntnHire",
+      "Our Premium Fleet | Executive Sedans, Limos & Party Buses | Hunt&Hire",
     description:
-      "Browse the HuntnHire luxury fleet: executive sedans, stretch limousines, SUVs, Sprinter vans, and party buses. 200+ vehicles, all current model year, fully insured.",
+      "Browse the Hunt&Hire luxury fleet: executive sedans, stretch limousines, SUVs, Sprinter vans, and party buses. 200+ vehicles, all current model year, fully insured.",
     keywords:
-      "luxury fleet, limousine fleet, party bus fleet, executive sedan rental, stretch limo rental, HuntnHire vehicles",
+      "luxury fleet, limousine fleet, party bus fleet, executive sedan rental, stretch limo rental, Hunt&Hire vehicles",
   });
 
   const [activeFilter, setActiveFilter] = useState("All");

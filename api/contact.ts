@@ -30,7 +30,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #1a1a1a;">
       <div style="background: #111; padding: 24px 32px; margin-bottom: 24px;">
         <h1 style="color: #c9a84c; margin: 0; font-size: 20px; letter-spacing: 2px; text-transform: uppercase;">
-          HuntnHire — New Contact
+          Hunt&Hire — New Contact
         </h1>
       </div>
       <div style="padding: 0 32px 32px;">
@@ -71,7 +71,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: { email: senderEmail, name: "HuntnHire Website" },
+        from: { email: senderEmail, name: "Hunt&Hire Website" },
         to: [{ email: receiverEmail }],
         reply_to: { email, name },
         subject: `Contact: ${subject} — ${name}`,

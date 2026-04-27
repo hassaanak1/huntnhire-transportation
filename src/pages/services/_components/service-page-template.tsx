@@ -31,9 +31,9 @@ export default function ServicePageTemplate({
   data,
 }: ServicePageTemplateProps) {
   usePageMeta({
-    title: `${data.title} | HuntnHire`,
+    title: `${data.title} | Hunt&Hire`,
     description: data.overview[0].slice(0, 160),
-    keywords: `${data.tagline}, ${data.shortTitle}, luxury transportation, HuntnHire`,
+    keywords: `${data.tagline}, ${data.shortTitle}, luxury transportation, Hunt&Hire`,
   });
 
   const relatedServices = data.relatedSlugs
@@ -230,7 +230,7 @@ export default function ServicePageTemplate({
               transition={{ duration: 0.6 }}
             >
               <p className="text-primary uppercase tracking-[0.3em] text-xs font-medium mb-4">
-                Why HuntnHire
+                Why Hunt&Hire
               </p>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-8">
                 Everything You Need, Nothing You Don{"'"}t
