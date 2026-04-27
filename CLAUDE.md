@@ -57,6 +57,7 @@ Both forms submit via `fetch` to Vercel serverless functions. There is no databa
 - API route: `api/booking.ts`
 - 4-step multi-page form (Event → Trip → Personal Info → Review)
 - Posts full booking payload on final step
+- `passengers` and `hoursNeeded` are stored as `string` in `BookingFormData` (not `number`) — this allows the fields to be fully cleared while typing. They are parsed with `parseInt` at validation time and on submit. Do not change these back to `number` with a `|| 1` fallback; that was the original bug (clearing the field snapped it back to 1).
 
 ### Environment variables
 

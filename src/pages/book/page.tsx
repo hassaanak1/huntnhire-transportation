@@ -138,8 +138,8 @@ type BookingFormData = {
   stopsAddress: string;
   destinationAddress: string;
   dropoffTime: string;
-  passengers: number;
-  hoursNeeded: number;
+  passengers: string;
+  hoursNeeded: string;
   vehicleNeeded: string;
   specialRequests: string;
 };
@@ -155,8 +155,8 @@ const INITIAL_FORM: BookingFormData = {
   stopsAddress: "",
   destinationAddress: "",
   dropoffTime: "",
-  passengers: 1,
-  hoursNeeded: 1,
+  passengers: "",
+  hoursNeeded: "",
   vehicleNeeded: "",
   specialRequests: "",
 };
@@ -299,9 +299,7 @@ function Step1EventVehicle({
             min={1}
             max={60}
             value={form.passengers}
-            onChange={(e) =>
-              onChange({ passengers: parseInt(e.target.value) || 1 })
-            }
+            onChange={(e) => onChange({ passengers: e.target.value })}
             required
             className="rounded-none bg-background"
           />
@@ -317,9 +315,7 @@ function Step1EventVehicle({
             min={1}
             max={24}
             value={form.hoursNeeded}
-            onChange={(e) =>
-              onChange({ hoursNeeded: parseInt(e.target.value) || 1 })
-            }
+            onChange={(e) => onChange({ hoursNeeded: e.target.value })}
             required
             className="rounded-none bg-background"
           />
@@ -545,10 +541,10 @@ function Step4Confirmation({ form }: { form: BookingFormData }) {
     { label: "Event Type", value: eventLabel },
     { label: "Event Date", value: form.eventDate },
     { label: "Vehicle", value: vehicleLabel },
-    { label: "Passengers", value: String(form.passengers) },
+    { label: "Passengers", value: form.passengers },
     {
       label: "Hours Needed",
-      value: `${form.hoursNeeded} hour${form.hoursNeeded !== 1 ? "s" : ""}`,
+      value: `${form.hoursNeeded} hour${form.hoursNeeded !== "1" ? "s" : ""}`,
     },
     { label: "Pickup Time", value: form.pickupTime },
     { label: "Pickup Address", value: form.pickupAddress },
@@ -673,7 +669,7 @@ export default function BookingPage() {
           toast.error("Please select a vehicle.");
           return false;
         }
-        if (form.passengers < 1) {
+        if (!form.passengers || parseInt(form.passengers) < 1) {
           toast.error("At least 1 passenger is required.");
           return false;
         }
@@ -744,8 +740,8 @@ export default function BookingPage() {
           stopsAddress: form.stopsAddress.trim() || undefined,
           destinationAddress: form.destinationAddress.trim(),
           dropoffTime: form.dropoffTime,
-          passengers: form.passengers,
-          hoursNeeded: form.hoursNeeded,
+          passengers: parseInt(form.passengers),
+          hoursNeeded: parseInt(form.hoursNeeded) || 0,
           vehicleNeeded: form.vehicleNeeded,
           specialRequests: form.specialRequests.trim() || undefined,
         }),
