@@ -16,6 +16,7 @@ const QUICK_LINKS = [
   { label: "Services", href: "/services" },
   { label: "Contact", href: "/contact" },
   { label: "Book a Ride", href: "/book" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
 ] as const;
 
 export default function Footer() {
@@ -49,22 +50,22 @@ export default function Footer() {
             </p>
             <div className="space-y-3">
               <a
-                href="tel:+12108019909"
+                href="tel:+19783964667"
                 className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Phone className="size-4 text-primary shrink-0" />
-                (210) 801-9909
+                (978) 396-4667
               </a>
               <a
-                href="mailto:limntrixinc@gmail.com"
+                href="mailto:admin@huntnhire.co"
                 className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail className="size-4 text-primary shrink-0" />
-                limntrixinc@gmail.com
+                admin@huntnhire.co
               </a>
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <MapPin className="size-4 text-primary shrink-0" />
-                Nationwide Service, USA
+                2019 Allen St, Dallas, TX 75204, United States
               </div>
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <Clock className="size-4 text-primary shrink-0" />
@@ -139,9 +140,15 @@ export default function Footer() {
             &copy; {year} HuntnHire. All rights reserved. Premium Luxury
             Transportation Services.
           </p>
-          <p className="text-xs text-muted-foreground">
-            Licensed & Insured | DOT Compliant
-          </p>
+          <div className="flex items-center gap-4 text-xs text-muted-foreground">
+            <span>Licensed & Insured | DOT Compliant</span>
+            <Link
+              to="/privacy-policy"
+              className="hover:text-primary transition-colors underline-offset-2 hover:underline"
+            >
+              Privacy Policy
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

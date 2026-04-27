@@ -98,6 +98,16 @@ Vercel auto-detects files in `api/` as Node.js serverless functions. The `api/ts
 
 **ESM/CJS module conflict**: The root `package.json` has `"type": "module"` (required by Vite), which tells Node.js to load all compiled `.js` files as ES modules. The API functions compile to CommonJS (per `api/tsconfig.json`). Without a local override, Node.js tries to load the CJS bundle as ESM and crashes — `FUNCTION_INVOCATION_FAILED` — before any handler code runs. The `api/package.json` with `"type": "commonjs"` overrides the root setting for that directory only, so the CJS bundle loads correctly. **Do not delete `api/package.json`.**
 
+## Business contact details
+
+| Field   | Value                                    |
+| ------- | ---------------------------------------- |
+| Phone   | (978) 396-4667 / `tel:+19783964667`      |
+| Email   | admin@huntnhire.co                       |
+| Address | 2019 Allen St, Dallas, TX 75204, United States |
+
+These appear throughout the app (header, footer, contact page, hero, service pages, book page, about page, floating CTA, structured data). When updating contact details, search for the old value across all `src/` files — do not update just one location.
+
 ## Project structure
 
 ```
@@ -112,6 +122,7 @@ Vercel auto-detects files in `api/` as Node.js serverless functions. The `api/ts
 │   │   ├── ui/             # shadcn/ui components
 │   │   ├── header.tsx
 │   │   ├── footer.tsx
+│   │   ├── floating-cta.tsx
 │   │   └── site-layout.tsx
 │   ├── pages/
 │   │   ├── home/           # Landing page sections
@@ -120,6 +131,7 @@ Vercel auto-detects files in `api/` as Node.js serverless functions. The `api/ts
 │   │   ├── fleet/          # Vehicle fleet page
 │   │   ├── about/
 │   │   ├── services/       # Services + individual service pages
+│   │   ├── privacy/        # Privacy policy page (/privacy-policy)
 │   │   └── auth/Callback.tsx  # Redirects to / (auth removed, kept for safety)
 │   ├── hooks/
 │   │   ├── use-auth.ts     # Stub (auth unused)
@@ -127,6 +139,7 @@ Vercel auto-detects files in `api/` as Node.js serverless functions. The `api/ts
 │   │   └── use-mobile.ts
 │   └── lib/utils.ts
 ├── src/components/scroll-to-top.tsx  # Scrolls window to top on every route change
+├── src/components/seo/structured-data.tsx  # JSON-LD schema components (LocalBusiness, Organization, Service, etc.)
 ├── vite.config.ts          # Includes apiDevPlugin for local API handling
 ├── vercel.json             # SPA rewrite + build config
 ├── .env                    # Gitignored — local secrets

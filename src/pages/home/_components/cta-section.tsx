@@ -53,7 +53,7 @@ export default function CtaSection() {
                 <ChevronRight className="size-5" />
               </Button>
             </Link>
-            <a href="tel:+12108019909">
+            <a href="tel:+19783964667">
               <Button
                 size="lg"
                 variant="ghost"

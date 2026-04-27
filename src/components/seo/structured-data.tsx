@@ -20,8 +20,16 @@ export function LocalBusinessSchema() {
     description:
       "Premium luxury transportation services including limousine rentals, party bus services, corporate transportation, airport transfers, and wedding limo service across the United States.",
     url: "https://huntnhire.co",
-    telephone: "+1-210-801-9909",
-    email: "limntrixinc@gmail.com",
+    telephone: "+1-978-396-4667",
+    email: "admin@huntnhire.co",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "2019 Allen St",
+      addressLocality: "Dallas",
+      addressRegion: "TX",
+      postalCode: "75204",
+      addressCountry: "US",
+    },
     areaServed: {
       "@type": "Country",
       name: "United States",
@@ -61,8 +69,8 @@ export function OrganizationSchema() {
     description:
       "Premium luxury transportation company operating in 50+ cities across the United States since 2009.",
     url: "https://huntnhire.co",
-    telephone: "+1-210-801-9909",
-    email: "limntrixinc@gmail.com",
+    telephone: "+1-978-396-4667",
+    email: "admin@huntnhire.co",
     foundingDate: "2009",
     founder: {
       "@type": "Person",
@@ -136,7 +144,7 @@ export function ServiceSchema({
     provider: {
       "@type": "Organization",
       name: "HuntnHire",
-      telephone: "+1-210-801-9909",
+      telephone: "+1-978-396-4667",
     },
     areaServed: {
       "@type": "Country",

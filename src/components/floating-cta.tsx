@@ -43,7 +43,7 @@ export default function FloatingCta() {
           Book Now
         </button>
         <a
-          href="tel:+18887778989"
+          href="tel:+19783964667"
           className="flex items-center justify-center gap-2 bg-card border border-border text-primary py-3 px-5 text-xs uppercase tracking-widest font-semibold transition-colors hover:bg-accent"
         >
           <Phone className="size-4" />

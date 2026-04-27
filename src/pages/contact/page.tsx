@@ -28,23 +28,23 @@ const CONTACT_INFO = [
   {
     icon: Phone,
     label: "Phone",
-    value: "(210) 801-9909",
-    href: "tel:+12108019909",
+    value: "(978) 396-4667",
+    href: "tel:+19783964667",
     sublabel: "Available 24/7",
   },
   {
     icon: Mail,
     label: "Email",
-    value: "limntrixinc@gmail.com",
-    href: "mailto:limntrixinc@gmail.com",
+    value: "admin@huntnhire.co",
+    href: "mailto:admin@huntnhire.co",
     sublabel: "Response within 1 hour",
   },
   {
     icon: MapPin,
     label: "Headquarters",
-    value: "Nationwide Service, USA",
+    value: "2019 Allen St, Dallas, TX 75204",
     href: undefined,
-    sublabel: "50+ cities covered",
+    sublabel: "United States",
   },
   {
     icon: Clock,
@@ -351,7 +351,7 @@ export default function ContactPage() {
   usePageMeta({
     title: "Contact HuntnHire | 24/7 Luxury Transportation Support",
     description:
-      "Get in touch with HuntnHire for quotes, corporate accounts, wedding transportation, or general inquiries. Call (210) 801-9909 or send a message. We respond within the hour.",
+      "Get in touch with HuntnHire for quotes, corporate accounts, wedding transportation, or general inquiries. Call (978) 396-4667 or send a message. We respond within the hour.",
     keywords:
       "contact HuntnHire, limo service phone number, luxury transportation quote, corporate limo inquiry",
   });

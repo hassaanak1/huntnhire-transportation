@@ -518,11 +518,11 @@ function AboutCta() {
             </Button>
           </Link>
           <a
-            href="tel:+12108019909"
+            href="tel:+19783964667"
             className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
           >
             <Phone className="size-4" />
-            (210) 801-9909
+            (978) 396-4667
           </a>
         </div>
       </div>

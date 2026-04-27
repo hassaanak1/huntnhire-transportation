@@ -15,6 +15,7 @@ import FleetPage from "./pages/fleet/page.tsx";
 import AboutPage from "./pages/about/page.tsx";
 import ContactPage from "./pages/contact/page.tsx";
 import BookingPage from "./pages/book/page.tsx";
+import PrivacyPolicyPage from "./pages/privacy/page.tsx";
 
 export default function App() {
   return (
@@ -35,6 +36,7 @@ export default function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/book" element={<BookingPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           </Route>
           <Route path="*" element={<NotFound />} />
