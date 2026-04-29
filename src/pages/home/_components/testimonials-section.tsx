@@ -114,6 +114,49 @@ export default function TestimonialsSection() {
             </motion.div>
           ))}
         </div>
+
+        {/* Partner Badges */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-16 flex flex-col items-center gap-6"
+        >
+          <p className="text-xs text-muted-foreground uppercase tracking-[0.3em]">
+            As Featured On
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            <a rel="nofollow" target="_blank" href="https://www.weddingwire.com" title="weddingwire.com">
+              <img
+                alt="weddingwire.com"
+                src="https://www.weddingwire.com/images/sellos/partner--gg2231652.png"
+                className="h-16 w-auto object-contain opacity-75 hover:opacity-100 transition-opacity"
+              />
+            </a>
+            <a target="_blank" href="https://www.theknot.com/marketplace/redirect-2104622?utm_source=vendor_website&utm_medium=banner&utm_term=74926fe0-b3c4-4b5f-af70-ff55a8ca021d&utm_campaign=vendor_badge_assets">
+              <img
+                alt="Review us on The Knot"
+                src="https://d13ns7kbjmbjip.cloudfront.net/For_Your_Website/TK-badge_ReviewUs.png"
+                className="h-16 w-auto object-contain opacity-75 hover:opacity-100 transition-opacity"
+              />
+            </a>
+            <a target="_blank" href="https://www.theknot.com/marketplace/redirect-2104622?utm_source=vendor_website&utm_medium=banner&utm_term=74926fe0-b3c4-4b5f-af70-ff55a8ca021d&utm_campaign=vendor_badge_assets">
+              <img
+                alt="Couples love us! See our reviews on The Knot."
+                src="https://d13ns7kbjmbjip.cloudfront.net/For_Your_Website/TK-badge_ReadReviews.png"
+                className="h-16 w-auto object-contain opacity-75 hover:opacity-100 transition-opacity"
+              />
+            </a>
+            <a target="_blank" href="https://www.theknot.com/marketplace/redirect-2104622?utm_source=vendor_website&utm_medium=banner&utm_term=74926fe0-b3c4-4b5f-af70-ff55a8ca021d&utm_campaign=vendor_badge_assets">
+              <img
+                alt="As Seen on The Knot"
+                src="https://d13ns7kbjmbjip.cloudfront.net/For_Your_Website/TK-badge_AsSeen.png"
+                className="h-16 w-auto object-contain opacity-75 hover:opacity-100 transition-opacity"
+              />
+            </a>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
