@@ -193,6 +193,14 @@ These appear throughout the app (header, footer, contact page, hero, service pag
 └── CLAUDE.md                   # This file
 ```
 
+## Analytics
+
+Vercel Web Analytics is enabled via `@vercel/analytics/react`. The `<Analytics />` component is mounted inside `<DefaultProviders>` in `App.tsx`, after `</BrowserRouter>`.
+
+**Important**: always import from `@vercel/analytics/react`, never `@vercel/analytics/next` — the `/next` entrypoint uses Next.js App Router APIs that don't exist in Vite and will cause a blank page crash.
+
+Analytics data is only collected in production (deployed to Vercel). Locally it runs as a no-op.
+
 ## Lockfile and package manager
 
 The project uses **npm**. A `package-lock.json` is committed to the repo. There is no `pnpm-lock.yaml` — it was deleted because Vercel was picking it up (leftover from the original Hercules template), seeing it was out of sync with `package.json` after the dependency cleanup, and failing with `ERR_PNPM_OUTDATED_LOCKFILE`.

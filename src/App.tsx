@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import { DefaultProviders } from "./components/providers/default.tsx";
 import ScrollToTop from "./components/scroll-to-top.tsx";
 import AuthCallback from "./pages/auth/Callback.tsx";
@@ -27,10 +28,16 @@ export default function App() {
           <Route element={<SiteLayout />}>
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<ServicesPage />} />
-            <Route path="/services/limo-service" element={<LimoServicePage />} />
+            <Route
+              path="/services/limo-service"
+              element={<LimoServicePage />}
+            />
             <Route path="/services/party-bus" element={<PartyBusPage />} />
             <Route path="/services/corporate" element={<CorporatePage />} />
-            <Route path="/services/airport-transfers" element={<AirportTransfersPage />} />
+            <Route
+              path="/services/airport-transfers"
+              element={<AirportTransfersPage />}
+            />
             <Route path="/services/wedding" element={<WeddingPage />} />
             <Route path="/fleet" element={<FleetPage />} />
             <Route path="/about" element={<AboutPage />} />
@@ -42,6 +49,7 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <Analytics />
     </DefaultProviders>
   );
 }
