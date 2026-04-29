@@ -28,8 +28,8 @@ const CONTACT_INFO = [
   {
     icon: Phone,
     label: "Phone",
-    value: "(978) 396-4667",
-    href: "tel:+19783964667",
+    value: "(214) 253-8405",
+    href: "tel:+12142538405",
     sublabel: "Available 24/7",
   },
   {
@@ -351,7 +351,7 @@ export default function ContactPage() {
   usePageMeta({
     title: "Contact Hunt&Hire | 24/7 Luxury Transportation Support",
     description:
-      "Get in touch with Hunt&Hire for quotes, corporate accounts, wedding transportation, or general inquiries. Call (978) 396-4667 or send a message. We respond within the hour.",
+      "Get in touch with Hunt&Hire for quotes, corporate accounts, wedding transportation, or general inquiries. Call (214) 253-8405 or send a message. We respond within the hour.",
     keywords:
       "contact Hunt&Hire, limo service phone number, luxury transportation quote, corporate limo inquiry",
   });

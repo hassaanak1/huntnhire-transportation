@@ -50,11 +50,11 @@ export default function Footer() {
             </p>
             <div className="space-y-3">
               <a
-                href="tel:+19783964667"
+                href="tel:+12142538405"
                 className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Phone className="size-4 text-primary shrink-0" />
-                (978) 396-4667
+                (214) 253-8405
               </a>
               <a
                 href="mailto:admin@huntnhire.co"

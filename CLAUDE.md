@@ -107,7 +107,7 @@ Vercel auto-detects files in `api/` as Node.js serverless functions. The `api/ts
 
 | Field   | Value                                    |
 | ------- | ---------------------------------------- |
-| Phone   | (978) 396-4667 / `tel:+19783964667`      |
+| Phone   | (214) 253-8405 / `tel:+12142538405`      |
 | Email   | admin@huntnhire.co                       |
 | Address | 2019 Allen St, Dallas, TX 75204, United States |
 
@@ -209,3 +209,4 @@ The project uses **npm**. A `package-lock.json` is committed to the repo. There 
 - **Do not commit `pnpm-lock.yaml`** — Vercel detects it before `package-lock.json` and will try to use pnpm, breaking the build.
 - **Do not delete `api/package.json`** — it fixes the `FUNCTION_INVOCATION_FAILED` crash caused by the ESM/CJS module conflict between the root `"type": "module"` and the CommonJS API bundles. See the Production deployment section for full explanation.
 - **Navigation scroll-to-top**: `ScrollToTop` (`src/components/scroll-to-top.tsx`) is mounted inside `<BrowserRouter>` in `App.tsx`. It calls `window.scrollTo(0, 0)` on every `pathname` change. `SiteLayout` wraps `<Outlet>` in a `motion.div` keyed by pathname for a 180ms fade-in on each page transition. Do not remove the `key={pathname}` — without it, Motion won't re-trigger the animation on navigation.
+- **WeddingWire & The Knot partner badges**: Four trust badges (WeddingWire partner, Review us on The Knot, Couples love us on The Knot, As Seen on The Knot) are placed in the **testimonials section** (`src/pages/home/_components/testimonials-section.tsx`) as an "As Featured On" row below the review cards. They are intentionally **not** in the footer.

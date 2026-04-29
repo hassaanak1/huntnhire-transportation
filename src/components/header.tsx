@@ -50,16 +50,11 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-primary rotate-45 flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xs -rotate-45">
-                H&H
-              </span>
-            </div>
             <div>
               <span className="font-serif text-xl font-bold tracking-wide text-foreground">
-                Hunt&
+                Hunt &
               </span>
-              <span className="font-serif text-xl font-light tracking-widest text-primary">
+              <span className="font-serif text-xl font-light tracking-widest text-primary ml-1">
                 Hire
               </span>
             </div>
@@ -94,11 +89,11 @@ export default function Header() {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="tel:+19783964667"
+              href="tel:+12142538405"
               className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
             >
               <Phone className="size-4" />
-              <span className="font-medium">(978) 396-4667</span>
+              <span className="font-medium">(214) 253-8405</span>
             </a>
             <Button
               size="sm"
@@ -111,7 +106,7 @@ export default function Header() {
 
           {/* Mobile Menu */}
           <div className="lg:hidden flex items-center gap-3">
-            <a href="tel:+19783964667" className="text-primary">
+            <a href="tel:+12142538405" className="text-primary">
               <Phone className="size-5" />
             </a>
             <Sheet open={open} onOpenChange={setOpen}>
@@ -127,13 +122,8 @@ export default function Header() {
                 <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <div className="flex items-center justify-between mb-10">
                   <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 bg-primary rotate-45 flex items-center justify-center">
-                      <span className="text-primary-foreground font-bold text-[10px] -rotate-45">
-                        H&H
-                      </span>
-                    </div>
                     <span className="font-serif text-lg font-bold tracking-wide text-foreground">
-                      Hunt&Hire
+                      Hunt & Hire
                     </span>
                   </div>
                   <Button
@@ -182,11 +172,11 @@ export default function Header() {
                     Book Your Ride
                   </Button>
                   <a
-                    href="tel:+19783964667"
+                    href="tel:+12142538405"
                     className="flex items-center justify-center gap-2 mt-4 text-sm text-primary"
                   >
                     <Phone className="size-4" />
-                    (978) 396-4667
+                    (214) 253-8405
                   </a>
                 </div>
               </SheetContent>
