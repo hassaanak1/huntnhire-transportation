@@ -20,7 +20,7 @@ export function LocalBusinessSchema() {
     description:
       "Premium luxury transportation services including limousine rentals, party bus services, corporate transportation, airport transfers, and wedding limo service across the United States.",
     url: "https://huntnhire.co",
-    telephone: "+1-978-396-4667",
+    telephone: "+1-214-253-8405",
     email: "admin@huntnhire.co",
     address: {
       "@type": "PostalAddress",
@@ -69,7 +69,7 @@ export function OrganizationSchema() {
     description:
       "Premium luxury transportation company operating in 50+ cities across the United States since 2009.",
     url: "https://huntnhire.co",
-    telephone: "+1-978-396-4667",
+    telephone: "+1-214-253-8405",
     email: "admin@huntnhire.co",
     foundingDate: "2009",
     founder: {
@@ -144,7 +144,7 @@ export function ServiceSchema({
     provider: {
       "@type": "Organization",
       name: "Hunt&Hire",
-      telephone: "+1-978-396-4667",
+      telephone: "+1-214-253-8405",
     },
     areaServed: {
       "@type": "Country",

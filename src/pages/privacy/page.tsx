@@ -365,10 +365,10 @@ export default function PrivacyPolicyPage() {
                 <p>
                   Phone:{" "}
                   <a
-                    href="tel:+19783964667"
+                    href="tel:+12142538405"
                     className="text-primary hover:underline"
                   >
-                    (978) 396-4667
+                    (214) 253-8405
                   </a>
                 </p>
               </div>
