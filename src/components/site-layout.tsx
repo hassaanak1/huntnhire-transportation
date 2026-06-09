@@ -3,13 +3,15 @@ import { motion } from "motion/react";
 import Header from "@/components/header.tsx";
 import Footer from "@/components/footer.tsx";
 import FloatingCta from "@/components/floating-cta.tsx";
+import AnnouncementMarquee from "@/components/announcement-marquee.tsx";
 
 export default function SiteLayout() {
   const { pathname } = useLocation();
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col bg-background overflow-x-hidden">
       <Header />
+      <AnnouncementMarquee />
       <main className="flex-1">
         <motion.div
           key={pathname}
