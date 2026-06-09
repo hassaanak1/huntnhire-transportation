@@ -17,6 +17,7 @@ import AboutPage from "./pages/about/page.tsx";
 import ContactPage from "./pages/contact/page.tsx";
 import BookingPage from "./pages/book/page.tsx";
 import PrivacyPolicyPage from "./pages/privacy/page.tsx";
+import Fifa2026Page from "./pages/fifa-2026/page.tsx";
 
 export default function App() {
   return (
@@ -44,6 +45,7 @@ export default function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/book" element={<BookingPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/fifa-2026" element={<Fifa2026Page />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           </Route>
           <Route path="*" element={<NotFound />} />

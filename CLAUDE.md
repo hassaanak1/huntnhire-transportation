@@ -129,6 +129,7 @@ These appear throughout the app (header, footer, contact page, hero, service pag
 | `/contact`                    | `src/pages/contact/page.tsx`                           |
 | `/book`                       | `src/pages/book/page.tsx`                              |
 | `/privacy-policy`             | `src/pages/privacy/page.tsx`                           |
+| `/fifa-2026`                  | `src/pages/fifa-2026/page.tsx`                         |
 | `/auth/callback`              | `src/pages/auth/Callback.tsx` (redirects to `/`)       |
 | `*`                           | `src/pages/NotFound.tsx`                               |
 
@@ -142,7 +143,9 @@ These appear throughout the app (header, footer, contact page, hero, service pag
 │   └── package.json            # "type": "commonjs" — overrides root ESM for Vercel CJS functions
 ├── src/
 │   ├── assets/
-│   │   └── fleet/              # Fleet vehicle images (jpg/webp)
+│   │   ├── fleet/              # Fleet vehicle images (jpg/webp)
+│   │   └── events/
+│   │       └── fifa-2026/      # hero.png, match-day-transportation.png
 │   ├── components/
 │   │   ├── providers/          # Theme, QueryClient, Tooltip wrappers
 │   │   ├── ui/                 # shadcn/ui components
@@ -151,6 +154,7 @@ These appear throughout the app (header, footer, contact page, hero, service pag
 │   │   ├── floating-cta.tsx
 │   │   ├── trust-bar.tsx
 │   │   ├── scroll-to-top.tsx   # Scrolls to top on every route change
+│   │   ├── announcement-marquee.tsx  # Fixed FIFA promo ticker below navbar
 │   │   ├── site-layout.tsx
 │   │   └── seo/
 │   │       └── structured-data.tsx  # JSON-LD schema (LocalBusiness, Organization, Service, etc.)
@@ -178,6 +182,7 @@ These appear throughout the app (header, footer, contact page, hero, service pag
 │   │   │   ├── corporate/page.tsx
 │   │   │   ├── airport-transfers/page.tsx
 │   │   │   └── wedding/page.tsx
+│   │   ├── fifa-2026/page.tsx  # Special event landing page
 │   │   ├── privacy/page.tsx
 │   │   ├── auth/Callback.tsx   # Redirects to / immediately
 │   │   ├── Index.tsx           # Home page
@@ -208,6 +213,32 @@ The project uses **npm**. A `package-lock.json` is committed to the repo. There 
 - Always use `npm install` locally, not pnpm or yarn.
 - If a `pnpm-lock.yaml` ever reappears, delete it — it will break Vercel CI.
 
+## Special event pages
+
+### FIFA World Cup 2026 (`/fifa-2026`)
+
+- **Page**: `src/pages/fifa-2026/page.tsx` — standalone custom page (not using `ServicePageTemplate`)
+- **Local images**: imported from `src/assets/events/fifa-2026/`
+  - `hero.png` — hero section background
+  - `match-day-transportation.png` — Match Day Transportation section
+- **Sections**: Hero → Service Highlights Grid → Why Hunt&Hire → Match Day Transport → Party Bus → Corporate → Charter Bus → Airport Transfers → Areas We Serve → Reserve Early CTA
+- **SEO**: custom `usePageMeta` title/description/keywords/canonical; `BreadcrumbSchema` structured data
+
+When adding future special-event pages, follow the same pattern: standalone page component, local assets under `src/assets/events/<event-name>/`, route registered in `App.tsx`.
+
+## Announcement marquee
+
+`src/components/announcement-marquee.tsx` is a **fixed** promotional ticker bar rendered by `SiteLayout`, positioned at `top: 80px` (directly below the `h-20` header) with `z-index: 49`.
+
+- Currently advertises FIFA World Cup 2026 exclusively — all 8 items mention FIFA
+- The entire bar is a `<Link to="/fifa-2026">` — clicking anywhere navigates to the FIFA page
+- Scroll-aware: slides up and fades out after `scrollY > 120px`; reappears when scrolled back to top
+- CSS animation: uses `@keyframes marquee-x` defined in `index.css`, 42s linear infinite
+- Items are doubled in the array to create a seamless loop (`[...ITEMS, ...ITEMS]`)
+- Left/right edges use gradient fades matching the card background color
+
+To update the marquee content (e.g. a different event), edit the `ITEMS` array and the `<Link to="...">` target in `announcement-marquee.tsx`. To remove the marquee entirely, delete it from `SiteLayout`.
+
 ## Key decisions and constraints
 
 - **No auth**: Authentication was part of the Hercules template but is unused in this project. The stub files (`use-auth.ts`, `signin.tsx`, `auth/Callback.tsx`) are left in place to avoid breaking anything but do nothing.
@@ -218,3 +249,4 @@ The project uses **npm**. A `package-lock.json` is committed to the repo. There 
 - **Do not delete `api/package.json`** — it fixes the `FUNCTION_INVOCATION_FAILED` crash caused by the ESM/CJS module conflict between the root `"type": "module"` and the CommonJS API bundles. See the Production deployment section for full explanation.
 - **Navigation scroll-to-top**: `ScrollToTop` (`src/components/scroll-to-top.tsx`) is mounted inside `<BrowserRouter>` in `App.tsx`. It calls `window.scrollTo(0, 0)` on every `pathname` change. `SiteLayout` wraps `<Outlet>` in a `motion.div` keyed by pathname for a 180ms fade-in on each page transition. Do not remove the `key={pathname}` — without it, Motion won't re-trigger the animation on navigation.
 - **WeddingWire & The Knot partner badges**: Four trust badges (WeddingWire partner, Review us on The Knot, Couples love us on The Knot, As Seen on The Knot) are placed in the **testimonials section** (`src/pages/home/_components/testimonials-section.tsx`) as an "As Featured On" row below the review cards. They are intentionally **not** in the footer.
+- **`overflow-x: hidden` on `html` and `body`**: Set in `index.css` to prevent horizontal viewport scroll caused by Framer Motion `x: ±N` initial animation states and by decorative `absolute` elements with negative offsets. Do not remove. Decorative offset borders in the FIFA page also use `hidden sm:block` so they are suppressed on mobile where they would otherwise bleed off-screen.
