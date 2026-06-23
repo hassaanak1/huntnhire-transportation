@@ -30,7 +30,6 @@
 
     <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -39,7 +38,21 @@
       crossorigin
     />
 
-    <!-- Detect dark mode preference and set the class before next-themes loads. This avoids a flash of unstyled content (FOUC) when the page loads. -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2SPS2H4SE7"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      // We turn off the default page view because React Router App.tsx tracks it on location changes
+      gtag("config", "G-2SPS2H4SE7", { send_page_view: false });
+    </script>
+
     <script>
       (function () {
         try {
