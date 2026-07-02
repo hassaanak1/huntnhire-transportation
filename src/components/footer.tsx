@@ -63,11 +63,30 @@ export default function Footer() {
                 <Mail className="size-4 text-primary shrink-0" />
                 admin@huntnhire.co
               </a>
-              <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                <MapPin className="size-4 text-primary shrink-0" />
-                2019 Allen St, Dallas, TX 75204, United States
+
+              {/* Dallas Office Address */}
+              <div className="flex items-start gap-3 text-sm text-muted-foreground">
+                <MapPin className="size-4 text-primary shrink-0 mt-0.5" />
+                <div>
+                  <span className="font-medium text-foreground block">
+                    Dallas Office:
+                  </span>
+                  2019 Allen St, Dallas, TX 75204, United States
+                </div>
               </div>
-              <div className="flex items-center gap-3 text-sm text-muted-foreground">
+
+              {/* Head Office Address */}
+              <div className="flex items-start gap-3 text-sm text-muted-foreground">
+                <MapPin className="size-4 text-primary shrink-0 mt-0.5" />
+                <div>
+                  <span className="font-medium text-foreground block">
+                    Head Office:
+                  </span>
+                  2810 N Church St Wilmington, DE 19802-4447-100
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 text-sm text-muted-foreground pt-1">
                 <Clock className="size-4 text-primary shrink-0" />
                 Available 24/7
               </div>
